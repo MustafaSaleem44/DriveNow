@@ -12,6 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DriveNow">
         <activity
+            android:name=".CompanyDashboardOverview"
+            android:exported="false" />
+        <activity
+            android:name=".CompanyLogin"
+            android:exported="false" />
+        <activity
+            android:name=".UserLogin"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

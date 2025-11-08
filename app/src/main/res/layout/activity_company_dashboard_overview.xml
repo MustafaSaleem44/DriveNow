@@ -1,0 +1,778 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/figma_prompt_for_drivenow_app"
+    android:layout_width="match_parent"
+    android:layout_height="852dp"
+    android:background="@drawable/figma_prompt_for_drivenow_app">
+
+    <LinearLayout
+        android:id="@+id/company_dashboard_screen"
+        android:layout_width="393.28dp"
+        android:layout_height="852.31dp"
+        android:layout_gravity="top|left"
+        android:background="@drawable/company_dashboard_screen"
+        android:gravity="left|top"
+        android:orientation="vertical"
+        android:paddingLeft="15.98dp"
+        android:paddingRight="15.98dp"
+        android:paddingTop="97.19dp">
+
+        <LinearLayout
+            android:id="@+id/container_buttons"
+            android:layout_width="match_parent"
+            android:layout_height="47.95dp"
+            android:background="@drawable/container_buttons"
+            android:gravity="left|top"
+            android:orientation="horizontal"
+            android:paddingLeft="3.99dp"
+            android:paddingRight="3.99dp"
+            android:paddingTop="3.99dp">
+
+            <FrameLayout
+                android:id="@+id/button_overview"
+                android:layout_width="0dp"
+                android:layout_height="39.97dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_overview">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_marginRight="0.03dp"
+                    android:layout_marginBottom="0.17dp"
+                    android:layout_gravity="center"
+                    android:gravity="left|center_vertical"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="Overview"
+                    android:textColor="#FFFFFFFF"
+                    android:textSize="16dp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/button_cars"
+                android:layout_width="0dp"
+                android:layout_height="39.97dp"
+                android:layout_marginLeft="3.99dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_cars">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_marginLeft="0.36dp"
+                    android:layout_marginBottom="0.17dp"
+                    android:layout_gravity="center"
+                    android:gravity="left|center_vertical"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="Cars"
+                    android:textColor="#FFB0B0B0"
+                    android:textSize="16dp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/button_bookings"
+                android:layout_width="0dp"
+                android:layout_height="39.97dp"
+                android:layout_marginLeft="3.99dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_bookings">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_marginLeft="0.26dp"
+                    android:layout_marginBottom="0.17dp"
+                    android:layout_gravity="center"
+                    android:gravity="left|center_vertical"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="Bookings"
+                    android:textColor="#FFB0B0B0"
+                    android:textSize="16dp" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/container_card"
+            android:layout_width="match_parent"
+            android:layout_height="208.99dp"
+            android:layout_marginTop="15.98dp">
+
+            <LinearLayout
+                android:id="@+id/card_total_cars"
+                android:layout_width="172.65dp"
+                android:layout_height="86.5dp"
+                android:layout_gravity="top|left"
+                android:background="@drawable/card_total_cars"
+                android:gravity="left|center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="17.25dp"
+                android:paddingLeft="15.98dp"
+                android:paddingTop="17.25dp">
+
+                <ImageView
+                    android:layout_width="31.99dp"
+                    android:layout_height="31.99dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/drawable_image" />
+
+                <LinearLayout
+                    android:layout_width="70dp"
+                    android:layout_height="52dp"
+                    android:layout_marginLeft="11.99dp"
+                    android:gravity="left|top"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="32.01dp"
+                        android:layout_gravity="left"
+                        android:layout_weight="1"
+                        android:gravity="left|center_vertical"
+                        android:includeFontPadding="false"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="12"
+                        android:textColor="#FFFFFFFF"
+                        android:textSize="24dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_gravity="left"
+                        android:layout_marginTop="0.01dp"
+                        android:layout_marginBottom="0dp"
+                        android:clipToPadding="false"
+                        android:gravity="left|top"
+                        android:orientation="horizontal"
+                        android:paddingBottom="0dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp"
+                            android:gravity="left|center_vertical"
+                            android:includeFontPadding="false"
+                            android:maxLines="0"
+                            android:singleLine="true"
+                            android:text="Total Cars"
+                            android:textColor="#FFB0B0B0"
+                            android:textSize="14dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/card_total_bookings"
+                android:layout_width="172.67dp"
+                android:layout_height="86.5dp"
+                android:layout_marginLeft="188.64dp"
+                android:layout_gravity="top|left"
+                android:background="@drawable/card_total_bookings"
+                android:gravity="left|center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="17.25dp"
+                android:paddingLeft="15.98dp"
+                android:paddingTop="17.25dp">
+
+                <ImageView
+                    android:layout_width="31.99dp"
+                    android:layout_height="31.99dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/drawable_image_1" />
+
+                <LinearLayout
+                    android:layout_width="100dp"
+                    android:layout_height="52dp"
+                    android:layout_marginLeft="11.99dp"
+                    android:gravity="left|top"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="32.01dp"
+                        android:layout_gravity="left"
+                        android:layout_weight="1"
+                        android:gravity="left|center_vertical"
+                        android:includeFontPadding="false"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="45"
+                        android:textColor="#FFFFFFFF"
+                        android:textSize="24dp" />
+
+                    <LinearLayout
+                        android:layout_width="100dp"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="0.01dp"
+                        android:layout_marginBottom="0dp"
+                        android:layout_gravity="left"
+                        android:clipToPadding="false"
+                        android:gravity="left|top"
+                        android:orientation="horizontal"
+                        android:paddingBottom="0dp">
+
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="match_parent"
+                            android:gravity="left|center_vertical"
+                            android:includeFontPadding="false"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            android:text="Total Bookings"
+                            android:textColor="#FFB0B0B0"
+                            android:textSize="14dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/card_monthly_revenue"
+                android:layout_width="172.65dp"
+                android:layout_height="106.5dp"
+                android:layout_marginTop="102.49dp"
+                android:layout_gravity="top|left"
+                android:background="@drawable/card_monthly_revenue"
+                android:gravity="left|center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="17.25dp"
+                android:paddingLeft="15.98dp"
+                android:paddingTop="17.25dp">
+
+                <ImageView
+                    android:layout_width="28.87dp"
+                    android:layout_height="28.87dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/drawable_image_2" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="72dp"
+                    android:layout_marginLeft="11.99dp"
+                    android:layout_weight="1"
+                    android:gravity="left|top"
+                    android:orientation="vertical">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="32.01dp">
+
+                        <TextView
+                            android:layout_width="109dp"
+                            android:layout_height="34dp"
+                            android:layout_marginLeft="-0.09dp"
+                            android:layout_marginTop="4.87dp"
+                            android:layout_gravity="top|left"
+                            android:gravity="left|center_vertical"
+                            android:includeFontPadding="false"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            android:text="$15,650"
+                            android:textColor="#FFFFFFFF"
+                            android:textSize="24dp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="110dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="0dp">
+
+                        <TextView
+                            android:layout_width="109dp"
+                            android:layout_height="30dp"
+                            android:layout_marginLeft="0dp"
+                            android:layout_marginTop="-1.88dp"
+                            android:layout_gravity="top|left"
+                            android:gravity=""
+                            android:includeFontPadding="false"
+                            android:lineHeight="20dp"
+                            android:text="Monthly Revenue"
+                            android:textColor="#FFB0B0B0"
+                            android:textSize="14dp" />
+                    </FrameLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/card_rating"
+                android:layout_width="172.67dp"
+                android:layout_height="106.5dp"
+                android:layout_marginLeft="188.64dp"
+                android:layout_marginTop="102.49dp"
+                android:layout_gravity="top|left"
+                android:background="@drawable/card_rating"
+                android:gravity="left|center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="18.25dp"
+                android:paddingLeft="15.98dp"
+                android:paddingTop="17.25dp">
+
+                <ImageView
+                    android:layout_width="31.99dp"
+                    android:layout_height="31.99dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/drawable_image_3" />
+
+                <LinearLayout
+                    android:layout_width="39.81dp"
+                    android:layout_height="52dp"
+                    android:layout_marginLeft="11.99dp"
+                    android:gravity="left|top"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="32.01dp"
+                        android:layout_marginBottom="0.01dp"
+                        android:gravity="left|center_vertical"
+                        android:includeFontPadding="false"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="4.8"
+                        android:textColor="#FFFFFFFF"
+                        android:textSize="24dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginBottom="0dp"
+                        android:clipToPadding="false"
+                        android:gravity="left|top"
+                        android:orientation="horizontal"
+                        android:paddingBottom="0dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:gravity="left|center_vertical"
+                            android:includeFontPadding="false"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            android:text="Rating"
+                            android:textColor="#FFB0B0B0"
+                            android:textSize="14dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/card_recent_bookings"
+            android:layout_width="match_parent"
+            android:layout_height="242.97dp"
+            android:layout_marginTop="23.99dp"
+            android:background="@drawable/card_recent_bookings"
+            android:gravity="left|top"
+            android:orientation="vertical"
+            android:paddingLeft="15.98dp"
+            android:paddingTop="15.98dp">
+
+            <FrameLayout
+                android:layout_width="326.81dp"
+                android:layout_height="28dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:layout_marginTop="-1.74dp"
+                    android:layout_gravity="top|left"
+                    android:gravity="left|center_vertical"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="Recent Bookings"
+                    android:textColor="#FFFFFFFF"
+                    android:textSize="18dp" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="326.81dp"
+                android:layout_height="64.25dp"
+                android:layout_marginTop="39.97dp"
+                android:gravity="left|center_vertical"
+                android:orientation="horizontal"
+                android:paddingRight="0dp">
+
+                <LinearLayout
+                    android:layout_width="78.2dp"
+                    android:layout_height="44dp"
+                    android:gravity="left|top"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="24.01dp"
+                        android:clipToPadding="false"
+                        android:gravity="left|top"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="24dp"
+                            android:gravity="left|center_vertical"
+                            android:includeFontPadding="false"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            android:text="John Smith"
+                            android:textColor="#FFFFFFFF"
+                            android:textSize="16dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginBottom="0dp"
+                        android:clipToPadding="false"
+                        android:gravity="left|top"
+                        android:orientation="horizontal"
+                        android:paddingBottom="0dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp"
+                            android:layout_weight="1"
+                            android:gravity="left|center_vertical"
+                            android:includeFontPadding="false"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            android:text="BMW X5"
+                            android:textColor="#FFB0B0B0"
+                            android:textSize="14dp" />
+                    </LinearLayout>
+                </LinearLayout>
+                <!-- 1:1316:space-view0 Container_space_view0 space-view -->
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:layout_weight="1" />
+
+                <LinearLayout
+                    android:layout_width="50.23dp"
+                    android:layout_height="48.29dp"
+                    android:gravity="left|top"
+                    android:orientation="vertical"
+                    android:paddingTop="1.8dp">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="22.51dp"
+                        android:background="@drawable/drawable_shape">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="16dp"
+                            android:layout_marginLeft="9.25dp"
+                            android:layout_marginTop="2.26dp"
+                            android:layout_gravity="top|left"
+                            android:gravity="right|center_vertical"
+                            android:includeFontPadding="false"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            android:text="active"
+                            android:textColor="#FFFFFFFF"
+                            android:textSize="12dp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="3.99dp">
+
+                        <TextView
+                            android:layout_width="50dp"
+                            android:layout_height="22dp"
+                            android:layout_marginLeft="0.19dp"
+                            android:layout_marginTop="-1.6dp"
+                            android:layout_gravity="top|left"
+                            android:gravity="right|center_vertical"
+                            android:includeFontPadding="false"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            android:text="$360"
+                            android:textColor="#FFB0B0B0"
+                            android:textSize="14dp" />
+                    </FrameLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="64.25dp"
+                android:layout_marginTop="11.99dp"
+                android:gravity="left|center_vertical"
+                android:orientation="horizontal"
+                android:paddingRight="0dp">
+
+                <LinearLayout
+                    android:layout_width="109.23dp"
+                    android:layout_height="44dp"
+                    android:gravity="left|top"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="24.01dp"
+                        android:clipToPadding="false"
+                        android:gravity="left|top"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="24dp"
+                            android:gravity="left|center_vertical"
+                            android:includeFontPadding="false"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            android:text="Sarah Johnson"
+                            android:textColor="#FFFFFFFF"
+                            android:textSize="16dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginBottom="0dp"
+                        android:clipToPadding="false"
+                        android:gravity="left|top"
+                        android:orientation="horizontal"
+                        android:paddingBottom="0dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:gravity="left|center_vertical"
+                            android:includeFontPadding="false"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            android:text="Mercedes C-Class"
+                            android:textColor="#FFB0B0B0"
+                            android:textSize="14dp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="76.49dp"
+                    android:layout_height="48.29dp"
+                    android:layout_marginLeft="141.1dp"
+                    android:gravity="left|top"
+                    android:orientation="vertical"
+                    android:paddingTop="1.8dp">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="22.51dp"
+                        android:background="@drawable/drawable_shape_1">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="16dp"
+                            android:layout_marginLeft="11.25dp"
+                            android:layout_marginTop="2.26dp"
+                            android:layout_gravity="top|left"
+                            android:gravity="right|center_vertical"
+                            android:includeFontPadding="false"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            android:text="completed"
+                            android:textColor="#FF000000"
+                            android:textSize="12dp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="3.99dp">
+
+                        <TextView
+                            android:layout_width="76dp"
+                            android:layout_height="20dp"
+                            android:layout_marginLeft="0.44dp"
+                            android:layout_marginTop="0.15dp"
+                            android:layout_gravity="top|left"
+                            android:gravity="right|center_vertical"
+                            android:includeFontPadding="false"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            android:text="$380"
+                            android:textColor="#FFB0B0B0"
+                            android:textSize="14dp" />
+                    </FrameLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/button_add_new_car"
+            android:layout_width="match_parent"
+            android:layout_height="55.94dp"
+            android:layout_marginTop="23.99dp"
+            android:background="@drawable/button_add_new_car">
+
+            <ImageView
+                android:layout_width="15.98dp"
+                android:layout_height="15.98dp"
+                android:layout_marginLeft="126.71dp"
+                android:layout_marginBottom="0.04dp"
+                android:layout_gravity="center_vertical|left"
+                android:scaleType="centerInside"
+                android:src="@drawable/drawable_image_4" />
+
+            <LinearLayout
+                android:layout_width="83.91dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="150.68dp"
+                android:layout_marginTop="17.96dp"
+                android:layout_marginBottom="0dp"
+                android:layout_gravity="top|left"
+                android:clipToPadding="false"
+                android:gravity="left|top"
+                android:orientation="horizontal"
+                android:paddingBottom="0dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:gravity="left|center_vertical"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="Add New Car"
+                    android:textColor="#FFFFFFFF"
+                    android:textSize="14dp" />
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/container_premium_car_rentals"
+        android:layout_width="393.28dp"
+        android:layout_height="81.21dp"
+        android:layout_gravity="top|left"
+        android:background="@drawable/container_premium_car_rentals"
+        android:gravity="left|center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="17.25dp"
+        android:paddingLeft="15.98dp"
+        android:paddingRight="15.98dp"
+        android:paddingTop="15.98dp">
+
+        <LinearLayout
+            android:id="@+id/button_premium_car_rentals"
+            android:layout_width="39.95dp"
+            android:layout_height="39.95dp"
+            android:layout_marginTop="4.01dp"
+            android:layout_marginBottom="4.01dp"
+            android:background="@drawable/button_premium_car_rentals"
+            android:gravity="left|top"
+            android:orientation="vertical"
+            android:paddingLeft="7.98dp"
+            android:paddingRight="7.98dp"
+            android:paddingTop="7.98dp">
+
+            <ImageView
+                android:layout_width="23.99dp"
+                android:layout_height="23.99dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/drawable_image_5" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="183.08dp"
+            android:layout_height="47.97dp"
+            android:layout_marginLeft="15.98dp"
+            android:gravity="left|top"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/heading_premium_car_rentals"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:layout_marginBottom="-0.02dp"
+                android:clipToPadding="false"
+                android:gravity="left|top"
+                android:orientation="horizontal"
+                android:paddingBottom="0.02dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:gravity="left|center_vertical"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="Premium Car Rentals"
+                    android:textColor="#FFFFFFFF"
+                    android:textSize="20dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/paragraph_company_dashboard"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_marginBottom="0dp"
+                android:clipToPadding="false"
+                android:gravity="left|top"
+                android:orientation="horizontal"
+                android:paddingBottom="0dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_weight="1"
+                    android:gravity="left|center_vertical"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="Company Dashboard"
+                    android:textColor="#FFB0B0B0"
+                    android:textSize="14dp" />
+            </LinearLayout>
+        </LinearLayout>
+        <!-- 1:1344:space-view0 CompanyDashboardScreen_space_view0 space-view -->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="47.97dp"
+            android:layout_weight="1" />
+
+        <FrameLayout
+            android:id="@+id/button_add_car"
+            android:layout_width="101.26dp"
+            android:layout_height="31.99dp"
+            android:background="@drawable/button_add_car">
+
+            <ImageView
+                android:layout_width="15.98dp"
+                android:layout_height="15.98dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="8dp"
+                android:layout_gravity="top|left"
+                android:scaleType="centerInside"
+                android:src="@drawable/drawable_image_6" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginLeft="39.95dp"
+                android:layout_marginTop="0.03dp"
+                android:layout_gravity="center_vertical"
+                android:gravity="left|center_vertical"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="Add Car"
+                android:textColor="#FFFFFFFF"
+                android:textSize="14dp" />
+        </FrameLayout>
+    </LinearLayout>
+</FrameLayout>
