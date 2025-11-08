@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container_figma_prompt_drive_now_app"
+    android:layout_width="match_parent"
+    android:layout_height="852dp"
+    android:background="@drawable/container_figma_prompt_drive_now_app">
+
+    <LinearLayout
+        android:id="@+id/container_notifications_screen"
+        android:layout_width="393.28dp"
+        android:layout_height="852.31dp"
+        android:layout_gravity="top|left"
+        android:background="@drawable/container_notifications_screen"
+        android:gravity="left|top"
+        android:orientation="vertical"
+        android:paddingLeft="15.98dp"
+        android:paddingRight="15.98dp"
+        android:paddingTop="97.17dp">
+
+        <FrameLayout
+            android:id="@+id/container_notifications_screen_container2"
+            android:layout_width="match_parent"
+            android:layout_height="98.48dp"
+            android:background="@drawable/container_notifications_screen_container2"
+            android:paddingBottom="17.25dp"
+            android:paddingLeft="17.25dp"
+            android:paddingRight="17.25dp"
+            android:paddingTop="17.25dp">
+
+            <ImageView
+                android:id="@+id/container_notifications_screen_container3"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="3.99dp"
+                android:layout_gravity="top|left"
+                android:scaleType="centerInside"
+                android:src="@drawable/container_notifications_screen_container3" />
+
+            <LinearLayout
+                android:id="@+id/container_notifications_screen_container4"
+                android:layout_width="294.82dp"
+                android:layout_height="63.98dp"
+                android:layout_marginLeft="31.99dp"
+                android:layout_gravity="top|left"
+                android:gravity="left|top"
+                android:orientation="horizontal"
+                android:paddingRight="0dp">
+
+                <LinearLayout
+                    android:id="@+id/container_notifications_screen_container5"
+                    android:layout_width="0dp"
+                    android:layout_height="63.98dp"
+                    android:layout_weight="1"
+                    android:gravity="left|top"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/heading_booking_confirmed"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_marginBottom="0dp"
+                        android:clipToPadding="false"
+                        android:gravity="left|top"
+                        android:orientation="horizontal"
+                        android:paddingBottom="0dp">
+
+                        <TextView
+                            android:id="@+id/text_booking_confirmed"
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp"
+                            android:layout_weight="1"
+                            android:gravity="left|center_vertical"
+                            android:includeFontPadding="false"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            android:text="Booking Confirmed"
+                            android:textColor="#FFFFFFFF"
+                            android:textSize="14dp" />
+                    </LinearLayout>
+
+                    <FrameLayout
+                        android:id="@+id/container_notifications_screen_container6"
+                        android:layout_width="match_parent"
+                        android:layout_height="39.99dp"
+                        android:layout_marginTop="3.99dp">
+
+                        <TextView
+                            android:id="@+id/text_booking_confirmation_details"
+                            android:layout_width="206dp"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="-2dp"
+                            android:layout_gravity="top|left"
+                            android:gravity="left|top"
+                            android:includeFontPadding="false"
+                            android:lineHeight="20dp"
+                            android:text="Your booking for Toyota Camry is confirmed."
+                            android:textColor="#FFB0B0B0"
+                            android:textSize="14dp" />
+                    </FrameLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/container_notifications_screen_container7"
+                    android:layout_width="65.89dp"
+                    android:layout_height="15.98dp"
+                    android:gravity="left|center_vertical"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/text_days_ago"
+                        android:layout_width="49.93dp"
+                        android:layout_height="16dp"
+                        android:layout_marginBottom="-0.02dp"
+                        android:clipToPadding="false"
+                        android:gravity="left|top"
+                        android:orientation="horizontal"
+                        android:paddingBottom="0.02dp">
+
+                        <TextView
+                            android:id="@+id/text_days_ago_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="left|center_vertical"
+                            android:includeFontPadding="false"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            android:text="632d ago"
+                            android:textColor="#FF666666"
+                            android:textSize="12dp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/container_notifications_screen_container8"
+                        android:layout_width="7.98dp"
+                        android:layout_height="7.98dp"
+                        android:layout_marginLeft="7.98dp"
+                        android:background="@drawable/container_notifications_screen_container8"
+                        android:scaleType="centerInside" />
+                </LinearLayout>
+            </LinearLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/container_notifications_screen_container10"
+            android:layout_width="match_parent"
+            android:layout_height="98.48dp"
+            android:layout_marginTop="11.99dp"
+            android:background="@drawable/container_notifications_screen_container10"
+            android:paddingBottom="17.25dp"
+            android:paddingLeft="17.25dp"
+            android:paddingRight="17.25dp"
+            android:paddingTop="17.25dp">
+
+            <ImageView
+                android:id="@+id/container_notifications_screen_container11"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="3.99dp"
+                android:layout_gravity="top|left"
+                android:scaleType="centerInside"
+                android:src="@drawable/container_notifications_screen_container11" />
+
+            <LinearLayout
+                android:id="@+id/container_notifications_screen_container12"
+                android:layout_width="294.82dp"
+                android:layout_height="63.98dp"
+                android:layout_marginLeft="31.99dp"
+                android:layout_gravity="top|left"
+                android:gravity="left|top"
+                android:orientation="horizontal"
+                android:paddingRight="0dp">
+
+                <LinearLayout
+                    android:id="@+id/container_notifications_screen_container13"
+                    android:layout_width="0dp"
+                    android:layout_height="63.98dp"
+                    android:layout_weight="1"
+                    android:gravity="left|top"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/heading_payment_successful"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_marginBottom="0dp"
+                        android:clipToPadding="false"
+                        android:gravity="left|top"
+                        android:orientation="horizontal"
+                        android:paddingBottom="0dp">
+
+                        <TextView
+                            android:id="@+id/text_payment_successful"
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp"
+                            android:layout_weight="1"
+                            android:gravity="left|center_vertical"
+                            android:includeFontPadding="false"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            android:text="Payment Successful"
+                            android:textColor="#FFB0B0B0"
+                            android:textSize="14dp" />
+                    </LinearLayout>
+
+                    <FrameLayout
+                        android:id="@+id/container_notifications_screen_container14"
+                        android:layout_width="match_parent"
+                        android:layout_height="39.99dp"
+                        android:layout_marginTop="3.99dp">
+
+                        <TextView
+                            android:id="@+id/text_payment_details"
+                            android:layout_width="230dp"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="-2dp"
+                            android:layout_gravity="top|left"
+                            android:gravity="left|top"
+                            android:includeFontPadding="false"
+                            android:lineHeight="20dp"
+                            android:text="Payment of $135 has been processed successfully."
+                            android:textColor="#FFB0B0B0"
+                            android:textSize="14dp" />
+                    </FrameLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/text_days_ago_payment"
+                    android:layout_width="49.93dp"
+                    android:layout_height="16dp"
+                    android:layout_marginBottom="-0.02dp"
+                    android:clipToPadding="false"
+                    android:gravity="left|top"
+                    android:orientation="horizontal"
+                    android:paddingBottom="0.02dp">
+
+                    <TextView
+                        android:id="@+id/text_days_ago_payment_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="16dp"
+                        android:gravity="left|center_vertical"
+                        android:includeFontPadding="false"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="632d ago"
+                        android:textColor="#FF666666"
+                        android:textSize="12dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/container_notifications_screen_container15"
+        android:layout_width="393.28dp"
+        android:layout_height="73.19dp"
+        android:layout_gravity="top|left"
+        android:background="@drawable/container_notifications_screen_container15"
+        android:gravity="left|center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="17.25dp"
+        android:paddingLeft="15.98dp"
+        android:paddingRight="15.98dp"
+        android:paddingTop="15.98dp">
+
+        <LinearLayout
+            android:id="@+id/button_notification_icon"
+            android:layout_width="39.95dp"
+            android:layout_height="39.95dp"
+            android:background="@drawable/button_notification_icon"
+            android:gravity="left|top"
+            android:orientation="vertical"
+            android:paddingLeft="7.98dp"
+            android:paddingRight="7.98dp"
+            android:paddingTop="7.98dp">
+
+            <ImageView
+                android:id="@+id/icon_notification_button"
+                android:layout_width="23.99dp"
+                android:layout_height="23.99dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/icon_notification_button" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/heading_notifications"
+            android:layout_width="140dp"
+            android:layout_height="28dp"
+            android:layout_marginLeft="15.98dp"
+            android:layout_marginTop="5.99dp"
+            android:layout_marginBottom="5.97dp"
+            android:clipToPadding="false"
+            android:gravity="left|top"
+            android:orientation="horizontal"
+            android:paddingBottom="0.02dp">
+
+            <TextView
+                android:id="@+id/text_notifications"
+                android:layout_width="wrap_content"
+                android:layout_height="28dp"
+                android:gravity="left|center_vertical"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="Notifications"
+                android:textColor="#FFFFFFFF"
+                android:textSize="20dp" />
+        </LinearLayout>
+        <!-- 1:1132:space-view0 NotificationsScreen_space_view0 space-view -->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="39.95dp"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:id="@+id/button_mark_all_read"
+            android:layout_width="112.7dp"
+            android:layout_height="31.99dp"
+            android:background="@drawable/button_mark_all_read"
+            android:clipToPadding="false"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp">
+
+            <TextView
+                android:id="@+id/text_mark_all_read"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:gravity="left|center_vertical"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="Mark All Read"
+                android:textColor="#FFBB86FC"
+                android:textSize="14dp" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

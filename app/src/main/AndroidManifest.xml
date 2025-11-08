@@ -12,6 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DriveNow">
         <activity
+            android:name=".Notifications"
+            android:exported="false" />
+        <activity
+            android:name=".AddCar"
+            android:exported="false" />
+        <activity
+            android:name=".CompanyDashboardBookings"
+            android:exported="false" />
+        <activity
+            android:name=".CompanyDashboardCars"
+            android:exported="false" />
+        <activity
             android:name=".CompanyDashboardOverview"
             android:exported="false" />
         <activity

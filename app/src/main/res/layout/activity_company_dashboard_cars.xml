@@ -1,0 +1,993 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/figma_prompt_for_drivenow_app"
+    android:layout_width="match_parent"
+    android:layout_height="852dp"
+    android:background="@drawable/figma_prompt_for_drivenow_app">
+
+    <LinearLayout
+        android:id="@+id/company_dashboard_screen"
+        android:layout_width="match_parent"
+        android:layout_height="852.31dp"
+        android:layout_gravity="top|left"
+        android:background="@drawable/company_dashboard_screen"
+        android:gravity="left|top"
+        android:orientation="vertical"
+        android:paddingLeft="15.98dp"
+        android:paddingTop="97.19dp"
+        android:paddingRight="15.98dp">
+
+        <LinearLayout
+            android:id="@+id/container_button_overview"
+            android:layout_width="match_parent"
+            android:layout_height="47.95dp"
+            android:background="@drawable/container_button_overview"
+            android:gravity="left|top"
+            android:orientation="horizontal"
+            android:paddingLeft="3.99dp"
+            android:paddingTop="3.99dp"
+            android:paddingRight="3.99dp">
+
+            <FrameLayout
+                android:id="@+id/button_overview"
+                android:layout_width="0dp"
+                android:layout_height="39.97dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/text_overview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="0.03dp"
+                    android:layout_marginBottom="0.17dp"
+                    android:gravity="left|center_vertical"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="Overview"
+                    android:textColor="@color/white"
+                    android:textSize="16dp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/button_cars"
+                android:layout_width="0dp"
+                android:layout_height="39.97dp"
+                android:layout_marginLeft="3.99dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_overview">
+
+                <TextView
+                    android:id="@+id/text_cars"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="0.36dp"
+                    android:layout_marginBottom="0.17dp"
+                    android:gravity="left|center_vertical"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="Cars"
+                    android:textColor="#FFFFFFFF"
+                    android:textSize="16dp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/button_bookings"
+                android:layout_width="0dp"
+                android:layout_height="39.97dp"
+                android:layout_marginLeft="3.99dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_bookings">
+
+                <TextView
+                    android:id="@+id/text_bookings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="0.26dp"
+                    android:layout_marginBottom="0.17dp"
+                    android:gravity="left|center_vertical"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="Bookings"
+                    android:textColor="@color/white"
+                    android:textSize="16dp" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/container_your_cars"
+            android:layout_width="match_parent"
+            android:layout_height="483.37dp"
+            android:layout_marginTop="15.98dp"
+            android:gravity="left|top"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/container_your_cars_heading"
+                android:layout_width="361.31dp"
+                android:layout_height="31.99dp"
+                android:layout_gravity="left"
+                android:gravity="left|center_vertical"
+                android:orientation="horizontal"
+                android:paddingRight="0dp">
+
+                <LinearLayout
+                    android:id="@+id/heading_your_cars"
+                    android:layout_width="90dp"
+                    android:layout_height="28dp"
+                    android:layout_marginBottom="-0.02dp"
+                    android:clipToPadding="false"
+                    android:gravity="left|top"
+                    android:orientation="horizontal"
+                    android:paddingBottom="0.02dp">
+
+                    <TextView
+                        android:id="@+id/text_your_cars"
+                        android:layout_width="wrap_content"
+                        android:layout_height="28dp"
+                        android:gravity="left|center_vertical"
+                        android:includeFontPadding="false"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="Your Cars"
+                        android:textColor="#FFFFFFFF"
+                        android:textSize="20dp" />
+                </LinearLayout>
+                <!-- 1:409:space-view0 Container_space_view0 space-view -->
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="27.98dp"
+                    android:layout_weight="1" />
+
+                <FrameLayout
+                    android:id="@+id/button_add_car"
+                    android:layout_width="101.26dp"
+                    android:layout_height="31.99dp"
+                    android:background="@drawable/button_add_car">
+
+                    <ImageView
+                        android:id="@+id/icon_add_car"
+                        android:layout_width="15.98dp"
+                        android:layout_height="15.98dp"
+                        android:layout_gravity="top|left"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="8dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/icon_add_car" />
+
+                    <TextView
+                        android:id="@+id/text_add_car"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="39.95dp"
+                        android:layout_marginBottom="0.13dp"
+                        android:gravity="left|center_vertical"
+                        android:includeFontPadding="false"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="Add Car"
+                        android:textColor="#FFFFFFFF"
+                        android:textSize="14dp" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/company_dashboard_screen_bmw_x5"
+                android:layout_width="361.31dp"
+                android:layout_height="134.48dp"
+                android:layout_gravity="left"
+                android:layout_marginTop="15.98dp"
+                android:background="@drawable/company_dashboard_screen_bmw_x5"
+                android:gravity="left|center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="15.98dp"
+                android:paddingTop="17.25dp"
+                android:paddingBottom="17.25dp">
+
+                <LinearLayout
+                    android:id="@+id/container_image_with_fallback_bmw_x5"
+                    android:layout_width="79.98dp"
+                    android:layout_height="79.98dp"
+                    android:background="@drawable/container_image_with_fallback_bmw_x5"
+                    android:gravity="left|top"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/image_with_fallback_bmw_x5"
+                        android:layout_width="match_parent"
+                        android:layout_height="79.98dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/image_with_fallback_bmw_x5" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/container_bmw_xdetails"
+                    android:layout_width="0dp"
+                    android:layout_height="99.98dp"
+                    android:layout_marginLeft="15.98dp"
+                    android:layout_weight="1"
+                    android:gravity="left|top"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/container_bmw_xheading"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:gravity="left|top"
+                        android:orientation="horizontal"
+                        android:paddingRight="0dp">
+
+                        <LinearLayout
+                            android:id="@+id/container_bmw_xinfo"
+                            android:layout_width="69.31dp"
+                            android:layout_height="44dp"
+                            android:gravity="left|top"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/heading_bmw_x5"
+                                android:layout_width="match_parent"
+                                android:layout_height="24.01dp"
+                                android:layout_marginBottom="0.01dp"
+                                android:gravity="left|center_vertical"
+                                android:includeFontPadding="false"
+                                android:maxLines="1"
+                                android:singleLine="true"
+                                android:text="BMW X5"
+                                android:textColor="#FFFFFFFF"
+                                android:textSize="16dp" />
+
+                            <FrameLayout
+                                android:id="@+id/paragraph_bmw_xtype"
+                                android:layout_width="match_parent"
+                                android:layout_height="20dp"
+                                android:layout_marginTop="0dp">
+
+                                <TextView
+                                    android:id="@+id/text_bmw_xtype"
+                                    android:layout_width="79dp"
+                                    android:layout_height="22dp"
+                                    android:layout_gravity="top|left"
+                                    android:layout_marginLeft="-0.2dp"
+                                    android:layout_marginTop="-2.36dp"
+                                    android:gravity="left|center_vertical"
+                                    android:includeFontPadding="false"
+                                    android:maxLines="1"
+                                    android:singleLine="true"
+                                    android:text="2024 • SUV"
+                                    android:textColor="#FFB0B0B0"
+                                    android:textSize="14dp" />
+                            </FrameLayout>
+                        </LinearLayout>
+                        <!-- 1:422:space-view0 Container_space_view0 space-view -->
+                        <View
+                            android:layout_width="96dp"
+                            android:layout_height="44dp"
+                            android:layout_weight="" />
+
+                        <LinearLayout
+                            android:id="@+id/badge_available"
+                            android:layout_width="66.15dp"
+                            android:layout_height="22.51dp"
+                            android:background="@drawable/badge_available"
+                            android:clipToPadding="false"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingLeft="8dp"
+                            android:paddingTop="2dp"
+                            android:paddingRight="8dp"
+                            android:paddingBottom="2dp">
+
+                            <TextView
+                                android:id="@+id/text_available"
+                                android:layout_width="wrap_content"
+                                android:layout_height="16dp"
+                                android:gravity="left|center_vertical"
+                                android:includeFontPadding="false"
+                                android:maxLines="1"
+                                android:singleLine="true"
+                                android:text="available"
+                                android:textColor="#FF000000"
+                                android:textSize="12dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/container_bmw_xprice"
+                        android:layout_width="match_parent"
+                        android:layout_height="47.99dp"
+                        android:layout_marginTop="7.98dp"
+                        android:gravity="left|center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingRight="0dp">
+
+                        <FrameLayout
+                            android:id="@+id/container_bmw_xprice_info"
+                            android:layout_width="74.29dp"
+                            android:layout_height="47.99dp">
+
+                            <FrameLayout
+                                android:id="@+id/paragraph_bmw_xprice"
+                                android:layout_width="74dp"
+                                android:layout_height="23dp"
+                                android:layout_gravity="top|left"
+                                android:layout_marginLeft="-0.2dp"
+                                android:layout_marginTop="4.66dp">
+
+                                <TextView
+                                    android:id="@+id/text_bmw_xprice"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="28dp"
+                                    android:layout_gravity="top|left"
+                                    android:layout_marginTop="-1.74dp"
+                                    android:gravity="left|center_vertical"
+                                    android:includeFontPadding="false"
+                                    android:maxLines="1"
+                                    android:singleLine="true"
+                                    android:text="$120/day"
+                                    android:textColor="#FFBB86FC"
+                                    android:textSize="18dp" />
+                            </FrameLayout>
+
+                            <FrameLayout
+                                android:id="@+id/paragraph_bmw_xbookings"
+                                android:layout_width="74.29dp"
+                                android:layout_height="20dp"
+                                android:layout_gravity="top|left"
+                                android:layout_marginTop="28dp">
+
+                                <TextView
+                                    android:id="@+id/text_bmw_xbookings"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="20dp"
+                                    android:layout_gravity="top|left"
+                                    android:layout_marginTop="-2dp"
+                                    android:gravity="left|center_vertical"
+                                    android:includeFontPadding="false"
+                                    android:maxLines="1"
+                                    android:singleLine="true"
+                                    android:text="8 bookings"
+                                    android:textColor="#FFB0B0B0"
+                                    android:textSize="14dp" />
+                            </FrameLayout>
+                        </FrameLayout>
+                        <!-- 1:430:space-view0 Container_space_view0 space-view -->
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="47.99dp"
+                            android:layout_weight="1" />
+
+                        <LinearLayout
+                            android:id="@+id/button_bmw_x5"
+                            android:layout_width="38.51dp"
+                            android:layout_height="31.99dp"
+                            android:background="@drawable/button_bmw_x5"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingRight="0dp">
+
+                            <ImageView
+                                android:id="@+id/icon_bmw_x5"
+                                android:layout_width="15.98dp"
+                                android:layout_height="15.98dp"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/icon_bmw_x5" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/button_bmw_x51"
+                            android:layout_width="38.51dp"
+                            android:layout_height="31.99dp"
+                            android:layout_marginLeft="7.98dp"
+                            android:background="@drawable/button_bmw_x51"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingRight="0dp">
+
+                            <ImageView
+                                android:id="@+id/icon_bmw_x51"
+                                android:layout_width="15.98dp"
+                                android:layout_height="15.98dp"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/icon_bmw_x51" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/company_dashboard_screen_mercedes_c_class"
+                android:layout_width="361.31dp"
+                android:layout_height="134.48dp"
+                android:layout_gravity="left"
+                android:layout_marginTop="15.98dp"
+                android:background="@drawable/company_dashboard_screen_mercedes_c_class"
+                android:gravity="left|center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="15.98dp"
+                android:paddingTop="17.25dp"
+                android:paddingBottom="17.25dp">
+
+                <LinearLayout
+                    android:id="@+id/container_image_with_fallback_mercedes_c_class"
+                    android:layout_width="79.98dp"
+                    android:layout_height="79.98dp"
+                    android:background="@drawable/container_image_with_fallback_mercedes_c_class"
+                    android:gravity="left|top"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/image_with_fallback_mercedes_c_class"
+                        android:layout_width="match_parent"
+                        android:layout_height="79.98dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/image_with_fallback_mercedes_c_class" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/container_mercedes_c_class_details"
+                    android:layout_width="0dp"
+                    android:layout_height="99.98dp"
+                    android:layout_marginLeft="15.98dp"
+                    android:layout_weight="1"
+                    android:gravity="left|top"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/container_mercedes_c_class_heading"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:gravity="left|top"
+                        android:orientation="horizontal"
+                        android:paddingRight="0dp">
+
+                        <FrameLayout
+                            android:id="@+id/container_mercedes_c_class_info"
+                            android:layout_width="124.8dp"
+                            android:layout_height="44dp">
+
+                            <LinearLayout
+                                android:id="@+id/heading_mercedes_c_class"
+                                android:layout_width="124.8dp"
+                                android:layout_height="24.01dp"
+                                android:layout_gravity="top|left"
+                                android:clipToPadding="false"
+                                android:gravity="left|top"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/text_mercedes_c_class"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="24dp"
+                                    android:gravity="left|center_vertical"
+                                    android:includeFontPadding="false"
+                                    android:maxLines="1"
+                                    android:singleLine="true"
+                                    android:text="Mercedes C-Class"
+                                    android:textColor="#FFFFFFFF"
+                                    android:textSize="16dp" />
+                            </LinearLayout>
+
+                            <FrameLayout
+                                android:id="@+id/paragraph_mercedes_c_class_type"
+                                android:layout_width="124.8dp"
+                                android:layout_height="20dp"
+                                android:layout_gravity="top|left"
+                                android:layout_marginTop="24.01dp">
+
+                                <TextView
+                                    android:id="@+id/text_mercedes_c_class_type"
+                                    android:layout_width="125dp"
+                                    android:layout_height="22dp"
+                                    android:layout_gravity="top|left"
+                                    android:layout_marginLeft="-0.2dp"
+                                    android:layout_marginTop="-1.82dp"
+                                    android:gravity="left|center_vertical"
+                                    android:includeFontPadding="false"
+                                    android:maxLines="1"
+                                    android:singleLine="true"
+                                    android:text="2024 • Sedan"
+                                    android:textColor="#FFB0B0B0"
+                                    android:textSize="14dp" />
+                            </FrameLayout>
+                        </FrameLayout>
+                        <!-- 1:453:space-view0 Container_space_view0 space-view -->
+                        <View
+                            android:layout_width="39dp"
+                            android:layout_height="44dp"
+                            android:layout_weight="0" />
+
+                        <LinearLayout
+                            android:id="@+id/badge_rented"
+                            android:layout_width="54.06dp"
+                            android:layout_height="22.51dp"
+                            android:background="@drawable/badge_rented"
+                            android:clipToPadding="false"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingLeft="8dp"
+                            android:paddingTop="2dp"
+                            android:paddingRight="8dp"
+                            android:paddingBottom="2dp">
+
+                            <TextView
+                                android:id="@+id/text_rented"
+                                android:layout_width="wrap_content"
+                                android:layout_height="16dp"
+                                android:gravity="left|center_vertical"
+                                android:includeFontPadding="false"
+                                android:maxLines="1"
+                                android:singleLine="true"
+                                android:text="rented"
+                                android:textColor="#FFFFFFFF"
+                                android:textSize="12dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/container_mercedes_c_class_price"
+                        android:layout_width="match_parent"
+                        android:layout_height="47.99dp"
+                        android:layout_marginTop="7.98dp"
+                        android:gravity="left|center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingRight="0dp">
+
+                        <FrameLayout
+                            android:id="@+id/container_mercedes_c_class_price_info"
+                            android:layout_width="76.03dp"
+                            android:layout_height="47.99dp">
+
+                            <FrameLayout
+                                android:id="@+id/paragraph_mercedes_c_class_price"
+                                android:layout_width="76.03dp"
+                                android:layout_height="28dp"
+                                android:layout_gravity="top|left"
+                                android:layout_marginLeft="-0.2dp"
+                                android:layout_marginTop="4.2dp">
+
+                                <TextView
+                                    android:id="@+id/text_mercedes_c_class_price"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="28dp"
+                                    android:layout_gravity="top|left"
+                                    android:layout_marginTop="-1.74dp"
+                                    android:gravity="left|center_vertical"
+                                    android:includeFontPadding="false"
+                                    android:maxLines="1"
+                                    android:singleLine="true"
+                                    android:text="$95/day"
+                                    android:textColor="#FFBB86FC"
+                                    android:textSize="18dp" />
+                            </FrameLayout>
+
+                            <FrameLayout
+                                android:id="@+id/paragraph_mercedes_c_class_bookings"
+                                android:layout_width="76.03dp"
+                                android:layout_height="20dp"
+                                android:layout_gravity="top|left"
+                                android:layout_marginTop="28dp">
+
+                                <TextView
+                                    android:id="@+id/text_mercedes_c_class_bookings"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="20dp"
+                                    android:layout_gravity="top|left"
+                                    android:layout_marginTop="-2dp"
+                                    android:gravity="left|center_vertical"
+                                    android:includeFontPadding="false"
+                                    android:maxLines="1"
+                                    android:singleLine="true"
+                                    android:text="12 bookings"
+                                    android:textColor="#FFB0B0B0"
+                                    android:textSize="14dp" />
+                            </FrameLayout>
+                        </FrameLayout>
+                        <!-- 1:461:space-view0 Container_space_view0 space-view -->
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="47.99dp"
+                            android:layout_weight="1" />
+
+                        <LinearLayout
+                            android:id="@+id/button_mercedes_c_class"
+                            android:layout_width="38.51dp"
+                            android:layout_height="31.99dp"
+                            android:background="@drawable/button_mercedes_c_class"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingRight="0dp">
+
+                            <ImageView
+                                android:id="@+id/icon_mercedes_c_class"
+                                android:layout_width="15.98dp"
+                                android:layout_height="15.98dp"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/icon_mercedes_c_class" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/button_mercedes_c_class1"
+                            android:layout_width="38.51dp"
+                            android:layout_height="31.99dp"
+                            android:layout_marginLeft="7.98dp"
+                            android:background="@drawable/button_mercedes_c_class1"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingRight="0dp">
+
+                            <ImageView
+                                android:id="@+id/icon_mercedes_c_class1"
+                                android:layout_width="15.98dp"
+                                android:layout_height="15.98dp"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/icon_mercedes_c_class1" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/company_dashboard_screen_audi_a4"
+                android:layout_width="361.31dp"
+                android:layout_height="134.48dp"
+                android:layout_gravity="left"
+                android:layout_marginTop="15.98dp"
+                android:background="@drawable/company_dashboard_screen_audi_a4"
+                android:gravity="left|center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="15.98dp"
+                android:paddingTop="17.25dp"
+                android:paddingBottom="17.25dp">
+
+                <LinearLayout
+                    android:id="@+id/container_image_with_fallback_audi_a4"
+                    android:layout_width="79.98dp"
+                    android:layout_height="79.98dp"
+                    android:background="@drawable/container_image_with_fallback_audi_a4"
+                    android:gravity="left|top"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/image_with_fallback_audi_a4"
+                        android:layout_width="match_parent"
+                        android:layout_height="79.98dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/image_with_fallback_audi_a4" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/container_audi_adetails"
+                    android:layout_width="0dp"
+                    android:layout_height="99.98dp"
+                    android:layout_marginLeft="15.98dp"
+                    android:layout_weight="1"
+                    android:gravity="left|top"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/container_audi_aheading"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:gravity="left|top"
+                        android:orientation="horizontal"
+                        android:paddingRight="0dp">
+
+                        <LinearLayout
+                            android:id="@+id/container_audi_ainfo"
+                            android:layout_width="81.6dp"
+                            android:layout_height="44dp"
+                            android:gravity="left|top"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/heading_audi_a4"
+                                android:layout_width="match_parent"
+                                android:layout_height="24.01dp"
+                                android:layout_marginBottom="0.01dp"
+                                android:gravity="left|center_vertical"
+                                android:includeFontPadding="false"
+                                android:maxLines="1"
+                                android:singleLine="true"
+                                android:text="Audi A4"
+                                android:textColor="#FFFFFFFF"
+                                android:textSize="16dp" />
+
+                            <FrameLayout
+                                android:id="@+id/paragraph_audi_atype"
+                                android:layout_width="match_parent"
+                                android:layout_height="20dp"
+                                android:layout_marginTop="0dp">
+
+                                <TextView
+                                    android:id="@+id/text_audi_atype"
+                                    android:layout_width="92dp"
+                                    android:layout_height="22dp"
+                                    android:layout_gravity="top|left"
+                                    android:layout_marginLeft="-0.2dp"
+                                    android:layout_marginTop="-2.28dp"
+                                    android:gravity="left|center_vertical"
+                                    android:includeFontPadding="false"
+                                    android:maxLines="1"
+                                    android:singleLine="true"
+                                    android:text="2023 • Sedan"
+                                    android:textColor="#FFB0B0B0"
+                                    android:textSize="14dp" />
+                            </FrameLayout>
+                        </LinearLayout>
+                        <!-- 1:484:space-view0 Container_space_view0 space-view -->
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="44dp"
+                            android:layout_weight="1" />
+
+                        <LinearLayout
+                            android:id="@+id/badge_maintenance"
+                            android:layout_width="88.38dp"
+                            android:layout_height="22.51dp"
+                            android:background="@drawable/badge_maintenance"
+                            android:clipToPadding="false"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingLeft="8dp"
+                            android:paddingTop="2dp"
+                            android:paddingRight="8dp"
+                            android:paddingBottom="2dp">
+
+                            <TextView
+                                android:id="@+id/text_maintenance"
+                                android:layout_width="wrap_content"
+                                android:layout_height="16dp"
+                                android:gravity="left|center_vertical"
+                                android:includeFontPadding="false"
+                                android:maxLines="1"
+                                android:singleLine="true"
+                                android:text="maintenance"
+                                android:textColor="#FFFFFFFF"
+                                android:textSize="12dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/container_audi_aprice"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7.98dp"
+                        android:gravity="left|center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingRight="0dp">
+
+                        <LinearLayout
+                            android:id="@+id/container_audi_aprice_info"
+                            android:layout_width="76.03dp"
+                            android:layout_height="47.99dp"
+                            android:gravity="left|top"
+                            android:orientation="vertical">
+
+                            <FrameLayout
+                                android:id="@+id/paragraph_audi_aprice"
+                                android:layout_width="match_parent"
+                                android:layout_height="28dp">
+
+                                <TextView
+                                    android:id="@+id/text_audi_aprice"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="23dp"
+                                    android:layout_gravity="top|left"
+                                    android:layout_marginLeft="-0.2dp"
+                                    android:layout_marginTop="4.24dp"
+                                    android:layout_marginBottom="-0.5dp"
+                                    android:gravity="left|center_vertical"
+                                    android:includeFontPadding="false"
+                                    android:maxLines="1"
+                                    android:singleLine="true"
+                                    android:text="$85/day"
+                                    android:textColor="#FFBB86FC"
+                                    android:textSize="18dp" />
+                            </FrameLayout>
+
+                            <FrameLayout
+                                android:id="@+id/paragraph_audi_abookings"
+                                android:layout_width="match_parent"
+                                android:layout_height="20dp"
+                                android:layout_marginTop="0dp">
+
+                                <TextView
+                                    android:id="@+id/text_audi_abookings"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="20dp"
+                                    android:layout_gravity="top|left"
+                                    android:layout_marginTop="-2dp"
+                                    android:gravity="left|center_vertical"
+                                    android:includeFontPadding="false"
+                                    android:maxLines="1"
+                                    android:singleLine="true"
+                                    android:text="15 bookings"
+                                    android:textColor="#FFB0B0B0"
+                                    android:textSize="14dp" />
+                            </FrameLayout>
+                        </LinearLayout>
+                        <!-- 1:492:space-view0 Container_space_view0 space-view -->
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="47.99dp"
+                            android:layout_weight="1" />
+
+                        <LinearLayout
+                            android:id="@+id/button_audi_a4"
+                            android:layout_width="38.51dp"
+                            android:layout_height="31.99dp"
+                            android:background="@drawable/button_audi_a4"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingRight="0dp">
+
+                            <ImageView
+                                android:id="@+id/icon_audi_a4"
+                                android:layout_width="15.98dp"
+                                android:layout_height="15.98dp"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/icon_audi_a4" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/button_audi_a41"
+                            android:layout_width="38.51dp"
+                            android:layout_height="31.99dp"
+                            android:layout_marginLeft="7.98dp"
+                            android:background="@drawable/button_audi_a41"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingRight="0dp">
+
+                            <ImageView
+                                android:id="@+id/icon_audi_a41"
+                                android:layout_width="15.98dp"
+                                android:layout_height="15.98dp"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/icon_audi_a41" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/container_premium_car_rentals"
+        android:layout_width="393.28dp"
+        android:layout_height="81.21dp"
+        android:layout_gravity="top|left"
+        android:background="@drawable/container_premium_car_rentals"
+        android:gravity="left|center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="17.25dp"
+        android:paddingLeft="15.98dp"
+        android:paddingRight="15.98dp"
+        android:paddingTop="15.98dp">
+
+        <LinearLayout
+            android:id="@+id/button_premium_car_rentals"
+            android:layout_width="39.95dp"
+            android:layout_height="39.95dp"
+            android:layout_marginTop="4.01dp"
+            android:layout_marginBottom="4.01dp"
+            android:background="@drawable/button_premium_car_rentals"
+            android:gravity="left|top"
+            android:orientation="vertical"
+            android:paddingLeft="7.98dp"
+            android:paddingRight="7.98dp"
+            android:paddingTop="7.98dp">
+
+            <ImageView
+                android:id="@+id/icon_premium_car_rentals"
+                android:layout_width="23.99dp"
+                android:layout_height="23.99dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/icon_premium_car_rentals" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/container_premium_car_rentals_heading"
+            android:layout_width="183.08dp"
+            android:layout_height="47.97dp"
+            android:layout_marginLeft="15.98dp"
+            android:gravity="left|top"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/heading_premium_car_rentals"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:layout_marginBottom="-0.02dp"
+                android:clipToPadding="false"
+                android:gravity="left|top"
+                android:orientation="horizontal"
+                android:paddingBottom="0.02dp">
+
+                <TextView
+                    android:id="@+id/text_premium_car_rentals"
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:gravity="left|center_vertical"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="Premium Car Rentals"
+                    android:textColor="#FFFFFFFF"
+                    android:textSize="20dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/paragraph_company_dashboard"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_marginBottom="0dp"
+                android:clipToPadding="false"
+                android:gravity="left|top"
+                android:orientation="horizontal"
+                android:paddingBottom="0dp">
+
+                <TextView
+                    android:id="@+id/text_company_dashboard"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_weight="1"
+                    android:gravity="left|center_vertical"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="Company Dashboard"
+                    android:textColor="#FFB0B0B0"
+                    android:textSize="14dp" />
+            </LinearLayout>
+        </LinearLayout>
+        <!-- 1:510:space-view0 CompanyDashboardScreen_space_view0 space-view -->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="47.97dp"
+            android:layout_weight="1" />
+
+        <FrameLayout
+            android:id="@+id/button_add_car_premium"
+            android:layout_width="101.26dp"
+            android:layout_height="31.99dp"
+            android:background="@drawable/button_add_car_premium">
+
+            <ImageView
+                android:id="@+id/icon_add_car_premium"
+                android:layout_width="15.98dp"
+                android:layout_height="15.98dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="8dp"
+                android:layout_gravity="top|left"
+                android:scaleType="centerInside"
+                android:src="@drawable/icon_add_car_premium" />
+
+            <TextView
+                android:id="@+id/text_add_car_premium"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginLeft="39.95dp"
+                android:layout_marginTop="0.03dp"
+                android:layout_gravity="center_vertical"
+                android:gravity="left|center_vertical"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="Add Car"
+                android:textColor="#FFFFFFFF"
+                android:textSize="14dp" />
+        </FrameLayout>
+    </LinearLayout>
+</FrameLayout>
