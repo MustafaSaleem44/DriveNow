@@ -1,0 +1,631 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="1014dp"
+    android:background="@drawable/drawable_shape">
+
+    <LinearLayout
+        android:id="@+id/container_profile_screen"
+        android:layout_width="match_parent"
+        android:layout_height="1014.19dp"
+        android:layout_gravity="top|left"
+        android:background="@drawable/container_profile_screen"
+        android:gravity="left|top"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/container_profile_screen_container1"
+            android:layout_width="332.22dp"
+            android:layout_height="166.27dp"
+            android:layout_gravity="left"
+            android:layout_marginLeft="15.98dp"
+            android:layout_marginTop="97.17dp">
+
+            <LinearLayout
+                android:id="@+id/text_profile_screen_heading"
+                android:layout_width="332.22dp"
+                android:layout_height="28dp"
+                android:layout_gravity="top|left"
+                android:layout_marginTop="114.28dp"
+                android:layout_marginBottom="-0.02dp"
+                android:clipToPadding="false"
+                android:gravity="left|top"
+                android:orientation="horizontal"
+                android:paddingBottom="0.02dp">
+
+                <TextView
+                    android:id="@+id/text_profile_screen_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="28dp"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="John Doe"
+                    android:textColor="#FFFFFFFF"
+                    android:textSize="20dp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/text_profile_screen_paragraph"
+                android:layout_width="match_parent"
+                android:layout_height="24.01dp"
+                android:layout_gravity="left"
+                android:layout_marginTop="142.26dp"
+                android:layout_marginBottom="0.01dp"
+                android:gravity="center_horizontal|center_vertical"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="Company Account"
+                android:textColor="#FFB0B0B0"
+                android:textSize="16dp" />
+
+            <FrameLayout
+                android:id="@+id/container_profile_screen_container2"
+                android:layout_width="95.99dp"
+                android:layout_height="95.99dp"
+                android:layout_gravity="top|left"
+                android:layout_marginLeft="118.12dp">
+
+                <LinearLayout
+                    android:id="@+id/container_profile_screen_container4"
+                    android:layout_width="95.99dp"
+                    android:layout_height="95.99dp"
+                    android:layout_gravity="top|left"
+                    android:background="@drawable/container_profile_screen_container4"
+                    android:clipToPadding="false"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingLeft="1.26dp"
+                    android:paddingTop="1.26dp"
+                    android:paddingRight="1.26dp"
+                    android:paddingBottom="1.26dp">
+
+                    <TextView
+                        android:id="@+id/text_profile_screen_initial"
+                        android:layout_width="wrap_content"
+                        android:layout_height="32dp"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:includeFontPadding="false"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="J"
+                        android:textColor="#FFB0B0B0"
+                        android:textSize="24dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/button_profile_screen_icon"
+                    android:layout_width="31.99dp"
+                    android:layout_height="31.99dp"
+                    android:layout_gravity="top|left"
+                    android:layout_marginLeft="64dp"
+                    android:layout_marginTop="64dp"
+                    android:background="@drawable/button_profile_screen_icon"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingRight="0dp">
+
+                    <ImageView
+                        android:layout_width="15.98dp"
+                        android:layout_height="15.98dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/drawable_image" />
+                </LinearLayout>
+            </FrameLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/text_profile_screen_full_name_label"
+            android:layout_width="332.22dp"
+            android:layout_height="14.01dp"
+            android:layout_marginLeft="15.98dp"
+            android:layout_marginTop="31.99dp">
+
+            <TextView
+                android:id="@+id/text_profile_screen_full_name"
+                android:layout_width="wrap_content"
+                android:layout_height="18dp"
+                android:layout_gravity="top|left"
+                android:layout_marginTop="-3.53dp"
+                android:layout_marginBottom="-2dp"
+                android:gravity="left|center_vertical"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="Full Name"
+                android:textColor="#FFFFFFFF"
+                android:textSize="14dp" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/input_profile_screen_full_name"
+            android:layout_width="332.22dp"
+            android:layout_height="35.98dp"
+            android:layout_marginLeft="15.98dp"
+            android:layout_marginTop="7.98dp"
+            android:alpha="0.6000000238418579"
+            android:background="@drawable/input_profile_screen_full_name"
+            android:clipToPadding="false"
+            android:gravity="left|center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="12dp"
+            android:paddingTop="4dp"
+            android:paddingRight="12dp"
+            android:paddingBottom="4dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:gravity="left|center_vertical"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="John Doe"
+                android:textColor="#FFFFFFFF"
+                android:textSize="16dp" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/text_profile_screen_email_label"
+            android:layout_width="332.22dp"
+            android:layout_height="14.01dp"
+            android:layout_marginLeft="15.98dp"
+            android:layout_marginTop="23.99dp">
+
+            <TextView
+                android:id="@+id/text_profile_screen_email"
+                android:layout_width="wrap_content"
+                android:layout_height="18dp"
+                android:layout_gravity="top|left"
+                android:layout_marginTop="-3.53dp"
+                android:layout_marginBottom="-2dp"
+                android:gravity="left|center_vertical"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="Email"
+                android:textColor="#FFFFFFFF"
+                android:textSize="14dp" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/input_profile_screen_email"
+            android:layout_width="332.22dp"
+            android:layout_height="35.98dp"
+            android:layout_marginLeft="15.98dp"
+            android:layout_marginTop="7.98dp"
+            android:alpha="0.6000000238418579"
+            android:background="@drawable/input_profile_screen_email"
+            android:clipToPadding="false"
+            android:gravity="left|center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="12dp"
+            android:paddingTop="4dp"
+            android:paddingRight="12dp"
+            android:paddingBottom="4dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:gravity="left|center_vertical"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="john@example.com"
+                android:textColor="#FFFFFFFF"
+                android:textSize="16dp" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/text_profile_screen_phone_label"
+            android:layout_width="332.22dp"
+            android:layout_height="14.01dp"
+            android:layout_marginLeft="15.98dp"
+            android:layout_marginTop="23.99dp">
+
+            <TextView
+                android:id="@+id/text_profile_screen_phone_number"
+                android:layout_width="wrap_content"
+                android:layout_height="18dp"
+                android:layout_gravity="top|left"
+                android:layout_marginTop="-3.53dp"
+                android:layout_marginBottom="-2dp"
+                android:gravity="left|center_vertical"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="Phone Number"
+                android:textColor="#FFFFFFFF"
+                android:textSize="14dp" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/input_profile_screen_phone_number"
+            android:layout_width="332.22dp"
+            android:layout_height="35.98dp"
+            android:layout_marginLeft="15.98dp"
+            android:layout_marginTop="7.98dp"
+            android:alpha="0.6000000238418579"
+            android:background="@drawable/input_profile_screen_phone_number"
+            android:clipToPadding="false"
+            android:gravity="left|center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="12dp"
+            android:paddingTop="4dp"
+            android:paddingRight="12dp"
+            android:paddingBottom="4dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:gravity="left|center_vertical"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="+1234567890"
+                android:textColor="#FFFFFFFF"
+                android:textSize="16dp" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/button_profile_screen_company_dashboard"
+            android:layout_width="332.22dp"
+            android:layout_height="35.98dp"
+            android:layout_gravity="left"
+            android:layout_marginLeft="15.98dp"
+            android:layout_marginTop="31.99dp"
+            android:background="@drawable/button_profile_screen_company_dashboard">
+
+            <ImageView
+                android:layout_width="15.98dp"
+                android:layout_height="15.98dp"
+                android:layout_gravity="top|left"
+                android:layout_marginLeft="83.56dp"
+                android:layout_marginTop="10dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/drawable_image_1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_gravity="top|left"
+                android:layout_marginLeft="115.51dp"
+                android:layout_marginTop="5.98dp"
+                android:gravity="left|center_vertical"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="Company Dashboard"
+                android:textColor="#FF000000"
+                android:textSize="14dp" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/text_profile_screen_settings_heading"
+            android:layout_width="332.22dp"
+            android:layout_height="28dp"
+            android:layout_marginLeft="15.98dp"
+            android:layout_marginTop="31.99dp">
+
+            <TextView
+                android:id="@+id/text_profile_screen_settings"
+                android:layout_width="wrap_content"
+                android:layout_height="28dp"
+                android:layout_gravity="top|left"
+                android:layout_marginTop="-1.74dp"
+                android:gravity="left|center_vertical"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="Settings"
+                android:textColor="#FFFFFFFF"
+                android:textSize="18dp" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/container_profile_screen_notifications"
+            android:layout_width="332.22dp"
+            android:layout_height="232.97dp"
+            android:layout_marginLeft="15.98dp"
+            android:layout_marginTop="11.99dp"
+            android:background="@drawable/container_profile_screen_notifications">
+
+            <LinearLayout
+                android:id="@+id/button_profile_screen_notifications"
+                android:layout_width="329.69dp"
+                android:layout_height="75.97dp"
+                android:layout_gravity="top|left"
+                android:layout_marginLeft="1.26dp"
+                android:layout_marginTop="1.26dp"
+                android:gravity="left|top"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/text_profile_screen_notifications_label"
+                    android:layout_width="297.72dp"
+                    android:layout_height="24.01dp"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="15.98dp"
+                    android:layout_marginTop="15.98dp"
+                    android:layout_weight="1"
+                    android:gravity="left|center_vertical"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="Notifications"
+                    android:textColor="#FFFFFFFF"
+                    android:textSize="16dp" />
+
+                <LinearLayout
+                    android:id="@+id/text_profile_screen_notifications_desc"
+                    android:layout_width="297.72dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="15.98dp"
+                    android:layout_marginTop="0.01dp"
+                    android:layout_marginBottom="0dp"
+                    android:clipToPadding="false"
+                    android:gravity="left|top"
+                    android:orientation="horizontal"
+                    android:paddingBottom="0dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_weight="1"
+                        android:gravity="left|center_vertical"
+                        android:includeFontPadding="false"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="Manage your notification preferences"
+                        android:textColor="#FFB0B0B0"
+                        android:textSize="14dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="329.69dp"
+                android:layout_height="1.26dp"
+                android:layout_gravity="top|left"
+                android:layout_marginLeft="1.26dp"
+                android:layout_marginTop="77.24dp"
+                android:background="@drawable/drawable_layer"
+                android:scaleType="centerInside" />
+
+            <LinearLayout
+                android:id="@+id/button_profile_screen_privacy_security"
+                android:layout_width="329.69dp"
+                android:layout_height="75.97dp"
+                android:layout_gravity="top|left"
+                android:layout_marginLeft="1.26dp"
+                android:layout_marginTop="78.5dp"
+                android:gravity="left|top"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/text_profile_screen_privacy_security_label"
+                    android:layout_width="297.72dp"
+                    android:layout_height="24.01dp"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="15.98dp"
+                    android:layout_marginTop="15.98dp"
+                    android:layout_weight="1"
+                    android:gravity="left|center_vertical"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="Privacy &amp; Security"
+                    android:textColor="#FFFFFFFF"
+                    android:textSize="16dp" />
+
+                <LinearLayout
+                    android:id="@+id/text_profile_screen_privacy_security_desc"
+                    android:layout_width="297.72dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="15.98dp"
+                    android:layout_marginTop="0.01dp"
+                    android:layout_marginBottom="0dp"
+                    android:clipToPadding="false"
+                    android:gravity="left|top"
+                    android:orientation="horizontal"
+                    android:paddingBottom="0dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_weight="1"
+                        android:gravity="left|center_vertical"
+                        android:includeFontPadding="false"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="Manage your account security"
+                        android:textColor="#FFB0B0B0"
+                        android:textSize="14dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="329.69dp"
+                android:layout_height="1.26dp"
+                android:layout_gravity="top|left"
+                android:layout_marginLeft="1.26dp"
+                android:layout_marginTop="154.47dp"
+                android:background="@drawable/drawable_layer_1"
+                android:scaleType="centerInside" />
+
+            <LinearLayout
+                android:id="@+id/button_profile_screen_help_support"
+                android:layout_width="329.69dp"
+                android:layout_height="75.97dp"
+                android:layout_gravity="top|left"
+                android:layout_marginLeft="1.26dp"
+                android:layout_marginTop="155.74dp"
+                android:gravity="left|top"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/text_profile_screen_help_support_label"
+                    android:layout_width="297.72dp"
+                    android:layout_height="24.01dp"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="15.98dp"
+                    android:layout_marginTop="15.98dp"
+                    android:layout_weight="1"
+                    android:gravity="left|center_vertical"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="Help &amp; Support"
+                    android:textColor="#FFFFFFFF"
+                    android:textSize="16dp" />
+
+                <LinearLayout
+                    android:id="@+id/text_profile_screen_help_support_desc"
+                    android:layout_width="297.72dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="15.98dp"
+                    android:layout_marginTop="0.01dp"
+                    android:layout_marginBottom="0dp"
+                    android:clipToPadding="false"
+                    android:gravity="left|top"
+                    android:orientation="horizontal"
+                    android:paddingBottom="0dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_weight="1"
+                        android:gravity="left|center_vertical"
+                        android:includeFontPadding="false"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="Get help or contact support"
+                        android:textColor="#FFB0B0B0"
+                        android:textSize="14dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/button_profile_screen_logout"
+            android:layout_width="332.22dp"
+            android:layout_height="35.98dp"
+            android:layout_gravity="left"
+            android:layout_marginLeft="15.98dp"
+            android:layout_marginTop="31.99dp"
+            android:background="@drawable/button_profile_screen_logout">
+
+            <ImageView
+                android:layout_width="15.98dp"
+                android:layout_height="15.98dp"
+                android:layout_gravity="top|left"
+                android:layout_marginLeft="127.52dp"
+                android:layout_marginTop="10dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/drawable_image_2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_gravity="top|left"
+                android:layout_marginLeft="159.47dp"
+                android:layout_marginTop="6dp"
+                android:gravity="left|center_vertical"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="Logout"
+                android:textColor="#FFFB2C36"
+                android:textSize="14dp" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/container_profile_screen_container9"
+        android:layout_width="364.19dp"
+        android:layout_height="73.19dp"
+        android:layout_gravity="top|left"
+        android:background="@drawable/container_profile_screen_container9"
+        android:gravity="left|center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="17.25dp"
+        android:paddingLeft="15.98dp"
+        android:paddingRight="15.98dp"
+        android:paddingTop="15.98dp">
+
+        <LinearLayout
+            android:id="@+id/button_profile_screen_icon2"
+            android:layout_width="39.95dp"
+            android:layout_height="39.95dp"
+            android:background="@drawable/button_profile_screen_icon2"
+            android:gravity="left|top"
+            android:orientation="vertical"
+            android:paddingLeft="7.98dp"
+            android:paddingRight="7.98dp"
+            android:paddingTop="7.98dp">
+
+            <ImageView
+                android:layout_width="23.99dp"
+                android:layout_height="23.99dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/drawable_image_3" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/text_profile_screen_profile_heading"
+            android:layout_width="56.27dp"
+            android:layout_height="28dp"
+            android:layout_marginLeft="15.98dp"
+            android:layout_marginTop="5.99dp"
+            android:layout_marginBottom="5.97dp"
+            android:clipToPadding="false"
+            android:gravity="left|top"
+            android:orientation="horizontal"
+            android:paddingBottom="0.02dp">
+
+            <TextView
+                android:id="@+id/text_profile_screen_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="28dp"
+                android:gravity="left|center_vertical"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="Profile"
+                android:textColor="#FFFFFFFF"
+                android:textSize="20dp" />
+        </LinearLayout>
+        <!-- 1:1430:space-view0 ProfileScreen_space_view0 space-view -->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="39.95dp"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:id="@+id/button_profile_screen_icon3"
+            android:layout_width="35.96dp"
+            android:layout_height="35.96dp"
+            android:background="@drawable/button_profile_screen_icon3"
+            android:gravity="left|top"
+            android:orientation="vertical"
+            android:paddingLeft="7.98dp"
+            android:paddingRight="7.98dp"
+            android:paddingTop="7.98dp">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/drawable_image_4" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

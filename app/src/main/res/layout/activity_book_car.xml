@@ -1,0 +1,697 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container_figma_prompt_for_drive_now_app"
+    android:layout_width="match_parent"
+    android:layout_height="1004dp"
+    android:background="@drawable/container_figma_prompt_for_drive_now_app">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="top|left"
+        android:background="@drawable/company_dashboard_screen">
+
+        <LinearLayout
+            android:id="@+id/container_booking_screen"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="left|top"
+            android:orientation="vertical"
+            android:paddingLeft="15.98dp"
+            android:paddingRight="15.98dp"
+            android:paddingTop="97.17dp">
+
+            <LinearLayout
+                android:id="@+id/container_booking_screen_container1"
+                android:layout_width="332.22dp"
+                android:layout_height="102.51dp"
+                android:background="@drawable/container_booking_screen_container1"
+                android:gravity="left|center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="17.25dp"
+                android:paddingLeft="17.25dp"
+                android:paddingRight="17.25dp"
+                android:paddingTop="17.25dp">
+
+                <LinearLayout
+                    android:id="@+id/container_booking_screen_container2"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@drawable/container_booking_screen_container2"
+                    android:gravity="left|top"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/image_fallback"
+                        android:layout_width="match_parent"
+                        android:layout_height="64dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/image_fallback" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/container_booking_screen_container3"
+                    android:layout_width="0dp"
+                    android:layout_height="68.01dp"
+                    android:layout_marginLeft="15.98dp"
+                    android:layout_weight="1"
+                    android:gravity="left|top"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/heading_car_model"
+                        android:layout_width="match_parent"
+                        android:layout_height="24.01dp"
+                        android:layout_marginBottom="0.01dp"
+                        android:gravity="left|center_vertical"
+                        android:includeFontPadding="false"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="Toyota Camry"
+                        android:textColor="#FFFFFFFF"
+                        android:textSize="16dp" />
+
+                    <FrameLayout
+                        android:id="@+id/paragraph_car_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="0dp">
+
+                        <TextView
+                            android:id="@+id/text_car_type"
+                            android:layout_width="99dp"
+                            android:layout_height="22dp"
+                            android:layout_marginLeft="-0.22dp"
+                            android:layout_marginTop="-2.43dp"
+                            android:layout_gravity="top|left"
+                            android:gravity="left|center_vertical"
+                            android:includeFontPadding="false"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            android:text="2024 • Sedan"
+                            android:textColor="#FFB0B0B0"
+                            android:textSize="14dp" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/paragraph_price_per_day"
+                        android:layout_width="match_parent"
+                        android:layout_height="24.01dp"
+                        android:layout_marginTop="0dp">
+
+                        <TextView
+                            android:id="@+id/text_price_per_day"
+                            android:layout_width="wrap_content"
+                            android:layout_height="24dp"
+                            android:layout_marginTop="-3dp"
+                            android:layout_gravity="top|left"
+                            android:gravity="left|center_vertical"
+                            android:includeFontPadding="false"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            android:text="$45/day"
+                            android:textColor="#FFBB86FC"
+                            android:textSize="16dp" />
+                    </FrameLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/container_form"
+                android:layout_width="match_parent"
+                android:layout_height="724.41dp"
+                android:layout_marginTop="23.99dp"
+                android:gravity="left|top"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:id="@+id/label_start_date"
+                    android:layout_width="332.22dp"
+                    android:layout_height="15.98dp">
+
+                    <ImageView
+                        android:id="@+id/icon_start_date"
+                        android:layout_width="15.98dp"
+                        android:layout_height="15.98dp"
+                        android:layout_gravity="top|left"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/icon_start_date" />
+
+                    <TextView
+                        android:id="@+id/text_start_date"
+                        android:layout_width="73dp"
+                        android:layout_height="18dp"
+                        android:layout_marginLeft="23.02dp"
+                        android:layout_marginTop="-0.17dp"
+                        android:layout_marginBottom="-0.5dp"
+                        android:layout_gravity="top|left"
+                        android:gravity="left|center_vertical"
+                        android:includeFontPadding="false"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="Start Date"
+                        android:textColor="#FFFFFFFF"
+                        android:textSize="14dp" />
+                </FrameLayout>
+
+                <ImageView
+                    android:id="@+id/input_start_date"
+                    android:layout_width="332.22dp"
+                    android:layout_height="35.98dp"
+                    android:layout_marginTop="7.98dp"
+                    android:background="@drawable/input_start_date"
+                    android:scaleType="centerInside" />
+
+                <FrameLayout
+                    android:id="@+id/label_end_date"
+                    android:layout_width="332.22dp"
+                    android:layout_height="15.98dp"
+                    android:layout_marginTop="15.98dp">
+
+                    <ImageView
+                        android:id="@+id/icon_end_date"
+                        android:layout_width="15.98dp"
+                        android:layout_height="15.98dp"
+                        android:layout_gravity="top|left"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/icon_end_date" />
+
+                    <TextView
+                        android:id="@+id/text_end_date"
+                        android:layout_width="68dp"
+                        android:layout_height="18dp"
+                        android:layout_marginLeft="23.02dp"
+                        android:layout_marginTop="-1.1dp"
+                        android:layout_marginBottom="-0.5dp"
+                        android:layout_gravity="top|left"
+                        android:gravity="left|center_vertical"
+                        android:includeFontPadding="false"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="End Date"
+                        android:textColor="#FFFFFFFF"
+                        android:textSize="14dp" />
+                </FrameLayout>
+
+                <ImageView
+                    android:id="@+id/input_end_date"
+                    android:layout_width="332.22dp"
+                    android:layout_height="35.98dp"
+                    android:layout_marginTop="7.98dp"
+                    android:background="@drawable/input_end_date"
+                    android:scaleType="centerInside" />
+
+                <FrameLayout
+                    android:id="@+id/label_pickup_location"
+                    android:layout_width="332.22dp"
+                    android:layout_height="15.98dp"
+                    android:layout_marginTop="23.99dp">
+
+                    <ImageView
+                        android:id="@+id/icon_pickup_location"
+                        android:layout_width="15.98dp"
+                        android:layout_height="15.98dp"
+                        android:layout_gravity="top|left"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/icon_pickup_location" />
+
+                    <TextView
+                        android:id="@+id/text_pickup_location"
+                        android:layout_width="108dp"
+                        android:layout_height="18dp"
+                        android:layout_marginLeft="23.02dp"
+                        android:layout_marginTop="-1.03dp"
+                        android:layout_marginBottom="-0.5dp"
+                        android:layout_gravity="top|left"
+                        android:gravity="left|center_vertical"
+                        android:includeFontPadding="false"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="Pickup Location"
+                        android:textColor="#FFFFFFFF"
+                        android:textSize="14dp" />
+                </FrameLayout>
+
+                <LinearLayout
+                    android:id="@+id/input_pickup_location"
+                    android:layout_width="332.22dp"
+                    android:layout_height="35.98dp"
+                    android:layout_marginTop="7.98dp"
+                    android:background="@drawable/input_pickup_location"
+                    android:clipToPadding="false"
+                    android:gravity="left|center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingBottom="4dp"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="12dp"
+                    android:paddingTop="4dp">
+
+                    <TextView
+                        android:id="@+id/text_pickup_location_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="24dp"
+                        android:gravity="left|center_vertical"
+                        android:includeFontPadding="false"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="Downtown Car Center"
+                        android:textColor="#FFFFFFFF"
+                        android:textSize="16dp" />
+                </LinearLayout>
+
+                <FrameLayout
+                    android:id="@+id/label_pickup_time"
+                    android:layout_width="332.22dp"
+                    android:layout_height="15.98dp"
+                    android:layout_marginTop="15.98dp">
+
+                    <ImageView
+                        android:id="@+id/icon_pickup_time"
+                        android:layout_width="15.98dp"
+                        android:layout_height="15.98dp"
+                        android:layout_gravity="top|left"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/icon_pickup_time" />
+
+                    <TextView
+                        android:id="@+id/text_pickup_time"
+                        android:layout_width="82dp"
+                        android:layout_height="18dp"
+                        android:layout_marginLeft="27.02dp"
+                        android:layout_marginTop="-1.47dp"
+                        android:layout_marginBottom="-1dp"
+                        android:layout_gravity="top|left"
+                        android:gravity="left|center_vertical"
+                        android:includeFontPadding="false"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="Pickup Time"
+                        android:textColor="#FFFFFFFF"
+                        android:textSize="14dp" />
+                </FrameLayout>
+
+                <ImageView
+                    android:id="@+id/input_pickup_time"
+                    android:layout_width="332.22dp"
+                    android:layout_height="35.98dp"
+                    android:layout_marginTop="7.98dp"
+                    android:background="@drawable/input_pickup_time"
+                    android:scaleType="centerInside" />
+
+                <LinearLayout
+                    android:id="@+id/container_price_breakdown"
+                    android:layout_width="332.22dp"
+                    android:layout_height="175.71dp"
+                    android:layout_marginTop="23.99dp"
+                    android:layout_gravity="left"
+                    android:background="@drawable/container_price_breakdown"
+                    android:gravity="left|top"
+                    android:orientation="vertical"
+                    android:paddingBottom="1.26dp"
+                    android:paddingLeft="17.25dp"
+                    android:paddingRight="17.25dp"
+                    android:paddingTop="17.25dp">
+
+                    <FrameLayout
+                        android:id="@+id/heading_price_breakdown"
+                        android:layout_width="match_parent"
+                        android:layout_height="24.01dp">
+
+                        <ImageView
+                            android:id="@+id/icon_price_breakdown"
+                            android:layout_width="15.98dp"
+                            android:layout_height="15.98dp"
+                            android:layout_marginTop="4.01dp"
+                            android:layout_gravity="top|left"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/icon_price_breakdown" />
+
+                        <TextView
+                            android:id="@+id/text_price_breakdown"
+                            android:layout_width="wrap_content"
+                            android:layout_height="24dp"
+                            android:layout_marginLeft="23.97dp"
+                            android:layout_marginTop="-3dp"
+                            android:layout_gravity="top|left"
+                            android:gravity="left|center_vertical"
+                            android:includeFontPadding="false"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            android:text="Price Breakdown"
+                            android:textColor="#FFFFFFFF"
+                            android:textSize="16dp" />
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:id="@+id/container_price_per_day"
+                        android:layout_width="match_parent"
+                        android:layout_height="24.01dp"
+                        android:layout_marginTop="15.98dp"
+                        android:gravity="left|top"
+                        android:orientation="horizontal"
+                        android:paddingRight="0dp">
+
+                        <FrameLayout
+                            android:id="@+id/text_price_per_day_calculation"
+                            android:layout_width="122.27dp"
+                            android:layout_height="24.01dp">
+
+                            <TextView
+                                android:id="@+id/text_price_per_day_calculation1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="24dp"
+                                android:layout_marginTop="-3dp"
+                                android:layout_gravity="top|left"
+                                android:gravity="left|center_vertical"
+                                android:includeFontPadding="false"
+                                android:maxLines="1"
+                                android:singleLine="true"
+                                android:text="$45/day × 0 days"
+                                android:textColor="#FFB0B0B0"
+                                android:textSize="16dp" />
+                        </FrameLayout>
+                        <!-- 1:1663:space-view0 Container_space_view0 space-view -->
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="24.01dp"
+                            android:layout_weight="1" />
+
+                        <FrameLayout
+                            android:id="@+id/text_price_per_day_total"
+                            android:layout_width="17.27dp"
+                            android:layout_height="24.01dp">
+
+                            <TextView
+                                android:id="@+id/text_price_per_day_total1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="24dp"
+                                android:layout_marginTop="-3dp"
+                                android:layout_gravity="top|left"
+                                android:gravity="left|center_vertical"
+                                android:includeFontPadding="false"
+                                android:maxLines="1"
+                                android:singleLine="true"
+                                android:text="$0"
+                                android:textColor="#FFB0B0B0"
+                                android:textSize="16dp" />
+                        </FrameLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/container_tax"
+                        android:layout_width="match_parent"
+                        android:layout_height="24.01dp"
+                        android:layout_marginTop="7.98dp"
+                        android:gravity="left|top"
+                        android:orientation="horizontal"
+                        android:paddingRight="0dp">
+
+                        <LinearLayout
+                            android:id="@+id/text_tax_percentage"
+                            android:layout_width="66.45dp"
+                            android:layout_height="24.01dp"
+                            android:clipToPadding="false"
+                            android:gravity="left|top"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/text_tax_percentage1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="24dp"
+                                android:gravity="left|center_vertical"
+                                android:includeFontPadding="false"
+                                android:maxLines="1"
+                                android:singleLine="true"
+                                android:text="Tax (10%)"
+                                android:textColor="#FFB0B0B0"
+                                android:textSize="16dp" />
+                        </LinearLayout>
+                        <!-- 1:1668:space-view0 Container_space_view0 space-view -->
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="24.01dp"
+                            android:layout_weight="1" />
+
+                        <FrameLayout
+                            android:id="@+id/text_tax_total"
+                            android:layout_width="17.27dp"
+                            android:layout_height="24.01dp">
+
+                            <TextView
+                                android:id="@+id/text_tax_total1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="24dp"
+                                android:layout_marginTop="-3dp"
+                                android:layout_gravity="top|left"
+                                android:gravity="left|center_vertical"
+                                android:includeFontPadding="false"
+                                android:maxLines="1"
+                                android:singleLine="true"
+                                android:text="$0"
+                                android:textColor="#FFB0B0B0"
+                                android:textSize="16dp" />
+                        </FrameLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/container_total_amount"
+                        android:layout_width="match_parent"
+                        android:layout_height="37.24dp"
+                        android:layout_marginTop="7.98dp"
+                        android:background="@drawable/container_total_amount"
+                        android:gravity="left|top"
+                        android:orientation="horizontal"
+                        android:paddingBottom="0dp"
+                        android:paddingRight="0dp"
+                        android:paddingTop="9.25dp">
+
+                        <FrameLayout
+                            android:id="@+id/text_total"
+                            android:layout_width="37.84dp"
+                            android:layout_height="28dp">
+
+                            <TextView
+                                android:id="@+id/text_total_label"
+                                android:layout_width="wrap_content"
+                                android:layout_height="28dp"
+                                android:layout_marginTop="-1.74dp"
+                                android:layout_gravity="top|left"
+                                android:gravity="left|center_vertical"
+                                android:includeFontPadding="false"
+                                android:maxLines="1"
+                                android:singleLine="true"
+                                android:text="Total"
+                                android:textColor="#FFFFFFFF"
+                                android:textSize="18dp" />
+                        </FrameLayout>
+                        <!-- 1:1673:space-view0 Container_space_view0 space-view -->
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="28dp"
+                            android:layout_weight="1" />
+
+                        <FrameLayout
+                            android:id="@+id/text_total_amount"
+                            android:layout_width="19.4dp"
+                            android:layout_height="28dp">
+
+                            <TextView
+                                android:id="@+id/text_total_amount1"
+                                android:layout_width="35dp"
+                                android:layout_height="23dp"
+                                android:layout_marginLeft="-6.55dp"
+                                android:layout_marginTop="-1.87dp"
+                                android:layout_gravity="top|left"
+                                android:gravity="left|center_vertical"
+                                android:includeFontPadding="false"
+                                android:maxLines="1"
+                                android:singleLine="true"
+                                android:text="$0"
+                                android:textColor="#FFBB86FC"
+                                android:textSize="18dp" />
+                        </FrameLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/container_payment_method"
+                    android:layout_width="332.22dp"
+                    android:layout_height="145.01dp"
+                    android:layout_marginTop="23.99dp"
+                    android:layout_gravity="left"
+                    android:background="@drawable/container_payment_method"
+                    android:gravity="left|top"
+                    android:orientation="vertical"
+                    android:paddingBottom="1.26dp"
+                    android:paddingLeft="17.25dp"
+                    android:paddingRight="17.25dp"
+                    android:paddingTop="17.25dp">
+
+                    <TextView
+                        android:id="@+id/heading_payment_method"
+                        android:layout_width="match_parent"
+                        android:layout_height="24.01dp"
+                        android:layout_marginBottom="0.01dp"
+                        android:gravity="left|center_vertical"
+                        android:includeFontPadding="false"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="Payment Method"
+                        android:textColor="#FFFFFFFF"
+                        android:textSize="16dp" />
+
+                    <LinearLayout
+                        android:id="@+id/container_payment_method_options"
+                        android:layout_width="match_parent"
+                        android:layout_height="70.52dp"
+                        android:layout_marginTop="15.98dp"
+                        android:background="@drawable/container_payment_method_options"
+                        android:gravity="left|center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="11.99dp"
+                        android:paddingRight="11.99dp">
+
+                        <ImageView
+                            android:id="@+id/image_payment_method_icon"
+                            android:layout_width="15.98dp"
+                            android:layout_height="15.98dp"
+                            android:background="@drawable/image_payment_method_icon"
+                            android:scaleType="centerInside" />
+
+                        <LinearLayout
+                            android:id="@+id/container_payment_method_details"
+                            android:layout_width="0dp"
+                            android:layout_height="44dp"
+                            android:layout_marginLeft="11.99dp"
+                            android:layout_weight="1"
+                            android:gravity="left|top"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/paragraph_payment_method"
+                                android:layout_width="match_parent"
+                                android:layout_height="24.01dp"
+                                android:layout_marginBottom="0.01dp"
+                                android:gravity="left|center_vertical"
+                                android:includeFontPadding="false"
+                                android:maxLines="1"
+                                android:singleLine="true"
+                                android:text="Credit Card"
+                                android:textColor="#FFFFFFFF"
+                                android:textSize="16dp" />
+
+                            <LinearLayout
+                                android:id="@+id/paragraph_credit_card_number"
+                                android:layout_width="match_parent"
+                                android:layout_height="20dp"
+                                android:layout_marginTop="0dp"
+                                android:layout_marginBottom="0dp"
+                                android:clipToPadding="false"
+                                android:gravity="left|top"
+                                android:orientation="horizontal"
+                                android:paddingBottom="0dp">
+
+                                <TextView
+                                    android:id="@+id/text_credit_card_number"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="20dp"
+                                    android:layout_weight="1"
+                                    android:gravity="left|center_vertical"
+                                    android:includeFontPadding="false"
+                                    android:maxLines="1"
+                                    android:singleLine="true"
+                                    android:text="**** **** **** 1234"
+                                    android:textColor="#FFB0B0B0"
+                                    android:textSize="14dp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <FrameLayout
+                    android:id="@+id/button_confirm_booking"
+                    android:layout_width="332.22dp"
+                    android:layout_height="35.98dp"
+                    android:layout_marginTop="23.99dp"
+                    android:layout_gravity="left"
+                    android:background="@drawable/button_confirm_booking">
+
+                    <TextView
+                        android:id="@+id/text_confirm_booking"
+                        android:layout_width="176dp"
+                        android:layout_height="28dp"
+                        android:layout_marginLeft="78.18dp"
+                        android:layout_marginTop="2.26dp"
+                        android:layout_gravity="top|left"
+                        android:gravity="left|center_vertical"
+                        android:includeFontPadding="false"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="Confirm Booking - $0"
+                        android:textColor="#FFFFFFFF"
+                        android:textSize="18dp" />
+                </FrameLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/container_booking_screen_button"
+            android:layout_width="364.19dp"
+            android:layout_height="73.19dp"
+            android:layout_gravity="top|left"
+            android:background="@drawable/container_booking_screen_button"
+            android:gravity="left|center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="0.19dp"
+            android:paddingLeft="15.98dp"
+            android:paddingRight="15.98dp">
+
+            <LinearLayout
+                android:id="@+id/button_book_car"
+                android:layout_width="39.95dp"
+                android:layout_height="39.95dp"
+                android:background="@drawable/button_book_car"
+                android:gravity="left|top"
+                android:orientation="vertical"
+                android:paddingLeft="7.98dp"
+                android:paddingRight="7.98dp"
+                android:paddingTop="7.98dp">
+
+                <ImageView
+                    android:id="@+id/icon_book_car"
+                    android:layout_width="23.99dp"
+                    android:layout_height="23.99dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/icon_book_car" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/heading_book_car"
+                android:layout_width="79.8dp"
+                android:layout_height="28dp"
+                android:layout_marginLeft="15.98dp"
+                android:layout_marginBottom="-0.02dp"
+                android:clipToPadding="false"
+                android:gravity="left|top"
+                android:orientation="horizontal"
+                android:paddingBottom="0.02dp">
+
+                <TextView
+                    android:id="@+id/text_book_car"
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:gravity="left|center_vertical"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="Book Car"
+                    android:textColor="#FFFFFFFF"
+                    android:textSize="20dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+</FrameLayout>
