@@ -1,20 +1,31 @@
 package com.example.drivenow
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class MainPage : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_main_page)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+
+        val carDetailsButton = findViewById<ImageView>(R.id.image_fallback)
+        carDetailsButton.setOnClickListener {
+            val intent = Intent(this, CarDetails::class.java)
+            startActivity(intent)
+        }
+
+        val bookingsButton = findViewById<ImageView>(R.id.image_icon1)
+        bookingsButton.setOnClickListener {
+            val intent = Intent(this, Bookings::class.java)
+            startActivity(intent)
+        }
+
+        val profileButton = findViewById<ImageView>(R.id.image_icon2)
+        profileButton.setOnClickListener {
+            val intent = Intent(this, ProfilePage::class.java)
+            startActivity(intent)
         }
     }
 }

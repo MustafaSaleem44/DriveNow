@@ -1,20 +1,25 @@
 package com.example.drivenow
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class CompanyDashboardOverview : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_company_dashboard_overview)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+
+        val carsButton = findViewById<TextView>(R.id.text_cars)
+        carsButton.setOnClickListener {
+            val intent = Intent(this, CompanyDashboardCars::class.java)
+            startActivity(intent)
+        }
+
+        val bookingsButton = findViewById<TextView>(R.id.text_bookings)
+        bookingsButton.setOnClickListener {
+            val intent = Intent(this, CompanyDashboardBookings::class.java)
+            startActivity(intent)
         }
     }
 }

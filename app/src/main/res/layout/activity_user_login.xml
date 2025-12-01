@@ -1,309 +1,313 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/container_figma_prompt"
     android:layout_width="match_parent"
-    android:layout_height="852dp"
-    android:background="@drawable/container_figma_prompt"
-    android:gravity="left|top"
-    android:orientation="vertical">
+    android:layout_height="match_parent"
+    android:fillViewport="true">
 
     <LinearLayout
-        android:id="@+id/container_main"
-        android:layout_width="345.3dp"
-        android:layout_height="105dp"
-        android:layout_gravity="left"
-        android:layout_marginLeft="23dp"
-        android:layout_marginTop="150dp"
-        android:layout_weight="0"
+        android:id="@+id/container_figma_prompt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/container_figma_prompt"
         android:gravity="left|top"
         android:orientation="vertical">
 
         <LinearLayout
-            android:id="@+id/container_icon_heading"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
+            android:id="@+id/container_main"
+            android:layout_width="345.3dp"
+            android:layout_height="105dp"
             android:layout_gravity="left"
-            android:layout_marginLeft="140.64dp"
-            android:background="@drawable/container_icon_heading"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:paddingLeft="0dp">
+            android:layout_marginLeft="23dp"
+            android:layout_marginTop="150dp"
+            android:layout_weight="0"
+            android:gravity="left|top"
+            android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/icon_drivenow"
-                android:layout_width="31.99dp"
-                android:layout_height="31.99dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/icon_drivenow" />
+            <LinearLayout
+                android:id="@+id/container_icon_heading"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_gravity="left"
+                android:layout_marginLeft="140.64dp"
+                android:background="@drawable/container_icon_heading"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingLeft="0dp">
+
+                <ImageView
+                    android:id="@+id/icon_drivenow"
+                    android:layout_width="31.99dp"
+                    android:layout_height="31.99dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/icon_drivenow" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/text_drivenow_heading"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_gravity="left"
+                android:layout_marginTop="1dp"
+                android:layout_marginBottom="0.01dp"
+                android:gravity="center_horizontal|center_vertical"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="DriveNow"
+                android:textColor="#FFBB86FC"
+                android:textSize="24dp" />
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/text_drivenow_heading"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
+        <LinearLayout
+            android:id="@+id/container_buttons"
+            android:layout_width="345.3dp"
+            android:layout_height="45dp"
             android:layout_gravity="left"
-            android:layout_marginTop="1dp"
-            android:layout_marginBottom="0.01dp"
-            android:layout_weight=""
-            android:gravity="center_horizontal|center_vertical"
-            android:includeFontPadding="false"
-            android:maxLines="1"
-            android:singleLine="true"
-            android:text="DriveNow"
-            android:textColor="#FFBB86FC"
-            android:textSize="24dp" />
-    </LinearLayout>
+            android:layout_marginLeft="23.99dp"
+            android:layout_marginTop="31.99dp"
+            android:background="@drawable/container_buttons"
+            android:gravity="left|top"
+            android:orientation="horizontal"
+            android:paddingLeft="0dp"
+            android:paddingTop="0dp"
+            android:paddingRight="0dp">
 
-    <LinearLayout
-        android:id="@+id/container_buttons"
-        android:layout_width="345.3dp"
-        android:layout_height="45dp"
-        android:layout_gravity="left"
-        android:layout_marginLeft="23.99dp"
-        android:layout_marginTop="31.99dp"
-        android:background="@drawable/container_buttons"
-        android:gravity="left|top"
-        android:orientation="horizontal"
-        android:paddingLeft="0dp"
-        android:paddingTop="0dp"
-        android:paddingRight="0dp">
+            <FrameLayout
+                android:id="@+id/button_customer"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/button_customer">
+
+                <ImageView
+                    android:id="@+id/icon_customer"
+                    android:layout_width="15.98dp"
+                    android:layout_height="15.98dp"
+                    android:layout_gravity="top|left"
+                    android:layout_marginLeft="38.21dp"
+                    android:layout_marginTop="11.99dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/icon_customer" />
+
+                <TextView
+                    android:id="@+id/text_customer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="62.18dp"
+                    android:layout_marginBottom="0.21dp"
+                    android:gravity="left|center_vertical"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="Customer"
+                    android:textColor="#FFFFFFFF"
+                    android:textSize="16dp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/button_company"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_company">
+
+                <ImageView
+                    android:id="@+id/icon_company"
+                    android:layout_width="15.98dp"
+                    android:layout_height="15.98dp"
+                    android:layout_gravity="top|left"
+                    android:layout_marginLeft="38.65dp"
+                    android:layout_marginTop="11.99dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/icon_company" />
+
+                <TextView
+                    android:id="@+id/text_company"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="62.61dp"
+                    android:layout_marginBottom="0.21dp"
+                    android:gravity="left|center_vertical"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="Company"
+                    android:textColor="#FFB0B0B0"
+                    android:textSize="16dp" />
+            </FrameLayout>
+        </LinearLayout>
 
         <FrameLayout
-            android:id="@+id/button_customer"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@drawable/button_customer">
-
-            <ImageView
-                android:id="@+id/icon_customer"
-                android:layout_width="15.98dp"
-                android:layout_height="15.98dp"
-                android:layout_gravity="top|left"
-                android:layout_marginLeft="38.21dp"
-                android:layout_marginTop="11.99dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/icon_customer" />
+            android:id="@+id/label_email"
+            android:layout_width="345.3dp"
+            android:layout_height="14.01dp"
+            android:layout_marginLeft="23.99dp"
+            android:layout_marginTop="23.99dp">
 
             <TextView
-                android:id="@+id/text_customer"
+                android:id="@+id/text_email_label"
                 android:layout_width="wrap_content"
-                android:layout_height="24dp"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="62.18dp"
-                android:layout_marginBottom="0.21dp"
+                android:layout_height="18dp"
+                android:layout_marginTop="-3.53dp"
+                android:layout_marginBottom="-2dp"
+                android:layout_gravity="top|left"
                 android:gravity="left|center_vertical"
                 android:includeFontPadding="false"
                 android:maxLines="1"
                 android:singleLine="true"
-                android:text="Customer"
+                android:text="Email"
                 android:textColor="#FFFFFFFF"
-                android:textSize="16dp" />
+                android:textSize="14dp" />
         </FrameLayout>
-
-        <FrameLayout
-            android:id="@+id/button_company"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="0dp"
-            android:layout_weight="1"
-            android:background="@drawable/button_company">
-
-            <ImageView
-                android:id="@+id/icon_company"
-                android:layout_width="15.98dp"
-                android:layout_height="15.98dp"
-                android:layout_gravity="top|left"
-                android:layout_marginLeft="38.65dp"
-                android:layout_marginTop="11.99dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/icon_company" />
-
-            <TextView
-                android:id="@+id/text_company"
-                android:layout_width="wrap_content"
-                android:layout_height="24dp"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="62.61dp"
-                android:layout_marginBottom="0.21dp"
-                android:gravity="left|center_vertical"
-                android:includeFontPadding="false"
-                android:maxLines="1"
-                android:singleLine="true"
-                android:text="Company"
-                android:textColor="#FFB0B0B0"
-                android:textSize="16dp" />
-        </FrameLayout>
-    </LinearLayout>
-
-    <FrameLayout
-        android:id="@+id/label_email"
-        android:layout_width="345.3dp"
-        android:layout_height="14.01dp"
-        android:layout_marginLeft="23.99dp"
-        android:layout_marginTop="23.99dp">
-
-        <TextView
-            android:id="@+id/text_email_label"
-            android:layout_width="wrap_content"
-            android:layout_height="18dp"
-            android:layout_marginTop="-3.53dp"
-            android:layout_marginBottom="-2dp"
-            android:layout_gravity="top|left"
-            android:gravity="left|center_vertical"
-            android:includeFontPadding="false"
-            android:maxLines="1"
-            android:singleLine="true"
-            android:text="Email"
-            android:textColor="#FFFFFFFF"
-            android:textSize="14dp" />
-    </FrameLayout>
-
-    <LinearLayout
-        android:id="@+id/input_email"
-        android:layout_width="345.3dp"
-        android:layout_height="35.98dp"
-        android:layout_marginLeft="23.99dp"
-        android:layout_marginTop="7.98dp"
-        android:background="@drawable/input_email"
-        android:clipToPadding="false"
-        android:gravity="left|center_vertical"
-        android:orientation="horizontal"
-        android:paddingBottom="4dp"
-        android:paddingLeft="12dp"
-        android:paddingRight="12dp"
-        android:paddingTop="4dp">
-
-        <TextView
-            android:id="@+id/text_email_input"
-            android:layout_width="wrap_content"
-            android:layout_height="21dp"
-            android:gravity="left|center_vertical"
-            android:includeFontPadding="false"
-            android:maxLines="1"
-            android:singleLine="true"
-            android:text="Enter your email"
-            android:textColor="#FF717182"
-            android:textSize="16dp" />
-    </LinearLayout>
-
-    <FrameLayout
-        android:id="@+id/label_password"
-        android:layout_width="345.3dp"
-        android:layout_height="14.01dp"
-        android:layout_marginLeft="23.99dp"
-        android:layout_marginTop="15.98dp">
-
-        <TextView
-            android:id="@+id/text_password_label"
-            android:layout_width="wrap_content"
-            android:layout_height="18dp"
-            android:layout_marginTop="-3.53dp"
-            android:layout_marginBottom="-2dp"
-            android:layout_gravity="top|left"
-            android:gravity="left|center_vertical"
-            android:includeFontPadding="false"
-            android:maxLines="1"
-            android:singleLine="true"
-            android:text="Password"
-            android:textColor="#FFFFFFFF"
-            android:textSize="14dp" />
-    </FrameLayout>
-
-    <FrameLayout
-        android:id="@+id/container_password_input"
-        android:layout_width="345.3dp"
-        android:layout_height="35.98dp"
-        android:layout_marginLeft="23.99dp"
-        android:layout_marginTop="7.98dp">
 
         <LinearLayout
-            android:id="@+id/input_password"
+            android:id="@+id/input_email"
             android:layout_width="345.3dp"
             android:layout_height="35.98dp"
-            android:layout_gravity="top|left"
-            android:background="@drawable/input_password"
+            android:layout_marginLeft="23.99dp"
+            android:layout_marginTop="7.98dp"
+            android:background="@drawable/input_email"
             android:clipToPadding="false"
             android:gravity="left|center_vertical"
             android:orientation="horizontal"
             android:paddingBottom="4dp"
             android:paddingLeft="12dp"
-            android:paddingRight="40dp"
+            android:paddingRight="12dp"
             android:paddingTop="4dp">
 
             <TextView
-                android:id="@+id/text_password_input"
+                android:id="@+id/text_email_input"
                 android:layout_width="wrap_content"
                 android:layout_height="21dp"
                 android:gravity="left|center_vertical"
                 android:includeFontPadding="false"
                 android:maxLines="1"
                 android:singleLine="true"
-                android:text="Enter your password"
+                android:text="Enter your email"
                 android:textColor="#FF717182"
                 android:textSize="16dp" />
         </LinearLayout>
 
-        <ImageView
-            android:id="@+id/button_password_visibility"
-            android:layout_width="15.98dp"
-            android:layout_height="15.98dp"
-            android:layout_marginLeft="317.32dp"
-            android:layout_marginTop="9.99dp"
-            android:layout_gravity="top|left"
-            android:scaleType="centerInside"
-            android:src="@drawable/button_password_visibility" />
-    </FrameLayout>
+        <FrameLayout
+            android:id="@+id/label_password"
+            android:layout_width="345.3dp"
+            android:layout_height="14.01dp"
+            android:layout_marginLeft="23.99dp"
+            android:layout_marginTop="15.98dp">
 
-    <FrameLayout
-        android:id="@+id/button_login"
-        android:layout_width="345.3dp"
-        android:layout_height="35.98dp"
-        android:layout_marginLeft="23.99dp"
-        android:layout_marginTop="15.98dp"
-        android:background="@drawable/button_login">
+            <TextView
+                android:id="@+id/text_password_label"
+                android:layout_width="wrap_content"
+                android:layout_height="18dp"
+                android:layout_marginTop="-3.53dp"
+                android:layout_marginBottom="-2dp"
+                android:layout_gravity="top|left"
+                android:gravity="left|center_vertical"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="Password"
+                android:textColor="#FFFFFFFF"
+                android:textSize="14dp" />
+        </FrameLayout>
 
-        <TextView
-            android:id="@+id/text_login"
-            android:layout_width="wrap_content"
-            android:layout_height="20dp"
-            android:layout_marginLeft="154.91dp"
-            android:layout_marginTop="6dp"
-            android:layout_gravity="top|left"
-            android:gravity="left|center_vertical"
-            android:includeFontPadding="false"
-            android:maxLines="1"
-            android:singleLine="true"
-            android:text="Login"
-            android:textColor="#FFFFFFFF"
-            android:textSize="14dp" />
-    </FrameLayout>
+        <FrameLayout
+            android:id="@+id/container_password_input"
+            android:layout_width="345.3dp"
+            android:layout_height="35.98dp"
+            android:layout_marginLeft="23.99dp"
+            android:layout_marginTop="7.98dp">
 
-    <LinearLayout
-        android:id="@+id/button_sign_up"
-        android:layout_width="229.95dp"
-        android:layout_height="24.01dp"
-        android:layout_marginLeft="81.66dp"
-        android:layout_marginTop="23.99dp"
-        android:layout_gravity="left"
-        android:clipToPadding="false"
-        android:gravity="left|top"
-        android:orientation="horizontal">
+            <LinearLayout
+                android:id="@+id/input_password"
+                android:layout_width="345.3dp"
+                android:layout_height="35.98dp"
+                android:layout_gravity="top|left"
+                android:background="@drawable/input_password"
+                android:clipToPadding="false"
+                android:gravity="left|center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="4dp"
+                android:paddingLeft="12dp"
+                android:paddingRight="40dp"
+                android:paddingTop="4dp">
 
-        <TextView
-            android:id="@+id/text_sign_up"
-            android:layout_width="wrap_content"
-            android:layout_height="24dp"
-            android:gravity="left|center_vertical"
-            android:includeFontPadding="false"
-            android:maxLines="1"
-            android:singleLine="true"
-            android:text="Don&#39;t have an account? Sign Up"
-            android:textColor="#FFB0B0B0"
-            android:textSize="16dp" />
+                <TextView
+                    android:id="@+id/text_password_input"
+                    android:layout_width="wrap_content"
+                    android:layout_height="21dp"
+                    android:gravity="left|center_vertical"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="Enter your password"
+                    android:textColor="#FF717182"
+                    android:textSize="16dp" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/button_password_visibility"
+                android:layout_width="15.98dp"
+                android:layout_height="15.98dp"
+                android:layout_marginLeft="317.32dp"
+                android:layout_marginTop="9.99dp"
+                android:layout_gravity="top|left"
+                android:scaleType="centerInside"
+                android:src="@drawable/button_password_visibility" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/button_login"
+            android:layout_width="345.3dp"
+            android:layout_height="35.98dp"
+            android:layout_marginLeft="23.99dp"
+            android:layout_marginTop="15.98dp"
+            android:background="@drawable/button_login">
+
+            <TextView
+                android:id="@+id/text_login"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginLeft="154.91dp"
+                android:layout_marginTop="6dp"
+                android:layout_gravity="top|left"
+                android:gravity="left|center_vertical"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="Login"
+                android:textColor="#FFFFFFFF"
+                android:textSize="14dp" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/button_sign_up"
+            android:layout_width="229.95dp"
+            android:layout_height="24.01dp"
+            android:layout_marginLeft="81.66dp"
+            android:layout_marginTop="23.99dp"
+            android:layout_gravity="left"
+            android:clipToPadding="false"
+            android:gravity="left|top"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/text_sign_up"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:gravity="left|center_vertical"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="Don&#39;t have an account? Sign Up"
+                android:textColor="#FFB0B0B0"
+                android:textSize="16dp" />
+        </LinearLayout>
     </LinearLayout>
-</LinearLayout>
+</ScrollView>
