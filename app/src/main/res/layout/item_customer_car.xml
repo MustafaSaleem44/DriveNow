@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_card_surface"
+    android:padding="12dp"
+    android:layout_marginBottom="16dp">
+
+    <!-- 1. Large Car Image -->
+    <ImageView
+        android:id="@+id/img_car_large"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:src="@drawable/icon_car"
+        app:tint="@color/text_secondary"
+        android:background="#333333"
+        android:scaleType="centerCrop"
+        android:layout_marginBottom="12dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Available Badge (Overlay) -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Available"
+        android:textColor="#000000"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:background="@drawable/badge_available"
+        android:paddingHorizontal="8dp"
+        android:paddingVertical="4dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintTop_toTopOf="@id/img_car_large"
+        app:layout_constraintEnd_toEndOf="@id/img_car_large"/>
+
+    <!-- 2. Car Info Row -->
+    <TextView
+        android:id="@+id/tv_car_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Toyota Camry"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@id/img_car_large"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_car_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2024 • Sedan"
+        android:textColor="@color/text_secondary"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/tv_car_title"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <!-- Price Section (Right Side) -->
+    <TextView
+        android:id="@+id/tv_price_val"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="$45"
+        android:textColor="@color/purple_primary"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/img_car_large"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="per day"
+        android:textColor="@color/text_secondary"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@id/tv_price_val"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- 3. Features Row -->
+    <LinearLayout
+        android:id="@+id/container_features"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_car_type">
+
+        <TextView
+            android:id="@+id/tv_seats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5 Seats"
+            android:textColor="@color/text_secondary"
+            android:textSize="14sp"
+            android:drawablePadding="4dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" • "
+            android:textColor="@color/text_secondary"
+            android:layout_marginHorizontal="8dp"/>
+
+        <TextView
+            android:id="@+id/tv_fuel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hybrid"
+            android:textColor="@color/text_secondary"
+            android:textSize="14sp"/>
+    </LinearLayout>
+
+    <!-- 4. View Details Button -->
+    <Button
+        android:id="@+id/btn_view_details"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="View Details"
+        android:background="@drawable/bg_toggle_active"
+        app:backgroundTint="@null"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/container_features"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

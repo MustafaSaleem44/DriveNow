@@ -12,40 +12,34 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DriveNow">
         <activity
+            android:name=".CompanyDashboardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SignupActivity"
+            android:exported="false" />
+        <activity
             android:name=".BookCar"
             android:exported="false" />
         <activity
             android:name=".CarDetails"
             android:exported="false" />
         <activity
-            android:name=".Bookings"
+            android:name=".CustomerBookingsActivity"
             android:exported="false" />
         <activity
-            android:name=".ProfilePage"
+            android:name=".ProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".MainPage"
+            android:name=".CustomerHomeActivity"
             android:exported="false" />
         <activity
-            android:name=".Notifications"
+            android:name=".NotificationsActivity"
             android:exported="false" />
         <activity
-            android:name=".AddCar"
+            android:name=".AddCarActivity"
             android:exported="false" />
         <activity
-            android:name=".CompanyDashboardBookings"
-            android:exported="false" />
-        <activity
-            android:name=".CompanyDashboardCars"
-            android:exported="false" />
-        <activity
-            android:name=".CompanyDashboardOverview"
-            android:exported="false" />
-        <activity
-            android:name=".CompanyLogin"
-            android:exported="false" />
-        <activity
-            android:name=".UserLogin"
+            android:name=".LoginActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

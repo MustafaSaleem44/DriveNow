@@ -1,1175 +1,337 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<FrameLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/prompt_drive_now"
     android:layout_width="match_parent"
-    android:layout_height="1059dp"
-    android:background="@drawable/prompt_drive_now">
+    android:layout_height="match_parent"
+    android:background="@color/background_dark">
 
+    <!-- HEADER -->
     <LinearLayout
-        android:id="@+id/add_car_screen"
+        android:id="@+id/header_container"
         android:layout_width="match_parent"
-        android:layout_height="903dp"
-        android:layout_gravity="top|left"
-        android:background="@drawable/add_car_screen"
-        android:gravity="left|top"
-        android:orientation="vertical"
-        android:paddingLeft="15.98dp"
-        android:paddingTop="23.99dp"
-        android:paddingRight="15.98dp">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="24dp"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_arrow_back"
+            android:background="@drawable/bg_input_field"
+            android:padding="8dp"/>
 
         <LinearLayout
-            android:id="@+id/container"
-            android:layout_width="match_parent"
-            android:layout_height="52dp"
-            android:gravity="left|center_vertical"
-            android:orientation="horizontal"
-            android:paddingRight="0dp">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="16dp">
 
-            <LinearLayout
-                android:id="@+id/container1"
-                android:layout_width="218.13dp"
-                android:layout_height="52dp"
-                android:gravity="left|center_vertical"
-                android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add New Car"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
 
-                <LinearLayout
-                    android:id="@+id/btn_add_car"
-                    android:layout_width="39.95dp"
-                    android:layout_height="39.95dp"
-                    android:background="@drawable/btn_add_car"
-                    android:gravity="left|top"
-                    android:orientation="vertical"
-                    android:paddingLeft="7.98dp"
-                    android:paddingTop="7.98dp"
-                    android:paddingRight="7.98dp">
-
-                    <ImageView
-                        android:id="@+id/icon_add_car"
-                        android:layout_width="23.99dp"
-                        android:layout_height="23.99dp"
-                        android:scaleType="centerInside"
-                        android:src="@drawable/icon_add_car" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/container2"
-                    android:layout_width="162.2dp"
-                    android:layout_height="52dp"
-                    android:layout_marginLeft="15.98dp"
-                    android:gravity="left|top"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/heading_add_car"
-                        android:layout_width="match_parent"
-                        android:layout_height="32.01dp"
-                        android:layout_marginBottom="0.01dp"
-                        android:gravity="left|center_vertical"
-                        android:includeFontPadding="false"
-                        android:maxLines="1"
-                        android:singleLine="true"
-                        android:text="Add New Car"
-                        android:textColor="#FFFFFFFF"
-                        android:textSize="24dp" />
-
-                    <LinearLayout
-                        android:id="@+id/paragraph_add_car"
-                        android:layout_width="match_parent"
-                        android:layout_height="20dp"
-                        android:layout_marginBottom="0dp"
-                        android:clipToPadding="false"
-                        android:gravity="left|top"
-                        android:orientation="horizontal"
-                        android:paddingBottom="0dp">
-
-                        <TextView
-                            android:id="@+id/text_add_vehicle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="20dp"
-                            android:gravity="left|center_vertical"
-                            android:includeFontPadding="false"
-                            android:maxLines="1"
-                            android:singleLine="true"
-                            android:text="Add a vehicle to your fleet"
-                            android:textColor="#FFB0B0B0"
-                            android:textSize="14dp" />
-                    </LinearLayout>
-                </LinearLayout>
-            </LinearLayout>
-            <!-- 1:646:space-view0 Container_space_view0 space-view -->
-            <View
-                android:layout_width="0dp"
-                android:layout_height="52dp"
-                android:layout_weight="1" />
-
-            <ImageView
-                android:id="@+id/icon_car"
-                android:layout_width="31.99dp"
-                android:layout_height="31.99dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/icon_car" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add a vehicle to your fleet"
+                android:textColor="@color/text_secondary"
+                android:textSize="14sp"/>
         </LinearLayout>
 
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/icon_car"
+            android:layout_marginLeft="90dp"/>
+
+    </LinearLayout>
+
+    <!-- CONTENT -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingHorizontal="24dp"
+        android:clipToPadding="false"
+        app:layout_constraintTop_toBottomOf="@id/header_container"
+        app:layout_constraintBottom_toBottomOf="parent">
+
         <LinearLayout
-            android:id="@+id/form_add_car"
             android:layout_width="match_parent"
-            android:layout_height="935.71dp"
-            android:layout_marginTop="23.99dp"
-            android:gravity="left|top"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="24dp">
 
+            <!-- 1. CAR INFORMATION CARD -->
             <LinearLayout
-                android:id="@+id/card_car_info"
-                android:layout_width="332.22dp"
-                android:layout_height="0dp"
-                android:layout_gravity="left"
-                android:layout_weight="1"
-                android:background="@drawable/card_car_info"
-                android:gravity="left|top"
-                android:orientation="vertical">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_card_surface"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:layout_marginBottom="16dp">
 
+                <!-- Section Title -->
                 <LinearLayout
-                    android:id="@+id/title_car_info"
-                    android:layout_width="281.72dp"
-                    android:layout_height="20dp"
-                    android:layout_gravity="left"
-                    android:layout_marginLeft="25.25dp"
-                    android:layout_marginTop="25.25dp"
-                    android:gravity="left|center_vertical"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:id="@+id/icon_car_info"
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:scaleType="centerInside"
-                        android:src="@drawable/icon_car_info" />
-
-                    <FrameLayout
-                        android:id="@+id/text_car_info"
-                        android:layout_width="110.89dp"
-                        android:layout_height="16dp"
-                        android:layout_marginLeft="7.98dp">
-
-                        <TextView
-                            android:id="@+id/text_car_info_title"
-                            android:layout_width="wrap_content"
-                            android:layout_height="21dp"
-                            android:layout_gravity="top|left"
-                            android:layout_marginTop="-5.29dp"
-                            android:layout_marginBottom="-2.5dp"
-                            android:gravity="left|center_vertical"
-                            android:includeFontPadding="false"
-                            android:maxLines="1"
-                            android:singleLine="true"
-                            android:text="Car Information"
-                            android:textColor="#FFFFFFFF"
-                            android:textSize="16dp" />
-                    </FrameLayout>
-                </LinearLayout>
-
-                <FrameLayout
-                    android:id="@+id/add_car_info"
-                    android:layout_width="281.72dp"
-                    android:layout_height="115.96dp"
-                    android:layout_marginLeft="25.25dp"
-                    android:layout_marginTop="29.97dp"
-                    android:layout_marginRight="23.99dp">
-
-                    <LinearLayout
-                        android:id="@+id/container_car_name"
-                        android:layout_width="282dp"
-                        android:layout_height="57dp"
-                        android:layout_gravity="top|left"
-                        android:layout_marginLeft="-0.24dp"
-                        android:layout_marginTop="-0.2dp"
-                        android:gravity="left|top"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:id="@+id/label_car_name"
-                            android:layout_width="match_parent"
-                            android:layout_height="21dp"
-                            android:clipToPadding="false"
-                            android:gravity="left|center_vertical"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:id="@+id/text_car_name"
-                                android:layout_width="wrap_content"
-                                android:layout_height="18dp"
-                                android:gravity="left|center_vertical"
-                                android:includeFontPadding="false"
-                                android:maxLines="1"
-                                android:singleLine="true"
-                                android:text="Car Name *"
-                                android:textColor="#FFB0B0B0"
-                                android:textSize="14dp" />
-                        </LinearLayout>
-
-                        <ImageView
-                            android:id="@+id/input_car_name"
-                            android:layout_width="match_parent"
-                            android:layout_height="35.98dp"
-                            android:layout_marginTop="0dp"
-                            android:background="@drawable/input_car_name"
-                            android:scaleType="centerCrop" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/container_model_year"
-                        android:layout_width="282dp"
-                        android:layout_height="61dp"
-                        android:layout_gravity="top|left"
-                        android:layout_marginLeft="-0.24dp"
-                        android:layout_marginTop="65.8dp"
-                        android:gravity="left|top"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:id="@+id/label_model_year"
-                            android:layout_width="match_parent"
-                            android:layout_height="25dp"
-                            android:clipToPadding="false"
-                            android:gravity="left|center_vertical"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:id="@+id/text_model_year"
-                                android:layout_width="wrap_content"
-                                android:layout_height="18dp"
-                                android:gravity="left|center_vertical"
-                                android:includeFontPadding="false"
-                                android:maxLines="1"
-                                android:singleLine="true"
-                                android:text="Model Year *"
-                                android:textColor="#FFB0B0B0"
-                                android:textSize="14dp" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:id="@+id/input_model_year"
-                            android:layout_width="match_parent"
-                            android:layout_height="35.98dp"
-                            android:layout_marginTop="0dp"
-                            android:background="@drawable/input_model_year"
-                            android:clipToPadding="false"
-                            android:gravity="left|center_vertical"
-                            android:orientation="horizontal"
-                            android:paddingLeft="12dp"
-                            android:paddingTop="4dp"
-                            android:paddingRight="12dp"
-                            android:paddingBottom="1dp">
-
-                            <TextView
-                                android:id="@+id/text_example_year"
-                                android:layout_width="wrap_content"
-                                android:layout_height="21dp"
-                                android:gravity="left|center_vertical"
-                                android:includeFontPadding="false"
-                                android:maxLines="1"
-                                android:singleLine="true"
-                                android:text="e.g., 2024"
-                                android:textColor="#FF717182"
-                                android:textSize="16dp" />
-                        </LinearLayout>
-                    </LinearLayout>
-                </FrameLayout>
-
-                <LinearLayout
-                    android:id="@+id/add_car_type"
                     android:layout_width="match_parent"
-                    android:layout_height="181.94dp"
-                    android:layout_marginLeft="25.25dp"
-                    android:layout_marginTop="15.98dp"
-                    android:layout_marginRight="23.99dp"
-                    android:gravity="left|top"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:id="@+id/label_car_type"
-                        android:layout_width="281.72dp"
-                        android:layout_height="24dp"
-                        android:clipToPadding="false"
-                        android:gravity="left|center_vertical"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:id="@+id/text_car_type"
-                            android:layout_width="wrap_content"
-                            android:layout_height="18dp"
-                            android:gravity="left|center_vertical"
-                            android:includeFontPadding="false"
-                            android:maxLines="1"
-                            android:singleLine="true"
-                            android:text="Car Type *"
-                            android:textColor="#FFB0B0B0"
-                            android:textSize="14dp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/btn_select_type"
-                        android:layout_width="281.72dp"
-                        android:layout_height="35.98dp"
-                        android:layout_marginTop="0dp"
-                        android:background="@drawable/btn_select_type"
-                        android:clipToPadding="false"
-                        android:gravity="left|center_vertical"
-                        android:orientation="horizontal"
-                        android:paddingLeft="11.99dp"
-                        android:paddingRight="11.99dp">
-
-                        <TextView
-                            android:id="@+id/span_select_type"
-                            android:layout_width="wrap_content"
-                            android:layout_height="20dp"
-                            android:gravity="left|center_vertical"
-                            android:includeFontPadding="false"
-                            android:maxLines="1"
-                            android:singleLine="true"
-                            android:text="Select type"
-                            android:textColor="#FF717182"
-                            android:textSize="14dp" />
-                        <!-- 1:688:space-view0 Primitive.button_space_view0 space-view -->
-                        <View
-                            android:layout_width="0dp"
-                            android:layout_height="20dp"
-                            android:layout_weight="1" />
-
-                        <ImageView
-                            android:id="@+id/icon_select_type"
-                            android:layout_width="15.98dp"
-                            android:layout_height="15.98dp"
-                            android:alpha="0.5"
-                            android:scaleType="centerInside"
-                            android:src="@drawable/icon_select_type" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/label_seating_capacity"
-                        android:layout_width="281.72dp"
-                        android:layout_height="24dp"
-                        android:layout_marginTop="5.99dp"
-                        android:clipToPadding="false"
-                        android:gravity="left|center_vertical"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:id="@+id/text_seating_capacity"
-                            android:layout_width="wrap_content"
-                            android:layout_height="18dp"
-                            android:gravity="left|center_vertical"
-                            android:includeFontPadding="false"
-                            android:maxLines="1"
-                            android:singleLine="true"
-                            android:text="Seating Capacity *"
-                            android:textColor="#FFB0B0B0"
-                            android:textSize="14dp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/btn_seats"
-                        android:layout_width="281.72dp"
-                        android:layout_height="35.98dp"
-                        android:layout_marginTop="0dp"
-                        android:background="@drawable/btn_seats"
-                        android:clipToPadding="false"
-                        android:gravity="left|center_vertical"
-                        android:orientation="horizontal"
-                        android:paddingLeft="11.99dp"
-                        android:paddingRight="11.99dp">
-
-                        <TextView
-                            android:id="@+id/span_seats"
-                            android:layout_width="wrap_content"
-                            android:layout_height="20dp"
-                            android:gravity="left|center_vertical"
-                            android:includeFontPadding="false"
-                            android:maxLines="1"
-                            android:singleLine="true"
-                            android:text="Seats"
-                            android:textColor="#FF717182"
-                            android:textSize="14dp" />
-                        <!-- 1:696:space-view0 Primitive.button_space_view0 space-view -->
-                        <View
-                            android:layout_width="0dp"
-                            android:layout_height="20dp"
-                            android:layout_weight="1" />
-
-                        <ImageView
-                            android:id="@+id/icon_seats"
-                            android:layout_width="15.98dp"
-                            android:layout_height="15.98dp"
-                            android:alpha="0.5"
-                            android:scaleType="centerInside"
-                            android:src="@drawable/icon_seats" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/label_fuel_type"
-                        android:layout_width="281.72dp"
-                        android:layout_height="24dp"
-                        android:layout_marginTop="15.98dp"
-                        android:clipToPadding="false"
-                        android:gravity="left|center_vertical"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:id="@+id/text_fuel_type"
-                            android:layout_width="wrap_content"
-                            android:layout_height="18dp"
-                            android:gravity="left|center_vertical"
-                            android:includeFontPadding="false"
-                            android:maxLines="1"
-                            android:singleLine="true"
-                            android:text="Fuel Type *"
-                            android:textColor="#FFB0B0B0"
-                            android:textSize="14dp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/btn_fuel_type"
-                        android:layout_width="281.72dp"
-                        android:layout_height="35.98dp"
-                        android:layout_marginTop="0dp"
-                        android:background="@drawable/btn_fuel_type"
-                        android:gravity="left|center_vertical"
-                        android:orientation="horizontal"
-                        android:paddingLeft="11.99dp"
-                        android:paddingRight="11.99dp">
-
-                        <LinearLayout
-                            android:id="@+id/span_fuel_type"
-                            android:layout_width="56.37dp"
-                            android:layout_height="20dp"
-                            android:layout_marginTop="0dp"
-                            android:layout_marginBottom="0dp"
-                            android:clipToPadding="false"
-                            android:gravity="left|center_vertical"
-                            android:orientation="horizontal"
-                            android:paddingTop="0dp"
-                            android:paddingBottom="0dp">
-
-                            <TextView
-                                android:id="@+id/text_fuel_type1"
-                                android:layout_width="wrap_content"
-                                android:layout_height="20dp"
-                                android:gravity="left|center_vertical"
-                                android:includeFontPadding="false"
-                                android:maxLines="1"
-                                android:singleLine="true"
-                                android:text="Fuel type"
-                                android:textColor="#FF717182"
-                                android:textSize="14dp" />
-                        </LinearLayout>
-                        <!-- 1:704:space-view0 Primitive.button_space_view0 space-view -->
-                        <View
-                            android:layout_width="0dp"
-                            android:layout_height="20dp"
-                            android:layout_weight="1" />
-
-                        <ImageView
-                            android:id="@+id/icon_fuel_type"
-                            android:layout_width="15.98dp"
-                            android:layout_height="15.98dp"
-                            android:alpha="0.5"
-                            android:scaleType="centerInside"
-                            android:src="@drawable/icon_fuel_type" />
-                    </LinearLayout>
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/card_pricing_media"
-                android:layout_width="332.22dp"
-                android:layout_height="236.41dp"
-                android:layout_gravity="left"
-                android:layout_marginTop="23.99dp"
-                android:background="@drawable/card_pricing_media"
-                android:gravity="left|top"
-                android:orientation="vertical"
-                android:paddingLeft="23.99dp"
-                android:paddingTop="23.99dp">
-
-                <LinearLayout
-                    android:id="@+id/title_pricing_media"
-                    android:layout_width="281.72dp"
-                    android:layout_height="21.86dp"
-                    android:layout_marginTop="-0.93dp"
-                    android:layout_marginBottom="-0.93dp"
-                    android:clipToPadding="false"
-                    android:gravity="left|center_vertical"
+                    android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:paddingTop="0.93dp"
-                    android:paddingBottom="0.93dp">
-
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="16dp">
                     <ImageView
-                        android:id="@+id/icon_pricing_media"
                         android:layout_width="20dp"
                         android:layout_height="20dp"
-                        android:scaleType="centerInside"
-                        android:src="@drawable/icon_pricing_media" />
-
+                        android:src="@drawable/ic_car_info"/>
                     <TextView
-                        android:id="@+id/text_pricing_media"
                         android:layout_width="wrap_content"
-                        android:layout_height="21dp"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="7.98dp"
-                        android:layout_marginTop="0.36dp"
-                        android:layout_marginBottom="-0.93dp"
-                        android:gravity="left|center_vertical"
-                        android:includeFontPadding="false"
-                        android:maxLines="1"
-                        android:singleLine="true"
-                        android:text="Pricing &amp; Media"
-                        android:textColor="#FFFFFFFF"
-                        android:textSize="16dp" />
+                        android:layout_height="wrap_content"
+                        android:text="Car Information"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_marginStart="8dp"/>
                 </LinearLayout>
 
-                <LinearLayout
-                    android:id="@+id/add_pricing_media"
-                    android:layout_width="281.72dp"
-                    android:layout_height="135.94dp"
-                    android:layout_marginTop="29.97dp"
-                    android:gravity="left|top"
-                    android:orientation="vertical">
+                <!-- Car Name -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Car Name *"
+                    android:textColor="@color/text_secondary"
+                    android:layout_marginBottom="8dp"/>
+                <EditText
+                    android:id="@+id/et_car_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/bg_input_field"
+                    android:hint="e.g., Toyota Camry"
+                    android:textColorHint="@color/text_secondary"
+                    android:textColor="@color/white"
+                    android:paddingHorizontal="12dp"
+                    android:layout_marginBottom="16dp"/>
 
-                    <LinearLayout
-                        android:id="@+id/label_daily_rate"
-                        android:layout_width="281.72dp"
-                        android:layout_height="23dp"
-                        android:clipToPadding="false"
-                        android:gravity="left|center_vertical"
-                        android:orientation="horizontal">
+                <!-- Model Year -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Model Year *"
+                    android:textColor="@color/text_secondary"
+                    android:layout_marginBottom="8dp"/>
+                <EditText
+                    android:id="@+id/et_model_year"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/bg_input_field"
+                    android:hint="e.g., 2024"
+                    android:inputType="number"
+                    android:textColorHint="@color/text_secondary"
+                    android:textColor="@color/white"
+                    android:paddingHorizontal="12dp"
+                    android:layout_marginBottom="16dp"/>
 
-                        <TextView
-                            android:id="@+id/text_daily_rate"
-                            android:layout_width="wrap_content"
-                            android:layout_height="18dp"
-                            android:gravity="left|center_vertical"
-                            android:includeFontPadding="false"
-                            android:maxLines="1"
-                            android:singleLine="true"
-                            android:text="Daily Rate (USD) *"
-                            android:textColor="#FFB0B0B0"
-                            android:textSize="14dp" />
-                    </LinearLayout>
+                <!-- Car Type Spinner -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Car Type *"
+                    android:textColor="@color/text_secondary"
+                    android:layout_marginBottom="8dp"/>
+                <Spinner
+                    android:id="@+id/spinner_car_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/bg_input_field"
+                    android:layout_marginBottom="16dp"/>
 
-                    <LinearLayout
-                        android:id="@+id/input_daily_rate"
-                        android:layout_width="281.72dp"
-                        android:layout_height="35.98dp"
-                        android:layout_marginTop="0dp"
-                        android:background="@drawable/input_daily_rate"
-                        android:clipToPadding="false"
-                        android:gravity="left|center_vertical"
-                        android:orientation="horizontal"
-                        android:paddingLeft="12dp"
-                        android:paddingTop="4dp"
-                        android:paddingRight="12dp"
-                        android:paddingBottom="4dp">
+                <!-- Seats Spinner -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Seating Capacity *"
+                    android:textColor="@color/text_secondary"
+                    android:layout_marginBottom="8dp"/>
+                <Spinner
+                    android:id="@+id/spinner_seats"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/bg_input_field"
+                    android:layout_marginBottom="16dp"/>
 
-                        <TextView
-                            android:id="@+id/text_example_rate"
-                            android:layout_width="wrap_content"
-                            android:layout_height="21dp"
-                            android:gravity="left|center_vertical"
-                            android:includeFontPadding="false"
-                            android:maxLines="1"
-                            android:singleLine="true"
-                            android:text="e.g., 45.00"
-                            android:textColor="#FF717182"
-                            android:textSize="16dp" />
-                    </LinearLayout>
+                <!-- Fuel Spinner -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fuel Type *"
+                    android:textColor="@color/text_secondary"
+                    android:layout_marginBottom="8dp"/>
+                <Spinner
+                    android:id="@+id/spinner_fuel"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/bg_input_field"/>
 
-                    <LinearLayout
-                        android:id="@+id/label_image_url"
-                        android:layout_width="281.72dp"
-                        android:layout_height="23dp"
-                        android:layout_marginTop="6.99dp"
-                        android:clipToPadding="false"
-                        android:gravity="left|center_vertical"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:id="@+id/text_image_url"
-                            android:layout_width="wrap_content"
-                            android:layout_height="18dp"
-                            android:gravity="left|center_vertical"
-                            android:includeFontPadding="false"
-                            android:maxLines="1"
-                            android:singleLine="true"
-                            android:text="Image URL (optional)"
-                            android:textColor="#FFB0B0B0"
-                            android:textSize="14dp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/input_image_url"
-                        android:layout_width="281.72dp"
-                        android:layout_height="35.98dp"
-                        android:layout_marginTop="0dp"
-                        android:background="@drawable/input_image_url"
-                        android:clipToPadding="false"
-                        android:gravity="left|center_vertical"
-                        android:orientation="horizontal"
-                        android:paddingLeft="12dp"
-                        android:paddingTop="4dp"
-                        android:paddingRight="12dp"
-                        android:paddingBottom="4dp">
-
-                        <TextView
-                            android:id="@+id/text_example_image"
-                            android:layout_width="wrap_content"
-                            android:layout_height="21dp"
-                            android:gravity="left|center_vertical"
-                            android:includeFontPadding="false"
-                            android:maxLines="1"
-                            android:singleLine="true"
-                            android:text="https://example.com/car-image.jpg"
-                            android:textColor="#FF717182"
-                            android:textSize="16dp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/paragraph_default_image"
-                        android:layout_width="281.72dp"
-                        android:layout_height="16dp"
-                        android:layout_marginTop="0dp"
-                        android:layout_marginBottom="-0.02dp"
-                        android:clipToPadding="false"
-                        android:gravity="left|top"
-                        android:orientation="horizontal"
-                        android:paddingBottom="0.02dp">
-
-                        <TextView
-                            android:id="@+id/text_default_image"
-                            android:layout_width="match_parent"
-                            android:layout_height="16dp"
-                            android:layout_weight="1"
-                            android:gravity="left|center_vertical"
-                            android:includeFontPadding="false"
-                            android:maxLines="1"
-                            android:singleLine="true"
-                            android:text="Leave empty to use a default car image"
-                            android:textColor="#FF666666"
-                            android:textSize="12dp" />
-                    </LinearLayout>
-                </LinearLayout>
             </LinearLayout>
 
+            <!-- 2. PRICING & MEDIA CARD -->
             <LinearLayout
-                android:id="@+id/card_description"
-                android:layout_width="332.22dp"
-                android:layout_height="177dp"
-                android:layout_gravity="left"
-                android:layout_marginTop="23.99dp"
-                android:background="@drawable/card_description"
-                android:clipToPadding="false"
-                android:gravity="left|top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_card_surface"
                 android:orientation="vertical"
-                android:paddingLeft="23.99dp"
-                android:paddingTop="19.96dp">
+                android:padding="16dp"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="16dp">
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_pricing"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pricing &amp; Media"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_marginStart="8dp"/>
+                </LinearLayout>
 
                 <TextView
-                    android:id="@+id/title_description"
                     android:layout_width="wrap_content"
-                    android:layout_height="21dp"
-                    android:layout_marginTop="-2.79dp"
-                    android:layout_marginBottom="0.3dp"
-                    android:gravity="left|center_vertical"
-                    android:includeFontPadding="false"
-                    android:maxLines="1"
-                    android:singleLine="true"
-                    android:text="Description"
-                    android:textColor="#FFFFFFFF"
-                    android:textSize="16dp" />
+                    android:layout_height="wrap_content"
+                    android:text="Daily Rate (USD) *"
+                    android:textColor="@color/text_secondary"
+                    android:layout_marginBottom="8dp"/>
+                <EditText
+                    android:id="@+id/et_daily_rate"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/bg_input_field"
+                    android:hint="e.g., 45.00"
+                    android:inputType="numberDecimal"
+                    android:textColorHint="@color/text_secondary"
+                    android:textColor="@color/white"
+                    android:paddingHorizontal="12dp"
+                    android:layout_marginBottom="16dp"/>
 
-                <LinearLayout
-                    android:id="@+id/label_car_description"
-                    android:layout_width="281.72dp"
-                    android:layout_height="22dp"
-                    android:layout_marginTop="29.97dp"
-                    android:clipToPadding="false"
-                    android:gravity="left|center_vertical"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/text_car_description"
-                        android:layout_width="wrap_content"
-                        android:layout_height="18dp"
-                        android:gravity="left|center_vertical"
-                        android:includeFontPadding="false"
-                        android:maxLines="1"
-                        android:singleLine="true"
-                        android:text="Car Description *"
-                        android:textColor="#FFB0B0B0"
-                        android:textSize="14dp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/textarea_car_description"
-                    android:layout_width="281.72dp"
-                    android:layout_height="66.51dp"
-                    android:layout_marginTop="0dp"
-                    android:background="@drawable/textarea_car_description"
-                    android:clipToPadding="false"
-                    android:gravity="left|top"
-                    android:orientation="horizontal"
-                    android:paddingLeft="12dp"
-                    android:paddingTop="8dp"
-                    android:paddingRight="12dp"
-                    android:paddingBottom="8dp">
-
-                    <TextView
-                        android:id="@+id/textarea_car_features"
-                        android:layout_width="wrap_content"
-                        android:layout_height="48dp"
-                        android:gravity="left|top"
-                        android:includeFontPadding="false"
-                        android:lineHeight="24dp"
-                        android:text="Describe the car&#39;s features, comfort,\nand unique selling points..."
-                        android:textColor="#FF717182"
-                        android:textSize="16dp" />
-                </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Image URL (Optional)"
+                    android:textColor="@color/text_secondary"
+                    android:layout_marginBottom="8dp"/>
+                <EditText
+                    android:id="@+id/et_image_url"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/bg_input_field"
+                    android:hint="https://example.com/image.jpg"
+                    android:inputType="textUri"
+                    android:textColorHint="@color/text_secondary"
+                    android:textColor="@color/white"
+                    android:paddingHorizontal="12dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Leave empty to use a default car image"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp"
+                    android:layout_marginTop="4dp"/>
             </LinearLayout>
 
+            <!-- 3. DESCRIPTION CARD -->
             <LinearLayout
-                android:id="@+id/container_buttons"
-                android:layout_width="332.22dp"
-                android:layout_height="35.98dp"
-                android:layout_gravity="left"
-                android:layout_marginTop="23.99dp"
-                android:gravity="left|top"
-                android:orientation="horizontal"
-                android:paddingRight="-0.02dp">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_card_surface"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:layout_marginBottom="24dp">
 
                 <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="16dp">
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_description"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Description"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_marginStart="8dp"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Car Description *"
+                    android:textColor="@color/text_secondary"
+                    android:layout_marginBottom="8dp"/>
+                <EditText
+                    android:id="@+id/et_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:background="@drawable/bg_input_field"
+                    android:hint="Describe the car's features..."
+                    android:gravity="top|start"
+                    android:padding="12dp"
+                    android:textColorHint="@color/text_secondary"
+                    android:textColor="@color/white"/>
+            </LinearLayout>
+
+            <!-- BUTTONS -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <Button
                     android:id="@+id/btn_cancel"
                     android:layout_width="0dp"
-                    android:layout_height="35.98dp"
+                    android:layout_height="56dp"
                     android:layout_weight="1"
-                    android:background="@drawable/btn_cancel"
-                    android:clipToPadding="false"
-                    android:gravity="center"
-                    android:orientation="horizontal"
-                    android:paddingLeft="16dp"
-                    android:paddingTop="7.99dp"
-                    android:paddingRight="16dp"
-                    android:paddingBottom="7.99dp">
+                    android:layout_marginEnd="8dp"
+                    android:text="Cancel"
+                    android:background="@drawable/bg_input_field"
+                    app:backgroundTint="@null"
+                    android:textColor="@color/text_secondary"
+                    android:textAllCaps="false"/>
 
-                    <TextView
-                        android:id="@+id/btn_text_cancel"
-                        android:layout_width="wrap_content"
-                        android:layout_height="20dp"
-                        android:gravity="left|center_vertical"
-                        android:includeFontPadding="false"
-                        android:maxLines="1"
-                        android:singleLine="true"
-                        android:text="Cancel"
-                        android:textColor="#FFB0B0B0"
-                        android:textSize="14dp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/btn_add_car_fleet"
+                <Button
+                    android:id="@+id/btn_add_car_submit"
                     android:layout_width="0dp"
-                    android:layout_height="35.98dp"
-                    android:layout_marginLeft="15.98dp"
+                    android:layout_height="56dp"
                     android:layout_weight="1"
-                    android:background="@drawable/btn_add_car_fleet"
-                    android:clipToPadding="false"
-                    android:gravity="center"
-                    android:orientation="horizontal"
-                    android:paddingLeft="16dp"
-                    android:paddingTop="7.99dp"
-                    android:paddingRight="16dp"
-                    android:paddingBottom="7.99dp">
+                    android:layout_marginStart="8dp"
+                    android:text="Add Car to Fleet"
+                    android:background="@drawable/bg_toggle_active"
+                    app:backgroundTint="@null"
+                    android:textColor="@color/white"
+                    android:textAllCaps="false"/>
 
-                    <TextView
-                        android:id="@+id/btn_text_add_fleet"
-                        android:layout_width="wrap_content"
-                        android:layout_height="20dp"
-                        android:gravity="left|center_vertical"
-                        android:includeFontPadding="false"
-                        android:maxLines="1"
-                        android:singleLine="true"
-                        android:text="Add Car to Fleet"
-                        android:textColor="#FFFFFFFF"
-                        android:textSize="14dp" />
-                </LinearLayout>
             </LinearLayout>
+
         </LinearLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/slot_car_types"
-        android:layout_width="0.99dp"
-        android:layout_height="0.99dp"
-        android:layout_marginLeft="40.25dp"
-        android:layout_marginTop="356.15dp"
-        android:layout_gravity="top|left"
-        android:gravity="left|top"
-        android:orientation="vertical"
-        android:paddingLeft="-40.25dp"
-        android:paddingRight="41.24dp"
-        android:paddingTop="-356.15dp">
-
-        <FrameLayout
-            android:id="@+id/select_sedan"
-            android:layout_width="match_parent"
-            android:layout_height="0dp">
-
-            <TextView
-                android:id="@+id/text_sedan"
-                android:layout_width="0dp"
-                android:layout_height="90dp"
-                android:layout_gravity="top|left"
-                android:gravity="left|top"
-                android:includeFontPadding="false"
-                android:lineHeight="18.4dp"
-                android:text="Sedan"
-                android:textColor="#FF0A0A0A"
-                android:textSize="16dp" />
-        </FrameLayout>
-
-        <FrameLayout
-            android:id="@+id/select_suv"
-            android:layout_width="match_parent"
-            android:layout_height="0dp">
-
-            <TextView
-                android:id="@+id/text_suv"
-                android:layout_width="0dp"
-                android:layout_height="54dp"
-                android:layout_gravity="top|left"
-                android:gravity="left|top"
-                android:includeFontPadding="false"
-                android:lineHeight="18.4dp"
-                android:text="SUV"
-                android:textColor="#FF0A0A0A"
-                android:textSize="16dp" />
-        </FrameLayout>
-
-        <FrameLayout
-            android:id="@+id/select_hatchback"
-            android:layout_width="match_parent"
-            android:layout_height="0dp">
-
-            <TextView
-                android:id="@+id/text_hatchback"
-                android:layout_width="0dp"
-                android:layout_height="162dp"
-                android:layout_gravity="top|left"
-                android:gravity="left|top"
-                android:includeFontPadding="false"
-                android:lineHeight="18.4dp"
-                android:text="Hatchback"
-                android:textColor="#FF0A0A0A"
-                android:textSize="16dp" />
-        </FrameLayout>
-
-        <FrameLayout
-            android:id="@+id/select_convertible"
-            android:layout_width="match_parent"
-            android:layout_height="0dp">
-
-            <TextView
-                android:id="@+id/text_convertible"
-                android:layout_width="0dp"
-                android:layout_height="198dp"
-                android:layout_gravity="top|left"
-                android:gravity="left|top"
-                android:includeFontPadding="false"
-                android:lineHeight="18.4dp"
-                android:text="Convertible"
-                android:textColor="#FF0A0A0A"
-                android:textSize="16dp" />
-        </FrameLayout>
-
-        <FrameLayout
-            android:id="@+id/select_coupe"
-            android:layout_width="match_parent"
-            android:layout_height="0dp">
-
-            <TextView
-                android:id="@+id/text_coupe"
-                android:layout_width="0dp"
-                android:layout_height="90dp"
-                android:layout_gravity="top|left"
-                android:gravity="left|top"
-                android:includeFontPadding="false"
-                android:lineHeight="18.4dp"
-                android:text="Coupe"
-                android:textColor="#FF0A0A0A"
-                android:textSize="16dp" />
-        </FrameLayout>
-
-        <FrameLayout
-            android:id="@+id/select_electric"
-            android:layout_width="match_parent"
-            android:layout_height="0dp">
-
-            <TextView
-                android:id="@+id/text_electric"
-                android:layout_width="0dp"
-                android:layout_height="144dp"
-                android:layout_gravity="top|left"
-                android:gravity="left|top"
-                android:includeFontPadding="false"
-                android:lineHeight="18.4dp"
-                android:text="Electric"
-                android:textColor="#FF0A0A0A"
-                android:textSize="16dp" />
-        </FrameLayout>
-
-        <FrameLayout
-            android:id="@+id/select_luxury"
-            android:layout_width="match_parent"
-            android:layout_height="0dp">
-
-            <TextView
-                android:id="@+id/text_luxury"
-                android:layout_width="0dp"
-                android:layout_height="108dp"
-                android:layout_gravity="top|left"
-                android:gravity="left|top"
-                android:includeFontPadding="false"
-                android:lineHeight="18.4dp"
-                android:text="Luxury"
-                android:textColor="#FF0A0A0A"
-                android:textSize="16dp" />
-        </FrameLayout>
-
-        <FrameLayout
-            android:id="@+id/select_sports"
-            android:layout_width="match_parent"
-            android:layout_height="0dp">
-
-            <TextView
-                android:id="@+id/text_sports"
-                android:layout_width="0dp"
-                android:layout_height="108dp"
-                android:layout_gravity="top|left"
-                android:gravity="left|top"
-                android:includeFontPadding="false"
-                android:lineHeight="18.4dp"
-                android:text="Sports"
-                android:textColor="#FF0A0A0A"
-                android:textSize="16dp" />
-        </FrameLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/slot_seating_capacity"
-        android:layout_width="0.99dp"
-        android:layout_height="0.99dp"
-        android:layout_marginLeft="40.25dp"
-        android:layout_marginTop="422.12dp"
-        android:layout_gravity="top|left"
-        android:gravity="left|top"
-        android:orientation="vertical"
-        android:paddingLeft="-40.25dp"
-        android:paddingRight="41.24dp"
-        android:paddingTop="-422.12dp">
-
-        <FrameLayout
-            android:id="@+id/select_seats"
-            android:layout_width="match_parent"
-            android:layout_height="0dp">
-
-            <TextView
-                android:id="@+id/text_seats1"
-                android:layout_width="0dp"
-                android:layout_height="108dp"
-                android:layout_gravity="top|left"
-                android:gravity="left|top"
-                android:includeFontPadding="false"
-                android:lineHeight="18.4dp"
-                android:text="2 Seats"
-                android:textColor="#FF0A0A0A"
-                android:textSize="16dp" />
-        </FrameLayout>
-
-        <FrameLayout
-            android:id="@+id/select_seats1"
-            android:layout_width="match_parent"
-            android:layout_height="0dp">
-
-            <TextView
-                android:id="@+id/text_seats2"
-                android:layout_width="0dp"
-                android:layout_height="108dp"
-                android:layout_gravity="top|left"
-                android:gravity="left|top"
-                android:includeFontPadding="false"
-                android:lineHeight="18.4dp"
-                android:text="4 Seats"
-                android:textColor="#FF0A0A0A"
-                android:textSize="16dp" />
-        </FrameLayout>
-
-        <FrameLayout
-            android:id="@+id/select_seats2"
-            android:layout_width="match_parent"
-            android:layout_height="0dp">
-
-            <TextView
-                android:id="@+id/text_seats3"
-                android:layout_width="0dp"
-                android:layout_height="108dp"
-                android:layout_gravity="top|left"
-                android:gravity="left|top"
-                android:includeFontPadding="false"
-                android:lineHeight="18.4dp"
-                android:text="5 Seats"
-                android:textColor="#FF0A0A0A"
-                android:textSize="16dp" />
-        </FrameLayout>
-
-        <FrameLayout
-            android:id="@+id/select_seats3"
-            android:layout_width="match_parent"
-            android:layout_height="0dp">
-
-            <TextView
-                android:id="@+id/text_seats4"
-                android:layout_width="0dp"
-                android:layout_height="108dp"
-                android:layout_gravity="top|left"
-                android:gravity="left|top"
-                android:includeFontPadding="false"
-                android:lineHeight="18.4dp"
-                android:text="7 Seats"
-                android:textColor="#FF0A0A0A"
-                android:textSize="16dp" />
-        </FrameLayout>
-
-        <FrameLayout
-            android:id="@+id/select_seats4"
-            android:layout_width="match_parent"
-            android:layout_height="0dp">
-
-            <TextView
-                android:id="@+id/text_seats5"
-                android:layout_width="0dp"
-                android:layout_height="108dp"
-                android:layout_gravity="top|left"
-                android:gravity="left|top"
-                android:includeFontPadding="false"
-                android:lineHeight="18.4dp"
-                android:text="8 Seats"
-                android:textColor="#FF0A0A0A"
-                android:textSize="16dp" />
-        </FrameLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/slot_fuel_type"
-        android:layout_width="0.99dp"
-        android:layout_height="0.99dp"
-        android:layout_marginLeft="40.25dp"
-        android:layout_marginTop="488.1dp"
-        android:layout_gravity="top|left"
-        android:gravity="left|top"
-        android:orientation="vertical"
-        android:paddingLeft="-40.25dp"
-        android:paddingRight="41.24dp"
-        android:paddingTop="-488.1dp">
-
-        <FrameLayout
-            android:id="@+id/select_gasoline"
-            android:layout_width="match_parent"
-            android:layout_height="0dp">
-
-            <TextView
-                android:id="@+id/text_gasoline"
-                android:layout_width="0dp"
-                android:layout_height="144dp"
-                android:layout_gravity="top|left"
-                android:gravity="left|top"
-                android:includeFontPadding="false"
-                android:lineHeight="18.4dp"
-                android:text="Gasoline"
-                android:textColor="#FF0A0A0A"
-                android:textSize="16dp" />
-        </FrameLayout>
-
-        <FrameLayout
-            android:id="@+id/select_diesel"
-            android:layout_width="match_parent"
-            android:layout_height="0dp">
-
-            <TextView
-                android:id="@+id/text_diesel"
-                android:layout_width="0dp"
-                android:layout_height="108dp"
-                android:layout_gravity="top|left"
-                android:gravity="left|top"
-                android:includeFontPadding="false"
-                android:lineHeight="18.4dp"
-                android:text="Diesel"
-                android:textColor="#FF0A0A0A"
-                android:textSize="16dp" />
-        </FrameLayout>
-
-        <FrameLayout
-            android:id="@+id/select_electric1"
-            android:layout_width="match_parent"
-            android:layout_height="0dp">
-
-            <TextView
-                android:id="@+id/text_electric1"
-                android:layout_width="0dp"
-                android:layout_height="144dp"
-                android:layout_gravity="top|left"
-                android:gravity="left|top"
-                android:includeFontPadding="false"
-                android:lineHeight="18.4dp"
-                android:text="Electric"
-                android:textColor="#FF0A0A0A"
-                android:textSize="16dp" />
-        </FrameLayout>
-
-        <FrameLayout
-            android:id="@+id/select_hybrid"
-            android:layout_width="match_parent"
-            android:layout_height="0dp">
-
-            <TextView
-                android:id="@+id/text_hybrid"
-                android:layout_width="0dp"
-                android:layout_height="108dp"
-                android:layout_gravity="top|left"
-                android:gravity="left|top"
-                android:includeFontPadding="false"
-                android:lineHeight="18.4dp"
-                android:text="Hybrid"
-                android:textColor="#FF0A0A0A"
-                android:textSize="16dp" />
-        </FrameLayout>
-
-        <FrameLayout
-            android:id="@+id/select_plug_in_hybrid"
-            android:layout_width="match_parent"
-            android:layout_height="0dp">
-
-            <TextView
-                android:id="@+id/text_plug_in_hybrid"
-                android:layout_width="0dp"
-                android:layout_height="234dp"
-                android:layout_gravity="top|left"
-                android:gravity="left|top"
-                android:includeFontPadding="false"
-                android:lineHeight="18.4dp"
-                android:text="Plug-in Hybrid"
-                android:textColor="#FF0A0A0A"
-                android:textSize="16dp" />
-        </FrameLayout>
-    </LinearLayout>
-</FrameLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
