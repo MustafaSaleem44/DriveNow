@@ -1,14 +1,14 @@
 // File: com/example/drivenow/CarDetailsActivity.kt
 package com.example.drivenow
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
-import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
-class CarDetails : AppCompatActivity() {
+class CarDetailsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,8 +32,8 @@ class CarDetails : AppCompatActivity() {
         btnBookNow.setOnClickListener {
             Toast.makeText(this, "Proceeding to booking...", Toast.LENGTH_SHORT).show()
             // Next step: Open Booking Confirmation Screen
-            // val intent = Intent(this, BookingProcessActivity::class.java)
-            // startActivity(intent)
+            val intent = Intent(this, BookCar::class.java)
+            startActivity(intent)
         }
     }
 }

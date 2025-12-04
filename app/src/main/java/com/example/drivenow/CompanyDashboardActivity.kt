@@ -1,5 +1,6 @@
 package com.example.drivenow
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.LinearLayout
@@ -58,6 +59,10 @@ class CompanyDashboardActivity : AppCompatActivity() {
 
         btnAddCar.setOnClickListener {
             Toast.makeText(this, "Add Car clicked", Toast.LENGTH_SHORT).show()
+            // Navigate to AddCarActivity
+            val intent = Intent(this, AddCarActivity::class.java)
+            startActivity(intent)
+
         }
     }
 

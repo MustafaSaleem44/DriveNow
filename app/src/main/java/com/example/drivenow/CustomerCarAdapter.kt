@@ -1,6 +1,7 @@
 // File: com/example/drivenow/CustomerCarAdapter.kt
 package com.example.drivenow
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,7 +17,7 @@ class CustomerCarAdapter(private val carList: List<Car>) : RecyclerView.Adapter<
         val tvType: TextView = itemView.findViewById(R.id.tv_car_type)
         val tvPrice: TextView = itemView.findViewById(R.id.tv_price_val)
         val btnView: Button = itemView.findViewById(R.id.btn_view_details)
-        // Add seats/fuel textviews here if your data model supports them
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -32,7 +33,10 @@ class CustomerCarAdapter(private val carList: List<Car>) : RecyclerView.Adapter<
 
         holder.btnView.setOnClickListener {
             Toast.makeText(holder.itemView.context, "Clicked ${car.name}", Toast.LENGTH_SHORT).show()
-            // Navigate to Details Page
+            // Navigate to CarDetailsActivity
+            val intent = Intent(holder.itemView.context, CarDetailsActivity::class.java)
+            intent.putExtra("CAR_NAME", car.name)
+            holder.itemView.context.startActivity(intent)
         }
     }
 
