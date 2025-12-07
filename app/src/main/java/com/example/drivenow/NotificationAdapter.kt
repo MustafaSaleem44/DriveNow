@@ -27,7 +27,7 @@ class NotificationAdapter(private val notifications: List<Notification>) : Recyc
 
         holder.tvTitle.text = notification.title
         holder.tvMessage.text = notification.message
-        holder.tvTime.text = notification.timeAgo
+        holder.tvTime.text = notification.date
 
         // Icon Logic
         when (notification.type) {

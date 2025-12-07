@@ -5,5 +5,8 @@ data class Car(
     val name: String,
     val type: String,
     val pricePerDay: String,
-    val status: String // "available", "rented", "maintenance"
+    val status: String, // "available", "rented", "maintenance"
+    val image: String,
+    val seats: String,
+    val fuelType: String
 )

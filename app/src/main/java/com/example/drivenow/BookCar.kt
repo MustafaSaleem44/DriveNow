@@ -1,7 +1,8 @@
-// File: com/example/drivenow/BookCarActivity.kt
 package com.example.drivenow
 
 import android.app.DatePickerDialog
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
@@ -11,6 +12,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import java.text.SimpleDateFormat
 import java.util.Calendar
+import java.util.Date
 import java.util.Locale
 import java.util.concurrent.TimeUnit
 
@@ -23,10 +25,19 @@ class BookCar : AppCompatActivity() {
     private lateinit var tvTaxTotal: TextView
     private lateinit var tvFinalTotal: TextView
     private lateinit var btnConfirm: Button
+    
+    // Header Info
+    private lateinit var tvCarName: TextView
+    private lateinit var tvCarRateDetail: TextView
 
     private var startTimestamp: Long = 0
     private var endTimestamp: Long = 0
-    private val carPricePerDay = 45.0 // Hardcoded for demo
+    private var carPricePerDay = 45.0
+    
+    // Data from Intent
+    private var carName: String = ""
+    private var carType: String = ""
+    private var carImage: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,9 +52,47 @@ class BookCar : AppCompatActivity() {
         tvTaxTotal = findViewById(R.id.tv_tax_total)
         tvFinalTotal = findViewById(R.id.tv_final_total)
         btnConfirm = findViewById(R.id.btn_confirm_booking)
+        
+        // Car Header Views
+        val tvName = findViewById<TextView>(R.id.tv_car_name)
+        val tvType = findViewById<TextView>(R.id.tv_car_type)
+        val tvPriceRate = findViewById<TextView>(R.id.tv_price_rate)
+        val imgThumb = findViewById<ImageView>(R.id.img_car_thumb)
 
         val containerStart = findViewById<LinearLayout>(R.id.container_start_date)
         val containerEnd = findViewById<LinearLayout>(R.id.container_end_date)
+
+        // Get Data from Intent
+        carName = intent.getStringExtra("CAR_NAME") ?: "Car"
+        val priceString = intent.getStringExtra("CAR_PRICE") ?: "$45" // e.g. "$45/day" or "$45"
+        carType = intent.getStringExtra("CAR_TYPE") ?: "Sedan"
+        carImage = intent.getStringExtra("CAR_IMAGE") ?: ""
+
+        // Set Header Data
+        tvName.text = carName
+        tvType.text = carType
+        tvPriceRate.text = priceString
+        
+        // Load Image
+        if (carImage.isNotEmpty()) {
+            try {
+                val imageBytes = android.util.Base64.decode(carImage, android.util.Base64.DEFAULT)
+                val decodedImage = android.graphics.BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)
+                imgThumb.setImageBitmap(decodedImage)
+                imgThumb.clearColorFilter() // Remove tint
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
+
+        // Parse Price
+        carPricePerDay = try {
+            // Remove '$', '/day', and clean spaces
+            val cleanPrice = priceString.replace("$", "").replace("/day", "").trim()
+            cleanPrice.toDouble()
+        } catch (e: Exception) {
+            45.0 // Fallback
+        }
 
         // Back Button
         btnBack.setOnClickListener { finish() }
@@ -58,8 +107,61 @@ class BookCar : AppCompatActivity() {
                 Toast.makeText(this, "Please select dates", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-            Toast.makeText(this, "Booking Confirmed!", Toast.LENGTH_LONG).show()
-            // Here you would navigate to Booking Success page or Home
+            
+            // Get User Email
+            val sharedPref = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE)
+            val userEmail = sharedPref.getString("USER_EMAIL", "guest@example.com") ?: "guest@example.com"
+
+            // Create Booking
+            val diffMs = endTimestamp - startTimestamp
+            val days = TimeUnit.MILLISECONDS.toDays(diffMs).toInt() + 1
+            val subtotal = days * carPricePerDay
+            val tax = subtotal * 0.10
+            val total = subtotal + tax
+            val priceFormatted = "$" + String.format("%.2f", total)
+            
+            val startDateStr = SimpleDateFormat("MMM dd, yyyy", Locale.getDefault()).format(Date(startTimestamp))
+            val endDateStr = SimpleDateFormat("MMM dd, yyyy", Locale.getDefault()).format(Date(endTimestamp))
+            val todayStr = SimpleDateFormat("MMM dd, yyyy", Locale.getDefault()).format(Date())
+
+            val booking = CustomerBooking(
+                id = 0,
+                carName = carName,
+                carDetails = carType,
+                startDate = startDateStr,
+                endDate = endDateStr,
+                location = "Downtown Center", // Hardcoded for now
+                bookedOn = todayStr,
+                totalAmount = priceFormatted,
+                status = "Confirmed",
+                customerEmail = userEmail
+            )
+            
+            // Save to DB
+            val dbHelper = DatabaseHelper(this)
+            val result = dbHelper.addBooking(booking)
+            
+            if (result > -1) {
+                // Add Notifications
+                val currentDate = SimpleDateFormat("MMM dd, HH:mm", Locale.US).format(Date())
+                
+                // 1. Payment Successful
+                val paymentMsg = "Payment of $priceFormatted has been processed successfully."
+                dbHelper.addNotification(Notification(title = "Payment Successful", message = paymentMsg, date = currentDate, userEmail = userEmail, type = "payment"))
+
+                // 2. Booking Confirmed
+                val bookingMsg = "Your booking for $carName from $startDateStr is confirmed."
+                dbHelper.addNotification(Notification(title = "Booking Confirmed", message = bookingMsg, date = currentDate, userEmail = userEmail, type = "booking"))
+
+                Toast.makeText(this, "Booking Confirmed!", Toast.LENGTH_LONG).show()
+                // Navigate to Customer Home
+                val intent = Intent(this, CustomerHomeActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
+                startActivity(intent)
+                finish()
+            } else {
+                 Toast.makeText(this, "Failed to confirm booking", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 

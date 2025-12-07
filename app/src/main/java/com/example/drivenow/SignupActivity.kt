@@ -71,12 +71,26 @@ class SignupActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            // TODO: Add database registration logic here
-            val userType = if (isCompanyMode) "Company" else "Customer"
-            Toast.makeText(this, "Registered as $userType!", Toast.LENGTH_SHORT).show()
-
-            // Go back to login screen after successful signup
-            finish()
+            val dbHelper = DatabaseHelper(this)
+            if (isCompanyMode) {
+                val company = Company(name = name, email = email, password = pass)
+                val result = dbHelper.addCompany(company)
+                if (result > -1) {
+                    Toast.makeText(this, "Company Registered Successfully!", Toast.LENGTH_SHORT).show()
+                    finish()
+                } else {
+                    Toast.makeText(this, "Registration Failed", Toast.LENGTH_SHORT).show()
+                }
+            } else {
+                val customer = Customer(name = name, email = email, password = pass)
+                val result = dbHelper.addCustomer(customer)
+                if (result > -1) {
+                    Toast.makeText(this, "Customer Registered Successfully!", Toast.LENGTH_SHORT).show()
+                    finish()
+                } else {
+                    Toast.makeText(this, "Registration Failed", Toast.LENGTH_SHORT).show()
+                }
+            }
         }
 
         // 4. Handle "Already have an account?" link

@@ -9,15 +9,18 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 
-class CarAdapter(private val carList: List<Car>) : RecyclerView.Adapter<CarAdapter.CarViewHolder>() {
+class CarAdapter(
+    private val carList: MutableList<Car>,
+    private val onDeleteClick: (Car) -> Unit
+) : RecyclerView.Adapter<CarAdapter.CarViewHolder>() {
 
     class CarViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val imgCar: android.widget.ImageView = itemView.findViewById(R.id.img_car)
         val tvName: TextView = itemView.findViewById(R.id.tv_car_name)
         val tvDetails: TextView = itemView.findViewById(R.id.tv_car_details)
         val tvPrice: TextView = itemView.findViewById(R.id.tv_price)
         val tvStatus: TextView = itemView.findViewById(R.id.tv_status_badge)
-        // Ensure "badge_available" is the id in your item_car_card_1.xml for the status textview,
-        // if it didn't have an ID, please add android:id="@+id/tv_status_badge" to that TextView.
+        val btnDelete: View = itemView.findViewById(R.id.btn_delete)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CarViewHolder {
@@ -27,12 +30,30 @@ class CarAdapter(private val carList: List<Car>) : RecyclerView.Adapter<CarAdapt
 
     override fun onBindViewHolder(holder: CarViewHolder, position: Int) {
         val car = carList[position]
-        val context = holder.itemView.context
 
         holder.tvName.text = car.name
         holder.tvDetails.text = car.type
         holder.tvPrice.text = car.pricePerDay
         holder.tvStatus.text = car.status
+
+        // Delete Click
+        holder.btnDelete.setOnClickListener {
+            onDeleteClick(car)
+        }
+
+        // Image Handling
+        if (car.image.isNotEmpty()) {
+            try {
+                val imageBytes = android.util.Base64.decode(car.image, android.util.Base64.DEFAULT)
+                val decodedImage = android.graphics.BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)
+                holder.imgCar.setImageBitmap(decodedImage)
+            } catch (e: Exception) {
+                e.printStackTrace()
+                holder.imgCar.setImageResource(R.drawable.icon_car)
+            }
+        } else {
+             holder.imgCar.setImageResource(R.drawable.icon_car)
+        }
 
         // Dynamic Badge Styling
         when (car.status.lowercase()) {

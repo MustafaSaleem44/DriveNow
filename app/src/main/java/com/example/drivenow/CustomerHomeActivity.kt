@@ -18,17 +18,40 @@ class CustomerHomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_customer_home)
 
         rvCars = findViewById(R.id.rv_customer_cars)
+        val tvGreeting = findViewById<android.widget.TextView>(R.id.tv_greeting_name)
+        val etSearch = findViewById<android.widget.EditText>(R.id.et_search_cars)
 
-        // Dummy Data (Reusing the Car model we made earlier)
-        val carList = listOf(
-            Car(1, "Toyota Camry", "2024 • Sedan", "$45", "Available"),
-            Car(2, "Honda CR-V", "2024 • SUV", "$65", "Available"),
-            Car(3, "BMW Z4", "2024 • Convertible", "$120", "Available"),
-            Car(4, "Tesla Model 3", "2024 • Electric", "$85", "Available")
-        )
+        // 1. Personalize Greeting
+        val sharedPref = getSharedPreferences("UserPrefs", MODE_PRIVATE)
+        val userEmail = sharedPref.getString("USER_EMAIL", "") ?: ""
+        val dbHelper = DatabaseHelper(this)
+        
+        if (userEmail.isNotEmpty()) {
+            val userName = dbHelper.getCustomerName(userEmail)
+            tvGreeting.text = "Hello, $userName!"
+        }
 
+        // 2. Fetch Data
+        val allCars = dbHelper.getAllAvailableCars()
+        
         rvCars.layoutManager = LinearLayoutManager(this)
-        rvCars.adapter = CustomerCarAdapter(carList)
+        val adapter = CustomerCarAdapter(allCars)
+        rvCars.adapter = adapter
+
+        // 3. Implement Search
+        etSearch.addTextChangedListener(object : android.text.TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                val query = s.toString().lowercase()
+                val filteredList = allCars.filter { car ->
+                    car.name.lowercase().contains(query) || car.type.lowercase().contains(query)
+                }
+                // Update adapter with filtered list
+                // Note: It's better to update data inside adapter, but creating new one works for simple lists
+                 rvCars.adapter = CustomerCarAdapter(filteredList)
+            }
+            override fun afterTextChanged(s: android.text.Editable?) {}
+        })
 
         // Navigation Logic
         val bottomNav = findViewById<LinearLayout>(R.id.bottom_nav)

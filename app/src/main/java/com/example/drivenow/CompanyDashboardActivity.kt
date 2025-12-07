@@ -67,35 +67,75 @@ class CompanyDashboardActivity : AppCompatActivity() {
     }
 
     private fun setupRecyclerViews() {
-        // 1. Setup Recent Bookings (Overview)
-        val recentBookings = listOf(
-            Booking(1, "John Smith", "BMW X5", "Jan 15 - Jan 18", "$360", "active"),
-            Booking(2, "Sarah Johnson", "Mercedes C-Class", "Jan 12 - Jan 16", "$380", "completed")
-        )
+        val dbHelper = DatabaseHelper(this)
+
+        // 1. Setup Recent Bookings (Overview) - showing first 3 for example
+        val allBookingsList = dbHelper.getAllBookings()
+        val recentBookings = allBookingsList.take(3)
         rvRecentBookings.layoutManager = LinearLayoutManager(this)
         rvRecentBookings.adapter = BookingAdapter(recentBookings)
-        rvRecentBookings.isNestedScrollingEnabled = false // Optimization for NestedScrollView
+        rvRecentBookings.isNestedScrollingEnabled = false 
 
         // 2. Setup Cars List
-        val carList = listOf(
-            Car(1, "BMW X5", "2024 • SUV", "$120/day", "available"),
-            Car(2, "Mercedes C-Class", "2024 • Sedan", "$95/day", "rented"),
-            Car(3, "Audi A4", "2023 • Sedan", "$85/day", "maintenance"),
-            Car(4, "Tesla Model 3", "2024 • Electric", "$110/day", "available"),
-            Car(5, "Toyota Camry", "2023 • Sedan", "$55/day", "available")
-        )
+        // 2. Setup Cars List
+        val carList = dbHelper.getAllCars().toMutableList()
         rvCars.layoutManager = LinearLayoutManager(this)
-        rvCars.adapter = CarAdapter(carList)
+        rvCars.adapter = CarAdapter(carList) { carToDelete ->
+            // Delete Logic
+             if (dbHelper.deleteCar(carToDelete.id) > 0) {
+                 Toast.makeText(this, "${carToDelete.name} deleted", Toast.LENGTH_SHORT).show()
+                 // Refresh List
+                 val updatedList = dbHelper.getAllCars().toMutableList()
+                 rvCars.adapter = CarAdapter(updatedList) { car ->
+                     // Recursive callback for the refreshed adapter
+                     if (dbHelper.deleteCar(car.id) > 0) {
+                         Toast.makeText(this, "${car.name} deleted", Toast.LENGTH_SHORT).show()
+                         setupRecyclerViews() // Simple refresh
+                     }
+                 }
+                 // Also Update Stats
+                 val bookings = dbHelper.getAllBookings()
+                 updateDashboardStats(updatedList.size, bookings)
+             } else {
+                 Toast.makeText(this, "Failed to delete", Toast.LENGTH_SHORT).show()
+             }
+        }
 
         // 3. Setup All Bookings List
-        val allBookings = listOf(
-            Booking(1, "John Smith", "BMW X5", "Jan 15 - Jan 18", "$360", "active"),
-            Booking(2, "Sarah Johnson", "Mercedes C-Class", "Jan 12 - Jan 16", "$380", "completed"),
-            Booking(3, "Michael Brown", "Audi A4", "Jan 10 - Jan 12", "$170", "completed"),
-            Booking(4, "Emily Davis", "Tesla Model 3", "Jan 05 - Jan 09", "$440", "cancelled")
-        )
         rvAllBookings.layoutManager = LinearLayoutManager(this)
-        rvAllBookings.adapter = BookingAdapter(allBookings)
+        rvAllBookings.adapter = BookingAdapter(allBookingsList)
+
+        // 4. Update Dashboard Stats
+        updateDashboardStats(carList.size, allBookingsList)
+    }
+
+    private fun updateDashboardStats(totalCars: Int, bookings: List<CustomerBooking>) {
+        val tvTotalCars = findViewById<TextView>(R.id.tv_stat_total_cars)
+        val tvTotalBookings = findViewById<TextView>(R.id.tv_stat_total_bookings)
+        val tvRevenue = findViewById<TextView>(R.id.tv_stat_revenue)
+        val tvRating = findViewById<TextView>(R.id.tv_stat_rating)
+
+        // Count
+        tvTotalCars.text = totalCars.toString()
+        tvTotalBookings.text = bookings.size.toString()
+
+        // Revenue Calculation
+        var totalRevenue = 0.0
+        for (booking in bookings) {
+            try {
+                // Format is usually "$123.45"
+                val priceStr = booking.totalAmount.replace("$", "").replace(",", "").trim()
+                if (priceStr.isNotEmpty()) {
+                    totalRevenue += priceStr.toDouble()
+                }
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
+        tvRevenue.text = "$${String.format("%,.0f", totalRevenue)}"
+
+        // Rating (Placeholder Logic as no rating system exists yet)
+        tvRating.text = "5.0" 
     }
 
     private fun switchTab(tabName: String) {

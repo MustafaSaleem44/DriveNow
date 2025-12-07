@@ -10,5 +10,6 @@ data class CustomerBooking(
     val location: String,
     val bookedOn: String,
     val totalAmount: String,
-    val status: String // "Confirmed", "Active", "Completed", "Cancelled"
+    val status: String, // "Confirmed", "Active", "Completed", "Cancelled"
+    val customerEmail: String
 )

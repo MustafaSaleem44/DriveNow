@@ -145,9 +145,10 @@
                         android:orientation="vertical"
                         android:layout_marginEnd="8dp">
                         <TextView
+                            android:id="@+id/tv_stat_total_cars"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="12"
+                            android:text="0"
                             android:textSize="24sp"
                             android:textStyle="bold"
                             android:textColor="@color/white"/>
@@ -167,9 +168,10 @@
                         android:orientation="vertical"
                         android:layout_marginStart="8dp">
                         <TextView
+                            android:id="@+id/tv_stat_total_bookings"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="45"
+                            android:text="0"
                             android:textSize="24sp"
                             android:textStyle="bold"
                             android:textColor="@color/white"/>
@@ -196,9 +198,10 @@
                         android:orientation="vertical"
                         android:layout_marginEnd="8dp">
                         <TextView
+                            android:id="@+id/tv_stat_revenue"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="$15,650"
+                            android:text="$0"
                             android:textSize="20sp"
                             android:textStyle="bold"
                             android:textColor="@color/white"/>
@@ -218,9 +221,10 @@
                         android:orientation="vertical"
                         android:layout_marginStart="8dp">
                         <TextView
+                            android:id="@+id/tv_stat_rating"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="4.8"
+                            android:text="5.0"
                             android:textSize="24sp"
                             android:textStyle="bold"
                             android:textColor="@color/white"/>

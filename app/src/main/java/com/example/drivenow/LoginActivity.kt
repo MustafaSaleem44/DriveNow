@@ -54,18 +54,33 @@ class LoginActivity : AppCompatActivity() {
             val password = etPassword.text.toString()
 
             if (email.isNotEmpty() && password.isNotEmpty()) {
+                val dbHelper = DatabaseHelper(this)
                 if (isCompanyMode) {
-                    Toast.makeText(this, "Logging in as Company...", Toast.LENGTH_SHORT).show()
-                    // Navigate to Company Home
-                    val intent = Intent(this, CompanyDashboardActivity::class.java)
-                    startActivity(intent)
-                    finish()
+                    if (dbHelper.checkCompany(email, password)) {
+                        Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show()
+                        val intent = Intent(this, CompanyDashboardActivity::class.java)
+                        startActivity(intent)
+                        finish()
+                    } else {
+                        Toast.makeText(this, "Invalid Credentials", Toast.LENGTH_SHORT).show()
+                    }
                 } else {
-                    Toast.makeText(this, "Logging in as Customer...", Toast.LENGTH_SHORT).show()
-                    // Navigate to Customer Home
-                    val intent = Intent(this, CustomerHomeActivity::class.java)
-                    startActivity(intent)
-                    finish()
+                    if (dbHelper.checkCustomer(email, password)) {
+                        
+                        // Save User Email
+                        val sharedPref = getSharedPreferences("UserPrefs", MODE_PRIVATE)
+                        with (sharedPref.edit()) {
+                            putString("USER_EMAIL", email)
+                            apply()
+                        }
+
+                        Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show()
+                        val intent = Intent(this, CustomerHomeActivity::class.java)
+                        startActivity(intent)
+                        finish()
+                    } else {
+                        Toast.makeText(this, "Invalid Credentials", Toast.LENGTH_SHORT).show()
+                    }
                 }
             } else {
                 Toast.makeText(this, "Please enter email and password", Toast.LENGTH_SHORT).show()

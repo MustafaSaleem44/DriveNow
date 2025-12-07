@@ -227,29 +227,25 @@
                     android:paddingHorizontal="12dp"
                     android:layout_marginBottom="16dp"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Image URL (Optional)"
-                    android:textColor="@color/text_secondary"
-                    android:layout_marginBottom="8dp"/>
-                <EditText
-                    android:id="@+id/et_image_url"
+                <Button
+                    android:id="@+id/btn_select_image"
                     android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:background="@drawable/bg_input_field"
-                    android:hint="https://example.com/image.jpg"
-                    android:inputType="textUri"
-                    android:textColorHint="@color/text_secondary"
-                    android:textColor="@color/white"
-                    android:paddingHorizontal="12dp"/>
-                <TextView
-                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Leave empty to use a default car image"
-                    android:textColor="@color/text_secondary"
-                    android:textSize="12sp"
-                    android:layout_marginTop="4dp"/>
+                    android:text="Select Car Image"
+                    android:background="@drawable/bg_input_field"
+                    app:backgroundTint="@null"
+                    android:textColor="@color/white"
+                    android:textAllCaps="false"
+                    android:layout_marginBottom="8dp"/>
+
+                <ImageView
+                    android:id="@+id/img_car_preview"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:background="#333333"
+                    android:scaleType="centerCrop"
+                    android:visibility="gone"
+                    android:layout_marginBottom="16dp"/>
             </LinearLayout>
 
             <!-- 3. DESCRIPTION CARD -->

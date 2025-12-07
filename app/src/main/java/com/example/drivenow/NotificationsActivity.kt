@@ -23,40 +23,15 @@ class NotificationsActivity : AppCompatActivity() {
         rvNotifications = findViewById(R.id.rv_notifications)
         btnMarkRead = findViewById(R.id.btn_mark_read)
 
-        // Dummy Data based on Design
-        val list = listOf(
-            Notification(
-                1,
-                "Booking Confirmed",
-                "Your booking for Toyota Camry is confirmed.",
-                "2h ago",
-                "booking"
-            ),
-            Notification(
-                2,
-                "Payment Successful",
-                "Payment of $135 has been processed successfully.",
-                "5h ago",
-                "payment"
-            ),
-            Notification(
-                3,
-                "Booking Completed",
-                "Your trip with Honda CR-V has ended. Please rate your experience.",
-                "1d ago",
-                "booking"
-            ),
-            Notification(
-                4,
-                "Welcome!",
-                "Thanks for joining DriveNow. Complete your profile to start renting.",
-                "2d ago",
-                "alert"
-            )
-        )
+        // Fetch Real Notifications
+        val sharedPref = getSharedPreferences("UserPrefs", MODE_PRIVATE)
+        val userEmail = sharedPref.getString("USER_EMAIL", "") ?: ""
+        val dbHelper = DatabaseHelper(this)
+        
+        val notificationList = dbHelper.getUserNotifications(userEmail)
 
         rvNotifications.layoutManager = LinearLayoutManager(this)
-        rvNotifications.adapter = NotificationAdapter(list)
+        rvNotifications.adapter = NotificationAdapter(notificationList)
 
         btnMarkRead.setOnClickListener {
             Toast.makeText(this, "All notifications marked as read", Toast.LENGTH_SHORT).show()

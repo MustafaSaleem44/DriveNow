@@ -19,42 +19,12 @@ class CustomerBookingsActivity : AppCompatActivity() {
 
         rvBookings = findViewById(R.id.rv_bookings)
 
-        // Dummy Data based on Design
-        val bookingList = listOf(
-            CustomerBooking(
-                1,
-                "Toyota Camry",
-                "2024 • Sedan",
-                "Jan 15, 2024",
-                "Jan 18, 2024",
-                "Downtown Office",
-                "Jan 10, 2024",
-                "$135",
-                "Confirmed"
-            ),
-            CustomerBooking(
-                2,
-                "Honda CR-V",
-                "2024 • SUV",
-                "Dec 20, 2023",
-                "Dec 25, 2023",
-                "Airport Terminal 1",
-                "Dec 15, 2023",
-                "$450",
-                "Completed"
-            ),
-            CustomerBooking(
-                3,
-                "Tesla Model 3",
-                "2024 • Electric",
-                "Feb 01, 2024",
-                "Feb 03, 2024",
-                "City Center Mall",
-                "Jan 28, 2024",
-                "$210",
-                "Active"
-            )
-        )
+        // Get User Email
+        val sharedPref = getSharedPreferences("UserPrefs", MODE_PRIVATE)
+        val userEmail = sharedPref.getString("USER_EMAIL", "") ?: ""
+
+        val dbHelper = DatabaseHelper(this)
+        val bookingList = dbHelper.getCustomerBookings(userEmail)
 
         rvBookings.layoutManager = LinearLayoutManager(this)
         rvBookings.adapter = CustomerBookingAdapter(bookingList)

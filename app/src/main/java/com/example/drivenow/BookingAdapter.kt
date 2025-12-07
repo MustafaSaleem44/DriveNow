@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class BookingAdapter(private val bookingList: List<Booking>) : RecyclerView.Adapter<BookingAdapter.BookingViewHolder>() {
+class BookingAdapter(private val bookingList: List<CustomerBooking>) : RecyclerView.Adapter<BookingAdapter.BookingViewHolder>() {
 
     class BookingViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val tvCustomer: TextView = itemView.findViewById(R.id.tv_customer)
@@ -15,7 +15,6 @@ class BookingAdapter(private val bookingList: List<Booking>) : RecyclerView.Adap
         val tvDates: TextView = itemView.findViewById(R.id.tv_dates)
         val tvPrice: TextView = itemView.findViewById(R.id.tv_price)
         val tvStatus: TextView = itemView.findViewById(R.id.tv_status_badge)
-        // Same here: ensure android:id="@+id/tv_status_badge" is added to item_booking_card_1.xml
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BookingViewHolder {
@@ -26,10 +25,10 @@ class BookingAdapter(private val bookingList: List<Booking>) : RecyclerView.Adap
     override fun onBindViewHolder(holder: BookingViewHolder, position: Int) {
         val booking = bookingList[position]
 
-        holder.tvCustomer.text = booking.customerName
+        holder.tvCustomer.text = booking.customerEmail // Use email as customer identifier
         holder.tvCar.text = booking.carName
-        holder.tvDates.text = booking.dates
-        holder.tvPrice.text = booking.price
+        holder.tvDates.text = "${booking.startDate} - ${booking.endDate}"
+        holder.tvPrice.text = booking.totalAmount
         holder.tvStatus.text = booking.status
 
         // Dynamic Badge Styling (Reusing car badges for simplicity)
