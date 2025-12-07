@@ -185,18 +185,19 @@
                     </FrameLayout>
                 </LinearLayout>
 
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_cars"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:paddingBottom="80dp" />
+                
+                <!-- Keep old container hidden -->
                 <LinearLayout
                     android:id="@+id/company_dashboard_screen_bmw_x5"
-                    android:layout_width="361.31dp"
-                    android:layout_height="134.48dp"
-                    android:layout_gravity="left"
-                    android:layout_marginTop="15.98dp"
-                    android:background="@drawable/company_dashboard_screen_bmw_x5"
-                    android:gravity="left|center_vertical"
-                    android:orientation="horizontal"
-                    android:paddingLeft="15.98dp"
-                    android:paddingTop="17.25dp"
-                    android:paddingBottom="17.25dp">
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:visibility="gone">
 
                     <LinearLayout
                         android:id="@+id/container_image_with_fallback_bmw_x5"

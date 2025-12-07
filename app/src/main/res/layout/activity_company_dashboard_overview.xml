@@ -44,6 +44,7 @@
                     android:background="@drawable/button_overview">
 
                     <TextView
+                        android:id="@+id/text_overview"
                         android:layout_width="wrap_content"
                         android:layout_height="24dp"
                         android:layout_marginRight="0.03dp"
@@ -67,6 +68,7 @@
                     android:background="@drawable/button_cars">
 
                     <TextView
+                        android:id="@+id/text_cars"
                         android:layout_width="wrap_content"
                         android:layout_height="24dp"
                         android:layout_marginLeft="0.36dp"
@@ -90,6 +92,7 @@
                     android:background="@drawable/button_bookings">
 
                     <TextView
+                        android:id="@+id/text_bookings"
                         android:layout_width="wrap_content"
                         android:layout_height="24dp"
                         android:layout_marginLeft="0.26dp"
@@ -137,6 +140,7 @@
                         android:orientation="vertical">
 
                         <TextView
+                            android:id="@+id/text_total_cars"
                             android:layout_width="match_parent"
                             android:layout_height="32.01dp"
                             android:layout_gravity="left"
@@ -201,6 +205,7 @@
                         android:orientation="vertical">
 
                         <TextView
+                            android:id="@+id/text_total_bookings"
                             android:layout_width="match_parent"
                             android:layout_height="32.01dp"
                             android:layout_gravity="left"
@@ -270,6 +275,7 @@
                             android:layout_height="32.01dp">
 
                             <TextView
+                                android:id="@+id/text_monthly_revenue"
                                 android:layout_width="109dp"
                                 android:layout_height="34dp"
                                 android:layout_marginLeft="-0.09dp"
@@ -333,6 +339,7 @@
                         android:orientation="vertical">
 
                         <TextView
+                            android:id="@+id/text_rating"
                             android:layout_width="match_parent"
                             android:layout_height="32.01dp"
                             android:layout_marginBottom="0.01dp"

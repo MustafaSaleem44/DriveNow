@@ -20,14 +20,22 @@
             android:layout_gravity="top|left"
             android:background="@drawable/layer_home_screen">
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_cars"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|left"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
+                android:paddingBottom="80dp" />
+            
+            <!-- Keep old container hidden for reference -->
             <FrameLayout
                 android:id="@+id/layer_container"
-                android:layout_width="374dp"
-                android:layout_height="354.43dp"
-                android:layout_gravity="top|left"
-                android:layout_marginLeft="15.98dp"
-                android:layout_marginTop="225.11dp"
-                android:background="@drawable/layer_container">
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:visibility="gone">
 
                 <LinearLayout
                     android:id="@+id/layer_container1"
@@ -522,18 +530,15 @@
                     android:paddingTop="3dp">
 
                     <TextView
-                        android:id="@+id/layer_heading1"
-                        android:layout_width="145dp"
-                        android:layout_height="28dp"
+                        android:id="@+id/text_greeting"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="-3dp"
                         android:layout_marginBottom="3dp"
                         android:gravity="left|center_vertical"
-                        android:includeFontPadding="false"
-                        android:maxLines="1"
-                        android:singleLine="true"
-                        android:text="Hello,John Doe!"
+                        android:text="Hello, User!"
                         android:textColor="#FFFFFFFF"
-                        android:textSize="20dp" />
+                        android:textSize="20sp" />
 
                     <FrameLayout
                         android:id="@+id/layer_paragraph3"
@@ -658,32 +663,20 @@
                 android:layout_height="35.98dp"
                 android:layout_marginTop="15.98dp">
 
-                <LinearLayout
-                    android:id="@+id/layer_input"
+                <EditText
+                    android:id="@+id/edit_search"
                     android:layout_width="match_parent"
-                    android:layout_height="35.98dp"
-                    android:layout_gravity="top|left"
+                    android:layout_height="36dp"
                     android:background="@drawable/layer_input"
-                    android:clipToPadding="false"
-                    android:gravity="left|center_vertical"
-                    android:orientation="horizontal"
+                    android:hint="Search cars..."
+                    android:textColorHint="#FF717182"
+                    android:textColor="#FFFFFFFF"
+                    android:textSize="16dp"
                     android:paddingLeft="40dp"
-                    android:paddingTop="4dp"
                     android:paddingRight="12dp"
-                    android:paddingBottom="4dp">
-
-                    <TextView
-                        android:id="@+id/text_search_cars"
-                        android:layout_width="wrap_content"
-                        android:layout_height="21dp"
-                        android:gravity="left|center_vertical"
-                        android:includeFontPadding="false"
-                        android:maxLines="1"
-                        android:singleLine="true"
-                        android:text="Search cars..."
-                        android:textColor="#FF717182"
-                        android:textSize="16dp" />
-                </LinearLayout>
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:singleLine="true" />
 
                 <ImageView
                     android:id="@+id/image_icon7"
@@ -703,132 +696,123 @@
                 android:layout_marginTop="15.98dp">
 
                 <LinearLayout
-                    android:id="@+id/layer_button8"
-                    android:layout_width="40.7dp"
-                    android:layout_height="31.99dp"
+                    android:id="@+id/button_filter_all"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
                     android:layout_gravity="top|left"
                     android:background="@drawable/layer_button8"
                     android:clipToPadding="false"
                     android:gravity="center"
                     android:orientation="horizontal"
                     android:paddingLeft="12dp"
-                    android:paddingRight="12dp">
+                    android:paddingRight="12dp"
+                    android:clickable="true"
+                    android:focusable="true">
 
                     <TextView
                         android:id="@+id/text_all"
                         android:layout_width="wrap_content"
-                        android:layout_height="20dp"
-                        android:gravity="left|center_vertical"
-                        android:includeFontPadding="false"
-                        android:maxLines="1"
-                        android:singleLine="true"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
                         android:text="All"
                         android:textColor="#FFFFFFFF"
-                        android:textSize="14dp" />
+                        android:textSize="14sp" />
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/layer_button9"
-                    android:layout_width="65.5dp"
-                    android:layout_height="31.99dp"
+                    android:id="@+id/button_filter_sedan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
                     android:layout_gravity="top|left"
-                    android:layout_marginLeft="48.69dp"
+                    android:layout_marginLeft="12dp"
                     android:background="@drawable/layer_button9"
                     android:clipToPadding="false"
                     android:gravity="center"
                     android:orientation="horizontal"
                     android:paddingLeft="12dp"
-                    android:paddingRight="12dp">
+                    android:paddingRight="12dp"
+                    android:clickable="true"
+                    android:focusable="true">
 
                     <TextView
                         android:id="@+id/text_sedan1"
                         android:layout_width="wrap_content"
-                        android:layout_height="20dp"
-                        android:gravity="left|center_vertical"
-                        android:includeFontPadding="false"
-                        android:maxLines="1"
-                        android:singleLine="true"
+                        android:layout_height="wrap_content"
                         android:text="Sedan"
                         android:textColor="#FFB0B0B0"
-                        android:textSize="14dp" />
+                        android:textSize="14sp" />
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/layer_button10"
-                    android:layout_width="49.42dp"
-                    android:layout_height="31.99dp"
+                    android:id="@+id/button_filter_suv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
                     android:layout_gravity="top|left"
-                    android:layout_marginLeft="122.17dp"
+                    android:layout_marginLeft="12dp"
                     android:background="@drawable/layer_button10"
                     android:clipToPadding="false"
                     android:gravity="center"
                     android:orientation="horizontal"
                     android:paddingLeft="12dp"
-                    android:paddingRight="12dp">
+                    android:paddingRight="12dp"
+                    android:clickable="true"
+                    android:focusable="true">
 
                     <TextView
                         android:id="@+id/text_suv"
                         android:layout_width="wrap_content"
-                        android:layout_height="20dp"
-                        android:gravity="left|center_vertical"
-                        android:includeFontPadding="false"
-                        android:maxLines="1"
-                        android:singleLine="true"
+                        android:layout_height="wrap_content"
                         android:text="Suv"
                         android:textColor="#FFB0B0B0"
-                        android:textSize="14dp" />
+                        android:textSize="14sp" />
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/layer_button11"
-                    android:layout_width="100dp"
-                    android:layout_height="31.99dp"
+                    android:id="@+id/button_filter_convertible"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
                     android:layout_gravity="top|left"
-                    android:layout_marginLeft="179.57dp"
+                    android:layout_marginLeft="12dp"
                     android:background="@drawable/layer_button11"
                     android:clipToPadding="false"
                     android:gravity="center"
                     android:orientation="horizontal"
                     android:paddingLeft="12dp"
-                    android:paddingRight="12dp">
+                    android:paddingRight="12dp"
+                    android:clickable="true"
+                    android:focusable="true">
 
                     <TextView
                         android:id="@+id/text_convertible"
                         android:layout_width="wrap_content"
-                        android:layout_height="20dp"
-                        android:gravity="left|center_vertical"
-                        android:includeFontPadding="false"
-                        android:maxLines="1"
-                        android:singleLine="true"
+                        android:layout_height="wrap_content"
                         android:text="Convertible"
                         android:textColor="#FFB0B0B0"
-                        android:textSize="14dp" />
+                        android:textSize="14sp" />
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/layer_button12"
-                    android:layout_width="71.92dp"
-                    android:layout_height="31.99dp"
+                    android:id="@+id/button_filter_electric"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
                     android:layout_gravity="top|left"
-                    android:layout_marginLeft="287.55dp"
+                    android:layout_marginLeft="12dp"
                     android:background="@drawable/layer_button12"
                     android:clipToPadding="false"
                     android:gravity="center"
                     android:orientation="horizontal"
                     android:paddingLeft="12dp"
-                    android:paddingRight="12dp">
+                    android:paddingRight="12dp"
+                    android:clickable="true"
+                    android:focusable="true">
 
                     <TextView
                         android:id="@+id/text_electric"
                         android:layout_width="wrap_content"
-                        android:layout_height="20dp"
-                        android:gravity="left|center_vertical"
-                        android:includeFontPadding="false"
-                        android:maxLines="1"
-                        android:singleLine="true"
+                        android:layout_height="wrap_content"
                         android:text="Electric"
                         android:textColor="#FFB0B0B0"
-                        android:textSize="14dp" />
+                        android:textSize="14sp" />
                 </LinearLayout>
             </FrameLayout>
         </LinearLayout>

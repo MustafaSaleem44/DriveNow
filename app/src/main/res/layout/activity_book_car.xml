@@ -19,6 +19,18 @@
             android:layout_gravity="top|left"
             android:background="@drawable/company_dashboard_screen">
 
+            <ImageView
+                android:id="@+id/button_back"
+                android:layout_width="39.95dp"
+                android:layout_height="39.95dp"
+                android:layout_marginLeft="15.98dp"
+                android:layout_marginTop="50dp"
+                android:src="@drawable/icon_add_car"
+                android:scaleType="centerInside"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true" />
+
             <LinearLayout
                 android:id="@+id/container_booking_screen"
                 android:layout_width="match_parent"
@@ -162,13 +174,23 @@
                             android:textSize="14dp" />
                     </FrameLayout>
 
-                    <ImageView
-                        android:id="@+id/input_start_date"
+                    <EditText
+                        android:id="@+id/edit_start_date"
                         android:layout_width="332.22dp"
                         android:layout_height="35.98dp"
                         android:layout_marginTop="7.98dp"
                         android:background="@drawable/input_start_date"
-                        android:scaleType="centerInside" />
+                        android:inputType="none"
+                        android:focusable="false"
+                        android:clickable="true"
+                        android:paddingLeft="12dp"
+                        android:paddingRight="12dp"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:textColor="#FFFFFFFF"
+                        android:textColorHint="#FF717182"
+                        android:textSize="16dp"
+                        android:hint="Select start date" />
 
                     <FrameLayout
                         android:id="@+id/label_end_date"
@@ -201,13 +223,23 @@
                             android:textSize="14dp" />
                     </FrameLayout>
 
-                    <ImageView
-                        android:id="@+id/input_end_date"
+                    <EditText
+                        android:id="@+id/edit_end_date"
                         android:layout_width="332.22dp"
                         android:layout_height="35.98dp"
                         android:layout_marginTop="7.98dp"
                         android:background="@drawable/input_end_date"
-                        android:scaleType="centerInside" />
+                        android:inputType="none"
+                        android:focusable="false"
+                        android:clickable="true"
+                        android:paddingLeft="12dp"
+                        android:paddingRight="12dp"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:textColor="#FFFFFFFF"
+                        android:textColorHint="#FF717182"
+                        android:textSize="16dp"
+                        android:hint="Select end date" />
 
                     <FrameLayout
                         android:id="@+id/label_pickup_location"
@@ -240,32 +272,21 @@
                             android:textSize="14dp" />
                     </FrameLayout>
 
-                    <LinearLayout
-                        android:id="@+id/input_pickup_location"
+                    <EditText
+                        android:id="@+id/edit_pickup_location"
                         android:layout_width="332.22dp"
                         android:layout_height="35.98dp"
                         android:layout_marginTop="7.98dp"
                         android:background="@drawable/input_pickup_location"
-                        android:clipToPadding="false"
-                        android:gravity="left|center_vertical"
-                        android:orientation="horizontal"
-                        android:paddingBottom="4dp"
+                        android:inputType="text"
                         android:paddingLeft="12dp"
                         android:paddingRight="12dp"
-                        android:paddingTop="4dp">
-
-                        <TextView
-                            android:id="@+id/text_pickup_location_value"
-                            android:layout_width="wrap_content"
-                            android:layout_height="24dp"
-                            android:gravity="left|center_vertical"
-                            android:includeFontPadding="false"
-                            android:maxLines="1"
-                            android:singleLine="true"
-                            android:text="Downtown Car Center"
-                            android:textColor="#FFFFFFFF"
-                            android:textSize="16dp" />
-                    </LinearLayout>
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:textColor="#FFFFFFFF"
+                        android:textColorHint="#FF717182"
+                        android:textSize="16dp"
+                        android:hint="Enter pickup location" />
 
                     <FrameLayout
                         android:id="@+id/label_pickup_time"
@@ -298,13 +319,21 @@
                             android:textSize="14dp" />
                     </FrameLayout>
 
-                    <ImageView
-                        android:id="@+id/input_pickup_time"
+                    <EditText
+                        android:id="@+id/edit_pickup_time"
                         android:layout_width="332.22dp"
                         android:layout_height="35.98dp"
                         android:layout_marginTop="7.98dp"
                         android:background="@drawable/input_pickup_time"
-                        android:scaleType="centerInside" />
+                        android:inputType="time"
+                        android:paddingLeft="12dp"
+                        android:paddingRight="12dp"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:textColor="#FFFFFFFF"
+                        android:textColorHint="#FF717182"
+                        android:textSize="16dp"
+                        android:hint="Select pickup time" />
 
                     <LinearLayout
                         android:id="@+id/container_price_breakdown"
@@ -390,7 +419,7 @@
                                 android:layout_height="24.01dp">
 
                                 <TextView
-                                    android:id="@+id/text_price_per_day_total1"
+                                    android:id="@+id/text_total_amount"
                                     android:layout_width="wrap_content"
                                     android:layout_height="24dp"
                                     android:layout_marginTop="-3dp"
@@ -446,7 +475,7 @@
                                 android:layout_height="24.01dp">
 
                                 <TextView
-                                    android:id="@+id/text_tax_total1"
+                                    android:id="@+id/text_tax"
                                     android:layout_width="wrap_content"
                                     android:layout_height="24dp"
                                     android:layout_marginTop="-3dp"
@@ -504,7 +533,7 @@
                                 android:layout_height="28dp">
 
                                 <TextView
-                                    android:id="@+id/text_total_amount1"
+                                    android:id="@+id/text_final_total"
                                     android:layout_width="35dp"
                                     android:layout_height="23dp"
                                     android:layout_marginLeft="-6.55dp"

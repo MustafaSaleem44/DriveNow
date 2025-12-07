@@ -17,21 +17,20 @@
 
         <LinearLayout
             android:id="@+id/container_main"
-            android:layout_width="345.3dp"
-            android:layout_height="105dp"
-            android:layout_gravity="left"
-            android:layout_marginLeft="23dp"
-            android:layout_marginTop="150dp"
-            android:layout_weight="0"
-            android:gravity="left|top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginTop="80dp"
+            android:gravity="center_horizontal"
             android:orientation="vertical">
 
             <LinearLayout
                 android:id="@+id/container_icon_heading"
                 android:layout_width="64dp"
                 android:layout_height="64dp"
-                android:layout_gravity="left"
-                android:layout_marginLeft="140.64dp"
+                android:layout_gravity="center_horizontal"
                 android:background="@drawable/container_icon_heading"
                 android:gravity="center"
                 android:orientation="horizontal"
@@ -63,17 +62,15 @@
 
         <LinearLayout
             android:id="@+id/container_buttons"
-            android:layout_width="345.3dp"
+            android:layout_width="match_parent"
             android:layout_height="45dp"
-            android:layout_gravity="left"
-            android:layout_marginLeft="23.99dp"
-            android:layout_marginTop="31.99dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginTop="32dp"
             android:background="@drawable/container_buttons"
-            android:gravity="left|top"
-            android:orientation="horizontal"
-            android:paddingLeft="0dp"
-            android:paddingTop="0dp"
-            android:paddingRight="0dp">
+            android:gravity="center"
+            android:orientation="horizontal">
 
             <FrameLayout
                 android:id="@+id/button_customer"
@@ -145,10 +142,11 @@
 
         <FrameLayout
             android:id="@+id/label_email"
-            android:layout_width="345.3dp"
-            android:layout_height="14.01dp"
-            android:layout_marginLeft="23.99dp"
-            android:layout_marginTop="23.99dp">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginTop="24dp">
 
             <TextView
                 android:id="@+id/text_email_label"
@@ -166,40 +164,30 @@
                 android:textSize="14dp" />
         </FrameLayout>
 
-        <LinearLayout
-            android:id="@+id/input_email"
-            android:layout_width="345.3dp"
-            android:layout_height="35.98dp"
+        <EditText
+            android:id="@+id/edit_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="23.99dp"
+            android:layout_marginRight="23.99dp"
             android:layout_marginTop="7.98dp"
+            android:minHeight="36dp"
             android:background="@drawable/input_email"
-            android:clipToPadding="false"
-            android:gravity="left|center_vertical"
-            android:orientation="horizontal"
-            android:paddingBottom="4dp"
-            android:paddingLeft="12dp"
-            android:paddingRight="12dp"
-            android:paddingTop="4dp">
-
-            <TextView
-                android:id="@+id/text_email_input"
-                android:layout_width="wrap_content"
-                android:layout_height="21dp"
-                android:gravity="left|center_vertical"
-                android:includeFontPadding="false"
-                android:maxLines="1"
-                android:singleLine="true"
-                android:text="Enter your email"
-                android:textColor="#FF717182"
-                android:textSize="16dp" />
-        </LinearLayout>
+            android:inputType="textEmailAddress"
+            android:hint="Enter your email"
+            android:textColorHint="#FF717182"
+            android:textColor="#FFFFFFFF"
+            android:textSize="16dp"
+            android:padding="12dp"
+            android:singleLine="true" />
 
         <FrameLayout
             android:id="@+id/label_password"
-            android:layout_width="345.3dp"
-            android:layout_height="14.01dp"
-            android:layout_marginLeft="23.99dp"
-            android:layout_marginTop="15.98dp">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginTop="16dp">
 
             <TextView
                 android:id="@+id/text_password_label"
@@ -219,55 +207,49 @@
 
         <FrameLayout
             android:id="@+id/container_password_input"
-            android:layout_width="345.3dp"
-            android:layout_height="35.98dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="23.99dp"
+            android:layout_marginRight="23.99dp"
             android:layout_marginTop="7.98dp">
 
-            <LinearLayout
-                android:id="@+id/input_password"
-                android:layout_width="345.3dp"
-                android:layout_height="35.98dp"
-                android:layout_gravity="top|left"
+            <EditText
+                android:id="@+id/edit_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="36dp"
                 android:background="@drawable/input_password"
-                android:clipToPadding="false"
-                android:gravity="left|center_vertical"
-                android:orientation="horizontal"
-                android:paddingBottom="4dp"
+                android:inputType="textPassword"
+                android:hint="Enter your password"
+                android:textColorHint="#FF717182"
+                android:textColor="#FFFFFFFF"
+                android:textSize="16dp"
                 android:paddingLeft="12dp"
                 android:paddingRight="40dp"
-                android:paddingTop="4dp">
-
-                <TextView
-                    android:id="@+id/text_password_input"
-                    android:layout_width="wrap_content"
-                    android:layout_height="21dp"
-                    android:gravity="left|center_vertical"
-                    android:includeFontPadding="false"
-                    android:maxLines="1"
-                    android:singleLine="true"
-                    android:text="Enter your password"
-                    android:textColor="#FF717182"
-                    android:textSize="16dp" />
-            </LinearLayout>
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:singleLine="true" />
 
             <ImageView
                 android:id="@+id/button_password_visibility"
-                android:layout_width="15.98dp"
-                android:layout_height="15.98dp"
-                android:layout_marginLeft="317.32dp"
-                android:layout_marginTop="9.99dp"
-                android:layout_gravity="top|left"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="12dp"
                 android:scaleType="centerInside"
-                android:src="@drawable/button_password_visibility" />
+                android:src="@drawable/button_password_visibility"
+                android:clickable="true"
+                android:focusable="true" />
         </FrameLayout>
 
         <FrameLayout
             android:id="@+id/button_login"
-            android:layout_width="345.3dp"
-            android:layout_height="35.98dp"
-            android:layout_marginLeft="23.99dp"
-            android:layout_marginTop="15.98dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginTop="16dp"
+            android:minHeight="36dp"
             android:background="@drawable/button_login">
 
             <TextView

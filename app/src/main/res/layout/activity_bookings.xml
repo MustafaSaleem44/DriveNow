@@ -25,17 +25,18 @@
             android:paddingRight="15.98dp"
             android:paddingTop="97.17dp">
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_bookings"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="80dp" />
+            
+            <!-- Keep old container hidden -->
             <LinearLayout
                 android:id="@+id/container_my_bookings_screen_container2"
-                android:layout_width="match_parent"
-                android:layout_height="243.66dp"
-                android:background="@drawable/container_my_bookings_screen_container2"
-                android:gravity="left|top"
-                android:orientation="vertical"
-                android:paddingBottom="1.26dp"
-                android:paddingLeft="17.25dp"
-                android:paddingRight="17.25dp"
-                android:paddingTop="17.25dp">
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:visibility="gone">
 
                 <LinearLayout
                     android:id="@+id/container_my_bookings_screen_container3"
@@ -377,24 +378,16 @@
             android:paddingRight="15.98dp"
             android:paddingTop="15.98dp">
 
-            <LinearLayout
-                android:id="@+id/container_my_bookings_screen_button2"
-                android:layout_width="39.95dp"
-                android:layout_height="39.95dp"
-                android:background="@drawable/container_my_bookings_screen_button2"
-                android:gravity="left|top"
-                android:orientation="vertical"
-                android:paddingLeft="7.98dp"
-                android:paddingRight="7.98dp"
-                android:paddingTop="7.98dp">
-
                 <ImageView
-                    android:id="@+id/image_my_bookings_screen_icon4"
-                    android:layout_width="23.99dp"
-                    android:layout_height="23.99dp"
+                    android:id="@+id/button_back"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/container_my_bookings_screen_button2"
+                    android:padding="8dp"
+                    android:src="@drawable/image_my_bookings_screen_icon4"
                     android:scaleType="centerInside"
-                    android:src="@drawable/image_my_bookings_screen_icon4" />
-            </LinearLayout>
+                    android:clickable="true"
+                    android:focusable="true" />
 
             <LinearLayout
                 android:id="@+id/container_my_bookings_screen_heading2"

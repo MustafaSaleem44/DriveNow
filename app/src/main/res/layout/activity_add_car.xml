@@ -33,6 +33,17 @@
                 android:orientation="horizontal"
                 android:paddingRight="0dp">
 
+                <ImageView
+                    android:id="@+id/button_back"
+                    android:layout_width="39.95dp"
+                    android:layout_height="39.95dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/icon_add_car"
+                    android:scaleType="centerInside"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:focusable="true" />
+
                 <LinearLayout
                     android:id="@+id/container1"
                     android:layout_width="218.13dp"
@@ -214,13 +225,21 @@
                                     android:textSize="14dp" />
                             </LinearLayout>
 
-                            <ImageView
-                                android:id="@+id/input_car_name"
+                            <EditText
+                                android:id="@+id/edit_car_name"
                                 android:layout_width="match_parent"
                                 android:layout_height="35.98dp"
                                 android:layout_marginTop="0dp"
                                 android:background="@drawable/input_car_name"
-                                android:scaleType="centerCrop" />
+                                android:inputType="text"
+                                android:paddingLeft="12dp"
+                                android:paddingRight="12dp"
+                                android:paddingTop="8dp"
+                                android:paddingBottom="8dp"
+                                android:textColor="#FFFFFFFF"
+                                android:textColorHint="#FF717182"
+                                android:textSize="16dp"
+                                android:hint="Enter car name" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -254,32 +273,21 @@
                                     android:textSize="14dp" />
                             </LinearLayout>
 
-                            <LinearLayout
-                                android:id="@+id/input_model_year"
+                            <EditText
+                                android:id="@+id/edit_model_year"
                                 android:layout_width="match_parent"
                                 android:layout_height="35.98dp"
                                 android:layout_marginTop="0dp"
                                 android:background="@drawable/input_model_year"
-                                android:clipToPadding="false"
-                                android:gravity="left|center_vertical"
-                                android:orientation="horizontal"
+                                android:inputType="number"
                                 android:paddingLeft="12dp"
-                                android:paddingTop="4dp"
                                 android:paddingRight="12dp"
-                                android:paddingBottom="1dp">
-
-                                <TextView
-                                    android:id="@+id/text_example_year"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="21dp"
-                                    android:gravity="left|center_vertical"
-                                    android:includeFontPadding="false"
-                                    android:maxLines="1"
-                                    android:singleLine="true"
-                                    android:text="e.g., 2024"
-                                    android:textColor="#FF717182"
-                                    android:textSize="16dp" />
-                            </LinearLayout>
+                                android:paddingTop="8dp"
+                                android:paddingBottom="8dp"
+                                android:textColor="#FFFFFFFF"
+                                android:textColorHint="#FF717182"
+                                android:textSize="16dp"
+                                android:hint="e.g., 2024" />
                         </LinearLayout>
                     </FrameLayout>
 
@@ -314,43 +322,15 @@
                                 android:textSize="14dp" />
                         </LinearLayout>
 
-                        <LinearLayout
-                            android:id="@+id/btn_select_type"
+                        <Spinner
+                            android:id="@+id/spinner_car_type"
                             android:layout_width="281.72dp"
                             android:layout_height="35.98dp"
                             android:layout_marginTop="0dp"
                             android:background="@drawable/btn_select_type"
-                            android:clipToPadding="false"
-                            android:gravity="left|center_vertical"
-                            android:orientation="horizontal"
                             android:paddingLeft="11.99dp"
-                            android:paddingRight="11.99dp">
-
-                            <TextView
-                                android:id="@+id/span_select_type"
-                                android:layout_width="wrap_content"
-                                android:layout_height="20dp"
-                                android:gravity="left|center_vertical"
-                                android:includeFontPadding="false"
-                                android:maxLines="1"
-                                android:singleLine="true"
-                                android:text="Select type"
-                                android:textColor="#FF717182"
-                                android:textSize="14dp" />
-                            <!-- 1:688:space-view0 Primitive.button_space_view0 space-view -->
-                            <View
-                                android:layout_width="0dp"
-                                android:layout_height="20dp"
-                                android:layout_weight="1" />
-
-                            <ImageView
-                                android:id="@+id/icon_select_type"
-                                android:layout_width="15.98dp"
-                                android:layout_height="15.98dp"
-                                android:alpha="0.5"
-                                android:scaleType="centerInside"
-                                android:src="@drawable/icon_select_type" />
-                        </LinearLayout>
+                            android:paddingRight="11.99dp"
+                            android:popupBackground="@drawable/btn_select_type" />
 
                         <LinearLayout
                             android:id="@+id/label_seating_capacity"
@@ -374,43 +354,15 @@
                                 android:textSize="14dp" />
                         </LinearLayout>
 
-                        <LinearLayout
-                            android:id="@+id/btn_seats"
+                        <Spinner
+                            android:id="@+id/spinner_seating_capacity"
                             android:layout_width="281.72dp"
                             android:layout_height="35.98dp"
                             android:layout_marginTop="0dp"
                             android:background="@drawable/btn_seats"
-                            android:clipToPadding="false"
-                            android:gravity="left|center_vertical"
-                            android:orientation="horizontal"
                             android:paddingLeft="11.99dp"
-                            android:paddingRight="11.99dp">
-
-                            <TextView
-                                android:id="@+id/span_seats"
-                                android:layout_width="wrap_content"
-                                android:layout_height="20dp"
-                                android:gravity="left|center_vertical"
-                                android:includeFontPadding="false"
-                                android:maxLines="1"
-                                android:singleLine="true"
-                                android:text="Seats"
-                                android:textColor="#FF717182"
-                                android:textSize="14dp" />
-                            <!-- 1:696:space-view0 Primitive.button_space_view0 space-view -->
-                            <View
-                                android:layout_width="0dp"
-                                android:layout_height="20dp"
-                                android:layout_weight="1" />
-
-                            <ImageView
-                                android:id="@+id/icon_seats"
-                                android:layout_width="15.98dp"
-                                android:layout_height="15.98dp"
-                                android:alpha="0.5"
-                                android:scaleType="centerInside"
-                                android:src="@drawable/icon_seats" />
-                        </LinearLayout>
+                            android:paddingRight="11.99dp"
+                            android:popupBackground="@drawable/btn_seats" />
 
                         <LinearLayout
                             android:id="@+id/label_fuel_type"
@@ -434,55 +386,15 @@
                                 android:textSize="14dp" />
                         </LinearLayout>
 
-                        <LinearLayout
-                            android:id="@+id/btn_fuel_type"
+                        <Spinner
+                            android:id="@+id/spinner_fuel_type"
                             android:layout_width="281.72dp"
                             android:layout_height="35.98dp"
                             android:layout_marginTop="0dp"
                             android:background="@drawable/btn_fuel_type"
-                            android:gravity="left|center_vertical"
-                            android:orientation="horizontal"
                             android:paddingLeft="11.99dp"
-                            android:paddingRight="11.99dp">
-
-                            <LinearLayout
-                                android:id="@+id/span_fuel_type"
-                                android:layout_width="56.37dp"
-                                android:layout_height="20dp"
-                                android:layout_marginTop="0dp"
-                                android:layout_marginBottom="0dp"
-                                android:clipToPadding="false"
-                                android:gravity="left|center_vertical"
-                                android:orientation="horizontal"
-                                android:paddingTop="0dp"
-                                android:paddingBottom="0dp">
-
-                                <TextView
-                                    android:id="@+id/text_fuel_type1"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="20dp"
-                                    android:gravity="left|center_vertical"
-                                    android:includeFontPadding="false"
-                                    android:maxLines="1"
-                                    android:singleLine="true"
-                                    android:text="Fuel type"
-                                    android:textColor="#FF717182"
-                                    android:textSize="14dp" />
-                            </LinearLayout>
-                            <!-- 1:704:space-view0 Primitive.button_space_view0 space-view -->
-                            <View
-                                android:layout_width="0dp"
-                                android:layout_height="20dp"
-                                android:layout_weight="1" />
-
-                            <ImageView
-                                android:id="@+id/icon_fuel_type"
-                                android:layout_width="15.98dp"
-                                android:layout_height="15.98dp"
-                                android:alpha="0.5"
-                                android:scaleType="centerInside"
-                                android:src="@drawable/icon_fuel_type" />
-                        </LinearLayout>
+                            android:paddingRight="11.99dp"
+                            android:popupBackground="@drawable/btn_fuel_type" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -563,32 +475,21 @@
                                 android:textSize="14dp" />
                         </LinearLayout>
 
-                        <LinearLayout
-                            android:id="@+id/input_daily_rate"
+                        <EditText
+                            android:id="@+id/edit_daily_rate"
                             android:layout_width="281.72dp"
                             android:layout_height="35.98dp"
                             android:layout_marginTop="0dp"
                             android:background="@drawable/input_daily_rate"
-                            android:clipToPadding="false"
-                            android:gravity="left|center_vertical"
-                            android:orientation="horizontal"
+                            android:inputType="numberDecimal"
                             android:paddingLeft="12dp"
-                            android:paddingTop="4dp"
                             android:paddingRight="12dp"
-                            android:paddingBottom="4dp">
-
-                            <TextView
-                                android:id="@+id/text_example_rate"
-                                android:layout_width="wrap_content"
-                                android:layout_height="21dp"
-                                android:gravity="left|center_vertical"
-                                android:includeFontPadding="false"
-                                android:maxLines="1"
-                                android:singleLine="true"
-                                android:text="e.g., 45.00"
-                                android:textColor="#FF717182"
-                                android:textSize="16dp" />
-                        </LinearLayout>
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp"
+                            android:textColor="#FFFFFFFF"
+                            android:textColorHint="#FF717182"
+                            android:textSize="16dp"
+                            android:hint="e.g., 45.00" />
 
                         <LinearLayout
                             android:id="@+id/label_image_url"
@@ -612,32 +513,21 @@
                                 android:textSize="14dp" />
                         </LinearLayout>
 
-                        <LinearLayout
-                            android:id="@+id/input_image_url"
+                        <EditText
+                            android:id="@+id/edit_image_url"
                             android:layout_width="281.72dp"
                             android:layout_height="35.98dp"
                             android:layout_marginTop="0dp"
                             android:background="@drawable/input_image_url"
-                            android:clipToPadding="false"
-                            android:gravity="left|center_vertical"
-                            android:orientation="horizontal"
+                            android:inputType="textUri"
                             android:paddingLeft="12dp"
-                            android:paddingTop="4dp"
                             android:paddingRight="12dp"
-                            android:paddingBottom="4dp">
-
-                            <TextView
-                                android:id="@+id/text_example_image"
-                                android:layout_width="wrap_content"
-                                android:layout_height="21dp"
-                                android:gravity="left|center_vertical"
-                                android:includeFontPadding="false"
-                                android:maxLines="1"
-                                android:singleLine="true"
-                                android:text="https://example.com/car-image.jpg"
-                                android:textColor="#FF717182"
-                                android:textSize="16dp" />
-                        </LinearLayout>
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp"
+                            android:textColor="#FFFFFFFF"
+                            android:textColorHint="#FF717182"
+                            android:textSize="16dp"
+                            android:hint="https://example.com/car-image.jpg" />
 
                         <LinearLayout
                             android:id="@+id/paragraph_default_image"
@@ -715,31 +605,69 @@
                             android:textSize="14dp" />
                     </LinearLayout>
 
-                    <LinearLayout
-                        android:id="@+id/textarea_car_description"
+                    <EditText
+                        android:id="@+id/edit_description"
                         android:layout_width="281.72dp"
                         android:layout_height="66.51dp"
                         android:layout_marginTop="0dp"
                         android:background="@drawable/textarea_car_description"
-                        android:clipToPadding="false"
-                        android:gravity="left|top"
-                        android:orientation="horizontal"
+                        android:inputType="textMultiLine"
+                        android:gravity="top|start"
                         android:paddingLeft="12dp"
-                        android:paddingTop="8dp"
                         android:paddingRight="12dp"
-                        android:paddingBottom="8dp">
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:textColor="#FFFFFFFF"
+                        android:textColorHint="#FF717182"
+                        android:textSize="16dp"
+                        android:hint="Describe the car&#39;s features, comfort,&#10;and unique selling points..."
+                        android:maxLines="3"
+                        android:scrollbars="vertical" />
+                </LinearLayout>
 
-                        <TextView
-                            android:id="@+id/textarea_car_features"
-                            android:layout_width="wrap_content"
-                            android:layout_height="48dp"
-                            android:gravity="left|top"
-                            android:includeFontPadding="false"
-                            android:lineHeight="24dp"
-                            android:text="Describe the car&#39;s features, comfort,\nand unique selling points..."
-                            android:textColor="#FF717182"
-                            android:textSize="16dp" />
-                    </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/card_pickup_location"
+                    android:layout_width="332.22dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="23.99dp"
+                    android:background="@drawable/card_description"
+                    android:clipToPadding="false"
+                    android:gravity="left|top"
+                    android:orientation="vertical"
+                    android:paddingLeft="23.99dp"
+                    android:paddingTop="19.96dp"
+                    android:paddingRight="23.99dp"
+                    android:paddingBottom="19.96dp">
+
+                    <TextView
+                        android:id="@+id/title_pickup_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="21dp"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="left|center_vertical"
+                        android:includeFontPadding="false"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="Pickup Location (Optional)"
+                        android:textColor="#FFFFFFFF"
+                        android:textSize="16dp" />
+
+                    <EditText
+                        android:id="@+id/edit_pickup_location"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="35.98dp"
+                        android:background="@drawable/input_car_name"
+                        android:inputType="text"
+                        android:paddingLeft="12dp"
+                        android:paddingRight="12dp"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:textColor="#FFFFFFFF"
+                        android:textColorHint="#FF717182"
+                        android:textSize="16dp"
+                        android:hint="Enter pickup location" />
                 </LinearLayout>
 
                 <LinearLayout
