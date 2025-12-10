@@ -59,7 +59,6 @@ class AddCarActivity : AppCompatActivity() {
 
         btnSubmit.setOnClickListener {
             if (validateInputs(etName, etYear, etRate, spinnerType)) {
-                val dbHelper = DatabaseHelper(this)
                 // Use the selected items from spinners
                 val year = etYear.text.toString()
                 val carType = spinnerType.selectedItem.toString()
@@ -77,13 +76,30 @@ class AddCarActivity : AppCompatActivity() {
                     fuelType = spinnerFuel.selectedItem.toString()
                 )
                 
-                val result = dbHelper.addCar(car)
-                if (result > -1) {
-                    Toast.makeText(this, "Car Added Successfully!", Toast.LENGTH_SHORT).show()
-                    finish()
-                } else {
-                    Toast.makeText(this, "Failed to Add Car", Toast.LENGTH_SHORT).show()
-                }
+
+                
+                // 1. Save Locally
+                val dbHelper = DatabaseHelper(this)
+                dbHelper.addCar(car)
+
+                // 2. Save Remotely
+                RetrofitClient.instance.addCar(
+                    car.name, car.type, car.pricePerDay, car.status, car.image, car.seats, car.fuelType
+                ).enqueue(object : retrofit2.Callback<ApiResponse> {
+                    override fun onResponse(call: retrofit2.Call<ApiResponse>, response: retrofit2.Response<ApiResponse>) {
+                        if (response.isSuccessful && response.body()?.status == "success") {
+                            Toast.makeText(this@AddCarActivity, "Car Added Successfully!", Toast.LENGTH_SHORT).show()
+                            finish()
+                        } else {
+                            Toast.makeText(this@AddCarActivity, "Failed to Add Car to Cloud", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+
+                    override fun onFailure(call: retrofit2.Call<ApiResponse>, t: Throwable) {
+                         Toast.makeText(this@AddCarActivity, "Network Error. Saved locally.", Toast.LENGTH_SHORT).show()
+                         finish()
+                    }
+                })
             }
         }
     }

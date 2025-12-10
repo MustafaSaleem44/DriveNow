@@ -71,26 +71,36 @@ class SignupActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
+            val table = if (isCompanyMode) "company" else "customer"
+
+            // 1. Save Locally
             val dbHelper = DatabaseHelper(this)
             if (isCompanyMode) {
-                val company = Company(name = name, email = email, password = pass)
-                val result = dbHelper.addCompany(company)
-                if (result > -1) {
-                    Toast.makeText(this, "Company Registered Successfully!", Toast.LENGTH_SHORT).show()
-                    finish()
-                } else {
-                    Toast.makeText(this, "Registration Failed", Toast.LENGTH_SHORT).show()
-                }
+                dbHelper.addCompany(Company(name = name, email = email, password = pass))
             } else {
-                val customer = Customer(name = name, email = email, password = pass)
-                val result = dbHelper.addCustomer(customer)
-                if (result > -1) {
-                    Toast.makeText(this, "Customer Registered Successfully!", Toast.LENGTH_SHORT).show()
-                    finish()
-                } else {
-                    Toast.makeText(this, "Registration Failed", Toast.LENGTH_SHORT).show()
-                }
+                dbHelper.addCustomer(Customer(name = name, email = email, password = pass))
             }
+
+            // 2. Save Remotely (API)
+            RetrofitClient.instance.signupUser(name, email, pass, table)
+                .enqueue(object : retrofit2.Callback<ApiResponse> {
+                    override fun onResponse(call: retrofit2.Call<ApiResponse>, response: retrofit2.Response<ApiResponse>) {
+                        if (response.isSuccessful && response.body()?.status == "success") {
+                            Toast.makeText(this@SignupActivity, "${if(isCompanyMode) "Company" else "Customer"} Registered Successfully!", Toast.LENGTH_SHORT).show()
+                            finish()
+                        } else {
+                            // If API fails but Local succeeded, we might still want to finish or warn.
+                            // For now, we rely on the API success to close the screen, but data is saved locally.
+                            Toast.makeText(this@SignupActivity, response.body()?.message ?: "Registration Failed", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+
+                    override fun onFailure(call: retrofit2.Call<ApiResponse>, t: Throwable) {
+                        Toast.makeText(this@SignupActivity, "Network Error: ${t.message}. Saved locally.", Toast.LENGTH_SHORT).show()
+                        // Optional: Finish if we consider local save enough
+                        finish()
+                    }
+                })
         }
 
         // 4. Handle "Already have an account?" link

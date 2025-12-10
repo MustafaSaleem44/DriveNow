@@ -54,34 +54,38 @@ class LoginActivity : AppCompatActivity() {
             val password = etPassword.text.toString()
 
             if (email.isNotEmpty() && password.isNotEmpty()) {
-                val dbHelper = DatabaseHelper(this)
-                if (isCompanyMode) {
-                    if (dbHelper.checkCompany(email, password)) {
-                        Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show()
-                        val intent = Intent(this, CompanyDashboardActivity::class.java)
-                        startActivity(intent)
-                        finish()
-                    } else {
-                        Toast.makeText(this, "Invalid Credentials", Toast.LENGTH_SHORT).show()
-                    }
-                } else {
-                    if (dbHelper.checkCustomer(email, password)) {
-                        
-                        // Save User Email
-                        val sharedPref = getSharedPreferences("UserPrefs", MODE_PRIVATE)
-                        with (sharedPref.edit()) {
-                            putString("USER_EMAIL", email)
-                            apply()
+                val table = if (isCompanyMode) "company" else "customer"
+
+                RetrofitClient.instance.loginUser(email, password, table)
+                    .enqueue(object : retrofit2.Callback<ApiResponse> {
+                        override fun onResponse(call: retrofit2.Call<ApiResponse>, response: retrofit2.Response<ApiResponse>) {
+                            if (response.isSuccessful && response.body()?.status == "success") {
+                                // Save User Email
+                                val sharedPref = getSharedPreferences("UserPrefs", MODE_PRIVATE)
+                                with (sharedPref.edit()) {
+                                    putString("USER_EMAIL", email)
+                                    apply()
+                                }
+
+                                Toast.makeText(this@LoginActivity, "Login Successful", Toast.LENGTH_SHORT).show()
+                                
+                                if (isCompanyMode) {
+                                    val intent = Intent(this@LoginActivity, CompanyDashboardActivity::class.java)
+                                    startActivity(intent)
+                                } else {
+                                    val intent = Intent(this@LoginActivity, CustomerHomeActivity::class.java)
+                                    startActivity(intent)
+                                }
+                                finish()
+                            } else {
+                                Toast.makeText(this@LoginActivity, response.body()?.message ?: "Invalid Credentials", Toast.LENGTH_SHORT).show()
+                            }
                         }
 
-                        Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show()
-                        val intent = Intent(this, CustomerHomeActivity::class.java)
-                        startActivity(intent)
-                        finish()
-                    } else {
-                        Toast.makeText(this, "Invalid Credentials", Toast.LENGTH_SHORT).show()
-                    }
-                }
+                        override fun onFailure(call: retrofit2.Call<ApiResponse>, t: Throwable) {
+                            Toast.makeText(this@LoginActivity, "Error: ${t.message}", Toast.LENGTH_SHORT).show()
+                        }
+                    })
             } else {
                 Toast.makeText(this, "Please enter email and password", Toast.LENGTH_SHORT).show()
             }

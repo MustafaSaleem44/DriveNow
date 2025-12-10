@@ -67,46 +67,78 @@ class CompanyDashboardActivity : AppCompatActivity() {
     }
 
     private fun setupRecyclerViews() {
-        val dbHelper = DatabaseHelper(this)
+        fetchData()
+    }
 
-        // 1. Setup Recent Bookings (Overview) - showing first 3 for example
-        val allBookingsList = dbHelper.getAllBookings()
-        val recentBookings = allBookingsList.take(3)
-        rvRecentBookings.layoutManager = LinearLayoutManager(this)
-        rvRecentBookings.adapter = BookingAdapter(recentBookings)
-        rvRecentBookings.isNestedScrollingEnabled = false 
+    private fun fetchData() {
+        // 1. Fetch Cars
+        RetrofitClient.instance.getCars().enqueue(object : retrofit2.Callback<CarResponse> {
+            override fun onResponse(call: retrofit2.Call<CarResponse>, response: retrofit2.Response<CarResponse>) {
+                if (response.isSuccessful && response.body()?.status == "success") {
+                    val carList = response.body()?.data ?: emptyList()
+                    val mutableCars = carList.toMutableList()
 
-        // 2. Setup Cars List
-        // 2. Setup Cars List
-        val carList = dbHelper.getAllCars().toMutableList()
-        rvCars.layoutManager = LinearLayoutManager(this)
-        rvCars.adapter = CarAdapter(carList) { carToDelete ->
-            // Delete Logic
-             if (dbHelper.deleteCar(carToDelete.id) > 0) {
-                 Toast.makeText(this, "${carToDelete.name} deleted", Toast.LENGTH_SHORT).show()
-                 // Refresh List
-                 val updatedList = dbHelper.getAllCars().toMutableList()
-                 rvCars.adapter = CarAdapter(updatedList) { car ->
-                     // Recursive callback for the refreshed adapter
-                     if (dbHelper.deleteCar(car.id) > 0) {
-                         Toast.makeText(this, "${car.name} deleted", Toast.LENGTH_SHORT).show()
-                         setupRecyclerViews() // Simple refresh
-                     }
-                 }
-                 // Also Update Stats
-                 val bookings = dbHelper.getAllBookings()
-                 updateDashboardStats(updatedList.size, bookings)
-             } else {
-                 Toast.makeText(this, "Failed to delete", Toast.LENGTH_SHORT).show()
-             }
-        }
+                    // Setup Car Adapter
+                    rvCars.layoutManager = LinearLayoutManager(this@CompanyDashboardActivity)
+                    rvCars.adapter = CarAdapter(mutableCars) { car ->
+                        deleteCar(car.id)
+                    }
 
-        // 3. Setup All Bookings List
-        rvAllBookings.layoutManager = LinearLayoutManager(this)
-        rvAllBookings.adapter = BookingAdapter(allBookingsList)
+                    // 2. Fetch Bookings (Chained)
+                    fetchBookings(mutableCars.size)
+                } else {
+                    Toast.makeText(this@CompanyDashboardActivity, "Failed to load cars", Toast.LENGTH_SHORT).show()
+                }
+            }
 
-        // 4. Update Dashboard Stats
-        updateDashboardStats(carList.size, allBookingsList)
+            override fun onFailure(call: retrofit2.Call<CarResponse>, t: Throwable) {
+                Toast.makeText(this@CompanyDashboardActivity, "Error loading cars: ${t.message}", Toast.LENGTH_SHORT).show()
+            }
+        })
+    }
+
+    private fun fetchBookings(totalCars: Int) {
+        RetrofitClient.instance.getBookings().enqueue(object : retrofit2.Callback<BookingResponse> {
+            override fun onResponse(call: retrofit2.Call<BookingResponse>, response: retrofit2.Response<BookingResponse>) {
+                if (response.isSuccessful && response.body()?.status == "success") {
+                    val allBookings = response.body()?.data ?: emptyList()
+                    
+                    // Setup Recent Bookings
+                    val recentBookings = allBookings.take(3)
+                    rvRecentBookings.layoutManager = LinearLayoutManager(this@CompanyDashboardActivity)
+                    rvRecentBookings.adapter = BookingAdapter(recentBookings)
+                    rvRecentBookings.isNestedScrollingEnabled = false
+
+                    // Setup All Bookings
+                    rvAllBookings.layoutManager = LinearLayoutManager(this@CompanyDashboardActivity)
+                    rvAllBookings.adapter = BookingAdapter(allBookings)
+
+                    // Update Stats
+                    updateDashboardStats(totalCars, allBookings)
+                }
+            }
+
+            override fun onFailure(call: retrofit2.Call<BookingResponse>, t: Throwable) {
+                Toast.makeText(this@CompanyDashboardActivity, "Error loading bookings", Toast.LENGTH_SHORT).show()
+            }
+        })
+    }
+
+    private fun deleteCar(id: Int) {
+        RetrofitClient.instance.deleteCar(id).enqueue(object : retrofit2.Callback<ApiResponse> {
+            override fun onResponse(call: retrofit2.Call<ApiResponse>, response: retrofit2.Response<ApiResponse>) {
+                if (response.isSuccessful && response.body()?.status == "success") {
+                    Toast.makeText(this@CompanyDashboardActivity, "Car Deleted", Toast.LENGTH_SHORT).show()
+                    fetchData() // Refresh
+                } else {
+                    Toast.makeText(this@CompanyDashboardActivity, "Failed to delete", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            override fun onFailure(call: retrofit2.Call<ApiResponse>, t: Throwable) {
+                Toast.makeText(this@CompanyDashboardActivity, "Error: ${t.message}", Toast.LENGTH_SHORT).show()
+            }
+        })
     }
 
     private fun updateDashboardStats(totalCars: Int, bookings: List<CustomerBooking>) {

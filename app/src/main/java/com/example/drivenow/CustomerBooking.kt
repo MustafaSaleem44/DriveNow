@@ -1,15 +1,17 @@
 
 package com.example.drivenow
 
+import com.google.gson.annotations.SerializedName
+
 data class CustomerBooking(
     val id: Int,
-    val carName: String,
-    val carDetails: String, // e.g., "2024 • Sedan"
-    val startDate: String,
-    val endDate: String,
+    @SerializedName("car_name") val carName: String,
+    @SerializedName("car_details") val carDetails: String,
+    @SerializedName("start_date") val startDate: String,
+    @SerializedName("end_date") val endDate: String,
     val location: String,
-    val bookedOn: String,
-    val totalAmount: String,
-    val status: String, // "Confirmed", "Active", "Completed", "Cancelled"
-    val customerEmail: String
+    @SerializedName("booked_on") val bookedOn: String,
+    @SerializedName("total_amount") val totalAmount: String,
+    val status: String,
+    @SerializedName("customer_email") val customerEmail: String
 )

@@ -137,32 +137,76 @@ class BookCar : AppCompatActivity() {
                 customerEmail = userEmail
             )
             
-            // Save to DB
+            // 1. Save Locally
             val dbHelper = DatabaseHelper(this)
-            val result = dbHelper.addBooking(booking)
-            
-            if (result > -1) {
-                // Add Notifications
-                val currentDate = SimpleDateFormat("MMM dd, HH:mm", Locale.US).format(Date())
-                
-                // 1. Payment Successful
-                val paymentMsg = "Payment of $priceFormatted has been processed successfully."
-                dbHelper.addNotification(Notification(title = "Payment Successful", message = paymentMsg, date = currentDate, userEmail = userEmail, type = "payment"))
+            dbHelper.addBooking(booking)
 
-                // 2. Booking Confirmed
-                val bookingMsg = "Your booking for $carName from $startDateStr is confirmed."
-                dbHelper.addNotification(Notification(title = "Booking Confirmed", message = bookingMsg, date = currentDate, userEmail = userEmail, type = "booking"))
+            // Notifications Locally
+            val currentDate = SimpleDateFormat("MMM dd, HH:mm", Locale.US).format(Date())
+            val paymentMsgLocal = "Payment of $priceFormatted has been processed successfully."
+            dbHelper.addNotification(Notification(title = "Payment Successful", message = paymentMsgLocal, date = currentDate, userEmail = userEmail, type = "payment"))
+            val bookingMsgLocal = "Your booking for $carName from $startDateStr is confirmed."
+            dbHelper.addNotification(Notification(title = "Booking Confirmed", message = bookingMsgLocal, date = currentDate, userEmail = userEmail, type = "booking"))
 
-                Toast.makeText(this, "Booking Confirmed!", Toast.LENGTH_LONG).show()
-                // Navigate to Customer Home
-                val intent = Intent(this, CustomerHomeActivity::class.java)
-                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
-                startActivity(intent)
-                finish()
-            } else {
-                 Toast.makeText(this, "Failed to confirm booking", Toast.LENGTH_SHORT).show()
-            }
+            // 2. API Call
+            RetrofitClient.instance.bookCar(
+                booking.carName, booking.carDetails, booking.startDate, booking.endDate,
+                booking.location, booking.bookedOn, booking.totalAmount, booking.status, booking.customerEmail
+            ).enqueue(object : retrofit2.Callback<ApiResponse> {
+                override fun onResponse(call: retrofit2.Call<ApiResponse>, response: retrofit2.Response<ApiResponse>) {
+                    if (response.isSuccessful && response.body()?.status == "success") {
+                        sendNotifications(userEmail, priceFormatted, carName, startDateStr)
+                    } else {
+                        // Even if API fails, we saved locally
+                        Toast.makeText(this@BookCar, "Booking Saved Locally. Sync Failed.", Toast.LENGTH_SHORT).show()
+                        val intent = Intent(this@BookCar, CustomerHomeActivity::class.java)
+                        startActivity(intent)
+                        finish()
+                    }
+                }
+
+                override fun onFailure(call: retrofit2.Call<ApiResponse>, t: Throwable) {
+                     // Network error, but saved locally
+                     Toast.makeText(this@BookCar, "Booking Saved Locally.", Toast.LENGTH_SHORT).show()
+                     navigateHome()
+                }
+            })
         }
+    }
+
+    private fun sendNotifications(userEmail: String, priceFormatted: String, carName: String, startDateStr: String) {
+        val currentDate = SimpleDateFormat("MMM dd, HH:mm", Locale.US).format(Date())
+
+        // 1. Payment Successful
+        val paymentMsg = "Payment of $priceFormatted has been processed successfully."
+        RetrofitClient.instance.addNotification("Payment Successful", paymentMsg, currentDate, userEmail, "payment")
+            .enqueue(object : retrofit2.Callback<ApiResponse> {
+                override fun onResponse(call: retrofit2.Call<ApiResponse>, response: retrofit2.Response<ApiResponse>) {
+                    // 2. Booking Confirmed (Chained)
+                    val bookingMsg = "Your booking for $carName from $startDateStr is confirmed."
+                    RetrofitClient.instance.addNotification("Booking Confirmed", bookingMsg, currentDate, userEmail, "booking")
+                        .enqueue(object : retrofit2.Callback<ApiResponse> {
+                            override fun onResponse(call: retrofit2.Call<ApiResponse>, response: retrofit2.Response<ApiResponse>) {
+                                navigateHome()
+                            }
+                            override fun onFailure(call: retrofit2.Call<ApiResponse>, t: Throwable) {
+                                navigateHome() // Navigate anyway
+                            }
+                        })
+                }
+
+                override fun onFailure(call: retrofit2.Call<ApiResponse>, t: Throwable) {
+                    navigateHome() // Navigate anyway
+                }
+            })
+    }
+
+    private fun navigateHome() {
+        Toast.makeText(this@BookCar, "Booking Confirmed!", Toast.LENGTH_LONG).show()
+        val intent = Intent(this@BookCar, CustomerHomeActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
+        startActivity(intent)
+        finish()
     }
 
     private fun showDatePicker(isStart: Boolean) {

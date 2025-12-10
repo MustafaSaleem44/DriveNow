@@ -21,22 +21,28 @@ class CustomerHomeActivity : AppCompatActivity() {
         val tvGreeting = findViewById<android.widget.TextView>(R.id.tv_greeting_name)
         val etSearch = findViewById<android.widget.EditText>(R.id.et_search_cars)
 
-        // 1. Personalize Greeting
+        // 1. Personalize Greeting (Simplified for now - strictly fetching local name requires new API endpoint or saving it at login)
         val sharedPref = getSharedPreferences("UserPrefs", MODE_PRIVATE)
         val userEmail = sharedPref.getString("USER_EMAIL", "") ?: ""
-        val dbHelper = DatabaseHelper(this)
         
-        if (userEmail.isNotEmpty()) {
-            val userName = dbHelper.getCustomerName(userEmail)
-            tvGreeting.text = "Hello, $userName!"
-        }
+        // Use a default greeting or modify Login to save name. For now:
+        tvGreeting.text = "Hello!" 
 
         // 2. Fetch Data
-        val allCars = dbHelper.getAllAvailableCars()
+        var allCars = listOf<Car>()
         
-        rvCars.layoutManager = LinearLayoutManager(this)
-        val adapter = CustomerCarAdapter(allCars)
-        rvCars.adapter = adapter
+        RetrofitClient.instance.getCars("Available").enqueue(object : retrofit2.Callback<CarResponse> {
+            override fun onResponse(call: retrofit2.Call<CarResponse>, response: retrofit2.Response<CarResponse>) {
+                if (response.isSuccessful && response.body()?.status == "success") {
+                    allCars = response.body()?.data ?: emptyList()
+                    rvCars.layoutManager = LinearLayoutManager(this@CustomerHomeActivity)
+                    rvCars.adapter = CustomerCarAdapter(allCars)
+                }
+            }
+            override fun onFailure(call: retrofit2.Call<CarResponse>, t: Throwable) {
+                // Handle error
+            }
+        })
 
         // 3. Implement Search
         etSearch.addTextChangedListener(object : android.text.TextWatcher {
@@ -46,8 +52,6 @@ class CustomerHomeActivity : AppCompatActivity() {
                 val filteredList = allCars.filter { car ->
                     car.name.lowercase().contains(query) || car.type.lowercase().contains(query)
                 }
-                // Update adapter with filtered list
-                // Note: It's better to update data inside adapter, but creating new one works for simple lists
                  rvCars.adapter = CustomerCarAdapter(filteredList)
             }
             override fun afterTextChanged(s: android.text.Editable?) {}

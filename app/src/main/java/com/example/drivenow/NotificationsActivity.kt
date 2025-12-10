@@ -24,14 +24,23 @@ class NotificationsActivity : AppCompatActivity() {
         btnMarkRead = findViewById(R.id.btn_mark_read)
 
         // Fetch Real Notifications
+        // Fetch Real Notifications
         val sharedPref = getSharedPreferences("UserPrefs", MODE_PRIVATE)
         val userEmail = sharedPref.getString("USER_EMAIL", "") ?: ""
-        val dbHelper = DatabaseHelper(this)
         
-        val notificationList = dbHelper.getUserNotifications(userEmail)
+        RetrofitClient.instance.getNotifications(userEmail).enqueue(object : retrofit2.Callback<NotificationResponse> {
+            override fun onResponse(call: retrofit2.Call<NotificationResponse>, response: retrofit2.Response<NotificationResponse>) {
+                if (response.isSuccessful && response.body()?.status == "success") {
+                    val notificationList = response.body()?.data ?: emptyList()
+                    rvNotifications.layoutManager = LinearLayoutManager(this@NotificationsActivity)
+                    rvNotifications.adapter = NotificationAdapter(notificationList)
+                }
+            }
 
-        rvNotifications.layoutManager = LinearLayoutManager(this)
-        rvNotifications.adapter = NotificationAdapter(notificationList)
+            override fun onFailure(call: retrofit2.Call<NotificationResponse>, t: Throwable) {
+                Toast.makeText(this@NotificationsActivity, "Error loading notifications", Toast.LENGTH_SHORT).show()
+            }
+        })
 
         btnMarkRead.setOnClickListener {
             Toast.makeText(this, "All notifications marked as read", Toast.LENGTH_SHORT).show()
